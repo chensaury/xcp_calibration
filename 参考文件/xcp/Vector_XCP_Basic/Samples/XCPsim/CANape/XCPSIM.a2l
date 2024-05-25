@@ -1,0 +1,2283 @@
+/* @@@@ File written by CANAPE_VERSION 16 0 31 @@@@ */
+
+ASAP2_VERSION 1 51
+/begin PROJECT XCPSIM ""
+
+  /begin MODULE CPP ""
+
+    /begin A2ML
+
+
+      struct Protocol_Layer {
+        uint;  /* XCP protocol layer version, current 0x100 */
+        uint;  /* T1 [ms] */
+        uint;  /* T2 [ms] */
+        uint;  /* T3 [ms] */
+        uint;  /* T4 [ms] */
+        uint;  /* T5 [ms] */
+        uint;  /* T6 [ms] */
+        uint;  /* T7 [ms] */
+        uchar;  /* MAX_CTO */
+        uint;  /* MAX_DTO */
+        enum {
+          "BYTE_ORDER_MSB_LAST" = 0,
+          "BYTE_ORDER_MSB_FIRST" = 1
+        };
+        enum {
+          "ADDRESS_GRANULARITY_BYTE" = 1,
+          "ADDRESS_GRANULARITY_WORD" = 2,
+          "ADDRESS_GRANULARITY_DWORD" = 4
+        };
+        taggedstruct {
+          ("OPTIONAL_CMD" enum {
+            "GET_COMM_MODE_INFO" = 251,
+            "GET_ID" = 250,
+            "SET_REQUEST" = 249,
+            "GET_SEED" = 248,
+            "UNLOCK" = 247,
+            "SET_MTA" = 246,
+            "UPLOAD" = 245,
+            "SHORT_UPLOAD" = 244,
+            "BUILD_CHECKSUM" = 243,
+            "TRANSPORT_LAYER_CMD" = 242,
+            "USER_CMD" = 241,
+            "DOWNLOAD" = 240,
+            "DOWNLOAD_NEXT" = 239,
+            "DOWNLOAD_MAX" = 238,
+            "SHORT_DOWNLOAD" = 237,
+            "MODIFY_BITS" = 236,
+            "SET_CAL_PAGE" = 235,
+            "GET_CAL_PAGE" = 234,
+            "GET_PAG_PROCESSOR_INFO" = 233,
+            "GET_SEGMENT_INFO" = 232,
+            "GET_PAGE_INFO" = 231,
+            "SET_SEGMENT_MODE" = 230,
+            "GET_SEGMENT_MODE" = 229,
+            "COPY_CAL_PAGE" = 228,
+            "CLEAR_DAQ_LIST" = 227,
+            "SET_DAQ_PTR" = 226,
+            "WRITE_DAQ" = 225,
+            "SET_DAQ_LIST_MODE" = 224,
+            "GET_DAQ_LIST_MODE" = 223,
+            "START_STOP_DAQ_LIST" = 222,
+            "START_STOP_SYNCH" = 221,
+            "GET_DAQ_CLOCK" = 220,
+            "READ_DAQ" = 219,
+            "GET_DAQ_PROCESSOR_INFO" = 218,
+            "GET_DAQ_RESOLUTION_INFO" = 217,
+            "GET_DAQ_LIST_INFO" = 216,
+            "GET_DAQ_EVENT_INFO" = 215,
+            "FREE_DAQ" = 214,
+            "ALLOC_DAQ" = 213,
+            "ALLOC_ODT" = 212,
+            "ALLOC_ODT_ENTRY" = 211,
+            "PROGRAM_START" = 210,
+            "PROGRAM_CLEAR" = 209,
+            "PROGRAM" = 208,
+            "PROGRAM_RESET" = 207,
+            "GET_PGM_PROCESSOR_INFO" = 206,
+            "GET_SECTOR_INFO" = 205,
+            "PROGRAM_PREPARE" = 204,
+            "PROGRAM_FORMAT" = 203,
+            "PROGRAM_NEXT" = 202,
+            "PROGRAM_MAX" = 201,
+            "PROGRAM_VERIFY" = 200
+          })*;
+          "COMMUNICATION_MODE_SUPPORTED" taggedunion {
+            "BLOCK" taggedstruct {
+              "SLAVE" ;
+              "MASTER" struct {
+                uchar;  /* MAX_BS */
+                uchar;  /* MIN_ST */
+              };
+            };
+            "INTERLEAVED" uchar;  /* QUEUE_SIZE */
+          };
+          "SEED_AND_KEY_EXTERNAL_FUNCTION" char[256];  /* Name of the Seed&Key function */
+        };
+      };
+
+      struct Daq {
+        enum {
+          "STATIC" = 0,
+          "DYNAMIC" = 1
+        };
+        uint;  /* MAX_DAQ */
+        uint;  /* MAX_EVENT_CHANNEL */
+        uchar;  /* MIN_DAQ */
+        enum {
+          "OPTIMISATION_TYPE_DEFAULT" = 0,
+          "OPTIMISATION_TYPE_ODT_TYPE_16" = 1,
+          "OPTIMISATION_TYPE_ODT_TYPE_32" = 2,
+          "OPTIMISATION_TYPE_ODT_TYPE_64" = 3,
+          "OPTIMISATION_TYPE_ODT_TYPE_ALIGNMENT" = 4,
+          "OPTIMISATION_TYPE_MAX_ENTRY_SIZE" = 5
+        };
+        enum {
+          "ADDRESS_EXTENSION_FREE" = 0,
+          "ADDRESS_EXTENSION_ODT" = 1,
+          "ADDRESS_EXTENSION_DAQ" = 3
+        };
+        enum {
+          "IDENTIFICATION_FIELD_TYPE_ABSOLUTE" = 0,
+          "IDENTIFICATION_FIELD_TYPE_RELATIVE_BYTE" = 1,
+          "IDENTIFICATION_FIELD_TYPE_RELATIVE_WORD" = 2,
+          "IDENTIFICATION_FIELD_TYPE_RELATIVE_WORD_ALIGNED" = 3
+        };
+        enum {
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_BYTE" = 1,
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_WORD" = 2,
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_DWORD" = 4,
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_DLONG" = 8
+        };
+        uchar;  /* MAX_ODT_ENTRY_SIZE_DAQ */
+        enum {
+          "NO_OVERLOAD_INDICATION" = 0,
+          "OVERLOAD_INDICATION_PID" = 1,
+          "OVERLOAD_INDICATION_EVENT" = 2
+        };
+        taggedstruct {
+          "PRESCALER_SUPPORTED" ;
+          "RESUME_SUPPORTED" ;
+          block "STIM" struct {
+            enum {
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_BYTE" = 1,
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_WORD" = 2,
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_DWORD" = 4,
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_DLONG" = 8
+            };
+            uchar;  /* MAX_ODT_ENTRY_SIZE_STIM */
+            taggedstruct {
+              "BIT_STIM_SUPPORTED" ;
+            };
+          };
+          block "TIMESTAMP_SUPPORTED" struct {
+            uint;  /* TIMESTAMP_TICKS */
+            enum {
+              "NO_TIME_STAMP" = 0,
+              "SIZE_BYTE" = 1,
+              "SIZE_WORD" = 2,
+              "SIZE_DWORD" = 4
+            };
+            enum {
+              "UNIT_1NS" = 0,
+              "UNIT_10NS" = 1,
+              "UNIT_100NS" = 2,
+              "UNIT_1US" = 3,
+              "UNIT_10US" = 4,
+              "UNIT_100US" = 5,
+              "UNIT_1MS" = 6,
+              "UNIT_10MS" = 7,
+              "UNIT_100MS" = 8,
+              "UNIT_1S" = 9
+            };
+            taggedstruct {
+              "TIMESTAMP_FIXED" ;
+            };
+          };
+          "PID_OFF_SUPPORTED" ;
+          (block "DAQ_LIST" struct {
+            uint;  /* DAQ_LIST_NUMBER */
+            taggedstruct {
+              "DAQ_LIST_TYPE" enum {
+                "DAQ" = 1,
+                "STIM" = 2,
+                "DAQ_STIM" = 3
+              };
+              "MAX_ODT" uchar;
+              "MAX_ODT_ENTRIES" uchar;
+              "FIRST_PID" uchar;
+              "EVENT_FIXED" uint;
+              block "PREDEFINED" taggedstruct {
+                (block "ODT" struct {
+                  uchar;  /* ODT number */
+                  taggedstruct {
+                    ("ODT_ENTRY" struct {
+                      uchar;  /* ODT_ENTRY number */
+                      ulong;  /* address of element */
+                      uchar;  /* address extension of element */
+                      uchar;  /* size of element [AG] */
+                      uchar;  /* BIT_OFFSET */
+                    })*;
+                  };
+                })*;
+              };
+            };
+          })*;
+          (block "EVENT" struct {
+            char[101];  /* EVENT_CHANNEL_NAME       */
+            char[9];  /* EVENT_CHANNEL_SHORT_NAME */
+            uint;  /* EVENT_CHANNEL_NUMBER     */
+            enum {
+              "DAQ" = 1,
+              "STIM" = 2,
+              "DAQ_STIM" = 3
+            };
+            uchar;  /* MAX_DAQ_LIST */
+            uchar;  /* TIME_CYCLE   */
+            uchar;  /* TIME_UNIT    */
+            uchar;  /* PRIORITY     */
+          })*;
+        };
+      };
+
+      taggedunion Daq_Event {
+        "FIXED_EVENT_LIST" taggedstruct {
+          ("EVENT" uint)*;
+        };
+        "VARIABLE" taggedstruct {
+          block "AVAILABLE_EVENT_LIST" taggedstruct {
+            ("EVENT" uint)*;
+          };
+          block "DEFAULT_EVENT_LIST" taggedstruct {
+            ("EVENT" uint)*;
+          };
+        };
+      };
+
+      struct Pag {
+        uchar;  /* MAX_SEGMENTS */
+        taggedstruct {
+          "FREEZE_SUPPORTED" ;
+        };
+      };
+
+      struct Pgm {
+        enum {
+          "PGM_MODE_ABSOLUTE" = 1,
+          "PGM_MODE_FUNCTIONAL" = 2,
+          "PGM_MODE_ABSOLUTE_AND_FUNCTIONAL" = 3
+        };
+        uchar;  /* MAX_SECTORS */
+        uchar;  /* MAX_CTO_PGM */
+        taggedstruct {
+          (block "SECTOR" struct {
+            char[101];  /* SECTOR_NAME */
+            uchar;  /* SECTOR_NUMBER */
+            ulong;  /* Address */
+            ulong;  /* Length  */
+            uchar;  /* CLEAR_SEQUENCE_NUMBER */
+            uchar;  /* PROGRAM_SEQUENCE_NUMBER */
+            uchar;  /* PROGRAM_METHOD */
+          })*;
+          "COMMUNICATION_MODE_SUPPORTED" taggedunion {
+            "BLOCK" taggedstruct {
+              "SLAVE" ;
+              "MASTER" struct {
+                uchar;  /* MAX_BS_PGM */
+                uchar;  /* MIN_ST_PGM */
+              };
+            };
+            "INTERLEAVED" uchar;  /* QUEUE_SIZE_PGM */
+          };
+        };
+      };
+
+      struct Segment {
+        uchar;  /* SEGMENT_NUMBER */
+        uchar;  /* number of pages */
+        uchar;  /* ADDRESS_EXTENSION */
+        uchar;  /* COMPRESSION_METHOD */
+        uchar;  /* ENCRYPTION_METHOD */
+        taggedstruct {
+          block "CHECKSUM" struct {
+            enum {
+              "XCP_ADD_11" = 1,
+              "XCP_ADD_12" = 2,
+              "XCP_ADD_14" = 3,
+              "XCP_ADD_22" = 4,
+              "XCP_ADD_24" = 5,
+              "XCP_ADD_44" = 6,
+              "XCP_CRC_16" = 7,
+              "XCP_CRC_16_CITT" = 8,
+              "XCP_CRC_32" = 9,
+              "XCP_USER_DEFINED" = 255
+            };
+            taggedstruct {
+              "MAX_BLOCK_SIZE" ulong;
+              "EXTERNAL_FUNCTION" char[256];  /* Name of the Checksum.DLL */
+            };
+          };
+          (block "PAGE" struct {
+            uchar;  /* PAGE_NUMBER */
+            enum {
+              "ECU_ACCESS_NOT_ALLOWED" = 0,
+              "ECU_ACCESS_WITHOUT_XCP_ONLY" = 1,
+              "ECU_ACCESS_WITH_XCP_ONLY" = 2,
+              "ECU_ACCESS_DONT_CARE" = 3
+            };
+            enum {
+              "XCP_READ_ACCESS_NOT_ALLOWED" = 0,
+              "XCP_READ_ACCESS_WITHOUT_ECU_ONLY" = 1,
+              "XCP_READ_ACCESS_WITH_ECU_ONLY" = 2,
+              "XCP_READ_ACCESS_DONT_CARE" = 3
+            };
+            enum {
+              "XCP_WRITE_ACCESS_NOT_ALLOWED" = 0,
+              "XCP_WRITE_ACCESS_WITHOUT_ECU_ONLY" = 1,
+              "XCP_WRITE_ACCESS_WITH_ECU_ONLY" = 2,
+              "XCP_WRITE_ACCESS_DONT_CARE" = 3
+            };
+            taggedstruct {
+              "INIT_SEGMENT" uchar;  /* references segment that initialises this page */
+            };
+          })*;
+          (block "ADDRESS_MAPPING" struct {
+            ulong;  /* source address */
+            ulong;  /* destination address */
+            ulong;  /* length */
+          })*;
+          "PGM_VERIFY" ulong;  /* verification value for PGM */
+        };
+      };
+
+      taggedstruct Common_Parameters {
+        block "PROTOCOL_LAYER" struct Protocol_Layer;
+        block "SEGMENT" struct Segment;
+        block "DAQ" struct Daq;
+        block "PAG" struct Pag;
+        block "PGM" struct Pgm;
+        block "DAQ_EVENT" taggedunion Daq_Event;
+      };
+
+      struct CAN_Parameters {
+        uint;  /* XCP on CAN version, currentl 0x0100 */
+        taggedstruct {
+          "CAN_ID_BROADCAST" ulong;  /* Auto-detection CAN-ID */
+          "CAN_ID_MASTER" ulong;  /* CMD/STIM CAN-ID */
+          "CAN_ID_SLAVE" ulong;  /* RES/ERR/EV/SERV/DAQ CAN-ID */
+          "BAUDRATE" ulong;  /* Baudrate in Hz */
+          "SAMPLE_POINT" uchar;  /* Sample point in % of bit time */
+          "SAMPLE_RATE" enum {
+            "SINGLE" = 1,
+            "TRIPLE" = 3
+          };
+          "BTL_CYCLES" uchar;  /* slots per bit time */
+          "SJW" uchar;
+          "SYNC_EDGE" enum {
+            "SINGLE" = 1,
+            "DUAL" = 2
+          };
+          "MAX_DLC_REQUIRED" ;  /* master to slave frames */
+          (block "DAQ_LIST_CAN_ID" struct {
+            uint;  /* reference to DAQ_LIST_NUMBER */
+            taggedstruct {
+              "VARIABLE" ;
+              "FIXED" ulong;  /* this DAQ_LIST always on this CAN_ID */
+            };
+          })*;
+        };
+      };
+
+      struct SxI_Parameters {
+        uint;  /* XCP on SxI version, currently 0x0100 */
+        ulong;  /* BAUDRATE [Hz] */
+        taggedstruct {
+          "ASYNCH_FULL_DUPLEX_MODE" struct {
+            enum {
+              "PARITY_NONE" = 0,
+              "PARITY_ODD" = 1,
+              "PARITY_EVEN" = 2
+            };
+            enum {
+              "ONE_STOP_BIT" = 1,
+              "TWO_STOP_BITS" = 2
+            };
+          };
+          "SYNCH_FULL_DUPLEX_MODE_BYTE" ;
+          "SYNCH_FULL_DUPLEX_MODE_WORD" ;
+          "SYNCH_FULL_DUPLEX_MODE_DWORD" ;
+          "SYNCH_MASTER_SLAVE_MODE_BYTE" ;
+          "SYNCH_MASTER_SLAVE_MODE_WORD" ;
+          "SYNCH_MASTER_SLAVE_MODE_DWORD" ;
+        };
+        enum {
+          "HEADER_LEN_BYTE" = 0,
+          "HEADER_LEN_CTR_BYTE" = 1,
+          "HEADER_LEN_FILL_BYTE" = 2,
+          "HEADER_LEN_WORD" = 3,
+          "HEADER_LEN_CTR_WORD" = 4,
+          "HEADER_LEN_FILL_WORD" = 5
+        };
+        enum {
+          "NO_CHECKSUM" = 0,
+          "CHECKSUM_BYTE" = 1,
+          "CHECKSUM_WORD" = 2
+        };
+      };
+
+      struct TCP_IP_Parameters {
+        uint;  /* XCP on TCP_IP version, currently 0x0100 */
+        uint;  /* PORT */
+        taggedunion {
+          "HOST_NAME" char[256];
+          "ADDRESS" char[15];
+        };
+      };
+
+      struct UDP_Parameters {
+        uint;  /* XCP on UDP version, currently 0x0100 */
+        uint;  /* PORT */
+        taggedunion {
+          "HOST_NAME" char[256];
+          "ADDRESS" char[15];
+        };
+      };
+
+      struct ep_parameters {
+        uchar;  /* ENDPOINT_NUMBER, not endpoint address */
+        enum {
+          "BULK_TRANSFER" = 2,
+          "INTERRUPT_TRANSFER" = 3
+        };
+        uint;  /* wMaxPacketSize: Maximum packet  
+ size of endpoint in bytes       */
+        uchar;  /* bInterval: polling of endpoint  */
+        enum {
+          "MESSAGE_PACKING_SINGLE" = 0,
+          "MESSAGE_PACKING_MULTIPLE" = 1,
+          "MESSAGE_PACKING_STREAMING" = 2
+        };
+        enum {
+          "ALIGNMENT_8_BIT" = 0,
+          "ALIGNMENT_16_BIT" = 1,
+          "ALIGNMENT_32_BIT" = 2,
+          "ALIGNMENT_64_BIT" = 3
+        };
+        taggedstruct {
+          "RECOMMENDED_HOST_BUFSIZE" uint;  /* Recommended size for the host 
+ buffer size. The size is defined
+ as multiple of wMaxPacketSize.  */
+        };
+      };  /* end of ep_parameters */
+
+      struct USB_Parameters {
+        uint;  /* XCP on USB version  
+ e.g. "1.0" = 0x0100 */
+        uint;  /* Vendor ID                       */
+        uint;  /* Product ID                      */
+        uchar;  /* Number of interface             */
+        enum {
+          "HEADER_LEN_BYTE" = 0,
+          "HEADER_LEN_CTR_BYTE" = 1,
+          "HEADER_LEN_FILL_BYTE" = 2,
+          "HEADER_LEN_WORD" = 3,
+          "HEADER_LEN_CTR_WORD" = 4,
+          "HEADER_LEN_FILL_WORD" = 5
+        };
+        taggedunion {
+          block "OUT_EP_CMD_STIM" struct ep_parameters;
+        };
+        taggedunion {
+          block "IN_EP_RESERR_DAQ_EVSERV" struct ep_parameters;
+        };
+        taggedstruct {
+          "ALTERNATE_SETTING_NO" uchar;  /* Number of alternate setting   */
+          "INTERFACE_STRING_DESCRIPTOR" char[101];
+          (block "OUT_EP_ONLY_STIM" struct ep_parameters)*;
+          (block "IN_EP_ONLY_DAQ" struct ep_parameters)*;
+          block "IN_EP_ONLY_EVSERV" struct ep_parameters;
+          (block "DAQ_LIST_USB_ENDPOINT" struct {
+            uint;  /* reference to DAQ_LIST_NUMBER          */
+            taggedstruct {
+              "FIXED_IN" uchar;  /* this DAQ list always                
+ ENDPOINT_NUMBER, not endpoint address */
+              "FIXED_OUT" uchar;  /* this STIM list always               
+ ENDPOINT_NUMBER, not endpoint address */
+            };
+          })*;  /* end of DAQ_LIST_USB_ENDPOINT */
+        };  /* end of optional */
+      };
+
+      struct SIMULINK_Parameters {
+        taggedstruct {
+          "MODEL_NAME" char[64];
+        };
+      };
+
+      enum packet_assignment_type {
+        "NOT_ALLOWED" = 0,
+        "FIXED" = 1,
+        "VARIABLE_INITIALISED" = 2,
+        "VARIABLE" = 3
+      };  /* end of packet_assignment_type */
+
+      struct buffer {
+        uchar;  /* FLX_BUF */
+        taggedstruct {
+          "MAX_FLX_LEN_BUF" taggedunion {
+            "FIXED" uchar;  /* constant value */
+            "VARIABLE" uchar;  /* initial value */
+          };  /* end of MAX_FLX_LEN_BUF */
+          block "LPDU_ID" taggedstruct {
+            "FLX_SLOT_ID" taggedunion {
+              "FIXED" uint;
+              "VARIABLE" taggedstruct {
+                "INITIAL_VALUE" uint;
+              };
+            };  /* end of FLX_SLOT_ID */
+            "OFFSET" taggedunion {
+              "FIXED" uchar;
+              "VARIABLE" taggedstruct {
+                "INITIAL_VALUE" uchar;
+              };
+            };  /* end of OFFSET */
+            "CYCLE_REPETITION" taggedunion {
+              "FIXED" uchar;
+              "VARIABLE" taggedstruct {
+                "INITIAL_VALUE" uchar;
+              };
+            };  /* end of CYCLE_REPETITION */
+            "CHANNEL" taggedunion {
+              "FIXED" enum {
+                "A" = 0,
+                "B" = 1
+              };
+              "VARIABLE" taggedstruct {
+                "INITIAL_VALUE" enum {
+                  "A" = 0,
+                  "B" = 1
+                };
+              };
+            };  /* end of CHANNEL */
+          };  /* end of LPDU_ID */
+          block "XCP_PACKET" taggedstruct {
+            "CMD" enum packet_assignment_type;  /* end of CMD     */
+            "RES_ERR" enum packet_assignment_type;  /* end of RES_ERR */
+            "EV_SERV" enum packet_assignment_type;  /* end of EV_SERV */
+            "DAQ" enum packet_assignment_type;  /* end of DAQ     */
+            "STIM" enum packet_assignment_type;  /* end of STIM    */
+          };  /* end of XCP_PACKET */
+        };
+      };  /* end of buffer */
+
+      struct FLX_Parameters {
+        uint;  /* XCP on FlexRay version  
+ e.g. "1.0" = 0x0100 */
+        uint;  /* T1_FLX [ms] */
+        char[256];  /* FIBEX-file 
+ including CHI information 
+ including extension 
+ without path */
+        char[256];  /* Cluster-ID */
+        uchar;  /* NAX */
+        enum {
+          "HEADER_NAX" = 0,
+          "HEADER_NAX_FILL" = 1,
+          "HEADER_NAX_CTR" = 2,
+          "HEADER_NAX_FILL3" = 3,
+          "HEADER_NAX_CTR_FILL2" = 4,
+          "HEADER_NAX_LEN" = 5,
+          "HEADER_NAX_CTR_LEN" = 6,
+          "HEADER_NAX_FILL2_LEN" = 7,
+          "HEADER_NAX_CTR_FILL_LEN" = 8
+        };
+        enum {
+          "PACKET_ALIGNMENT_8" = 0,
+          "PACKET_ALIGNMENT_16" = 1,
+          "PACKET_ALIGNMENT_32" = 2
+        };
+        taggedunion {
+          block "INITIAL_CMD_BUFFER" struct buffer;
+        };
+        taggedunion {
+          block "INITIAL_RES_ERR_BUFFER" struct buffer;
+        };
+        taggedstruct {
+          (block "POOL_BUFFER" struct buffer)*;
+        };
+      };
+
+      block "IF_DATA" taggedunion if_data {
+
+        "CANAPE_EXT" struct {
+          int;             /* version number */
+          taggedstruct {
+            "LINK_MAP" struct {
+              char[256];   /* segment name */
+              long;        /* base address of the segment */
+              uint;        /* address extension of the segment */
+              uint;        /* flag: address is relative to DS */
+              long;        /* offset of the segment address */
+              uint;        /* datatypValid */
+              uint;        /* enum datatyp */
+              uint;        /* bit offset of the segment */
+            };
+            "DISPLAY" struct {
+              long;        /* display color */
+              double;      /* minimal display value (phys)*/
+              double;      /* maximal display value (phys)*/
+            };
+            "VIRTUAL_CONVERSION" struct {
+              char[256];   /* name of the conversion formula */
+            };
+          };
+        };
+        "CANAPE_MODULE" struct {
+          taggedstruct {
+            ("RECORD_LAYOUT_STEPSIZE" struct {
+              char[256];   /* name of record layout*/
+              uint;        /* stepsize for FNC_VALUES */
+              uint;        /* stepsize for AXIS_PTS_X */
+              uint;        /* stepsize for AXIS_PTS_Y */
+              uint;        /* stepsize for AXIS_PTS_Z */
+              uint;        /* stepsize for AXIS_PTS_4 */
+              uint;        /* stepsize for AXIS_PTS_5 */
+            })*;
+          };
+        };
+        "CANAPE_ADDRESS_UPDATE" taggedstruct {
+          ("EPK_ADDRESS" struct {
+            char[1024];         /* name of the corresponding symbol in MAP file */
+            long;               /* optional address offset */
+          })*;
+          "ECU_CALIBRATION_OFFSET" struct {
+            char[1024];         /* name of the corresponding symbol in MAP file */
+            long;               /* optional address offset */
+          };
+          (block "CALIBRATION_METHOD" taggedunion {
+            "AUTOSAR_SINGLE_POINTERED" struct {
+              char[1024];         /* MAP symbol name for pointer table in RAM */
+              long;               /* optional address offset */
+              taggedstruct {
+                "ORIGINAL_POINTER_TABLE" struct {
+                  char[1024];    /* MAP symbol name for pointer table in FLASH */
+                  long;          /* optional address offset */
+                };
+              };
+            };
+            "InCircuit2" struct {
+              char[1024];         /* MAP symbol name for pointer table in RAM */
+              long;               /* optional address offset */
+              taggedstruct {
+                "ORIGINAL_POINTER_TABLE" struct {
+                  char[1024];    /* MAP symbol name for pointer table in FLASH */
+                  long;          /* optional address offset */
+                };
+                "FLASH_SECTION" struct {
+                  ulong;       /* start address of flash section */
+                  ulong;       /* length of flash section */
+                };
+              };
+            };
+          })*;
+          block "MAP_SYMBOL" taggedstruct {
+            "FIRST" struct {
+              char[1024];  /* symbol name of the corresponding segment in MAP file */
+              long;        /* offset */
+            };
+            "LAST" struct {
+              char[1024];  /* symbol name of the corresponding segment in MAP file */
+              long;        /* offset */
+            };
+            ("ADDRESS_MAPPING_XCP" struct {
+              char[1024];  /* symbol name of source range in MAP file */
+              char[1024];  /* symbol name of destination range in MAP file */
+            })*;
+          };
+          (block "MEMORY_SEGMENT" struct {
+            char[1024];         /* name of the memory segment */
+            taggedstruct {
+              "FIRST" struct {
+                char[1024];  /* symbol name of the corresponding segment in MAP file */
+                long;        /* offset */
+              };
+              "LAST" struct {
+                char[1024];  /* symbol name of the corresponding segment in MAP file */
+                long;        /* offset */
+              };
+              ("ADDRESS_MAPPING_XCP" struct {
+                char[1024];  /* symbol name of source range in MAP file */
+                char[1024];  /* symbol name of destination range in MAP file */
+              })*;
+            };
+          })*;
+        };
+        "CANAPE_GROUP" taggedstruct {
+          block "STRUCTURE_LIST" (char[1024])*;
+        };
+
+        "XCP" struct {
+          taggedstruct Common_Parameters;  /* default parameters */
+          taggedstruct {
+            block "XCP_ON_CAN" struct {
+              struct CAN_Parameters;  /* specific for CAN */
+              taggedstruct Common_Parameters;  /* overruling of default */
+            };
+            block "XCP_ON_SxI" struct {
+              struct SxI_Parameters;  /* specific for SxI */
+              taggedstruct Common_Parameters;  /* overruling of default */
+            };
+            block "XCP_ON_TCP_IP" struct {
+              struct TCP_IP_Parameters;  /* specific for TCP_IP */
+              taggedstruct Common_Parameters;  /* overruling of default */
+            };
+            block "XCP_ON_UDP_IP" struct {
+              struct UDP_Parameters;  /* specific for UDP */
+              taggedstruct Common_Parameters;  /* overruling of default */
+            };
+            block "XCP_ON_USB" struct {
+              struct USB_Parameters;  /* specific for USB      */
+              taggedstruct Common_Parameters;  /* overruling of default */
+            };
+            block "XCP_ON_FLX" struct {
+              struct FLX_Parameters;  /* specific for FlexRay  */
+              taggedstruct Common_Parameters;  /* overruling of default */
+            };
+          };
+        };
+      };
+
+    /end A2ML
+
+    /begin MOD_COMMON ""
+      BYTE_ORDER MSB_LAST
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 1
+      ALIGNMENT_LONG 1
+      ALIGNMENT_FLOAT32_IEEE 1
+      ALIGNMENT_FLOAT64_IEEE 1
+    /end MOD_COMMON
+
+    /begin IF_DATA XCP
+      /begin PROTOCOL_LAYER
+        0x0100
+        0x03E8
+        0xC8
+        0x00
+        0x00
+        0x00
+        0x00
+        0x00
+        0x08
+        0x08
+        BYTE_ORDER_MSB_LAST
+        ADDRESS_GRANULARITY_BYTE
+        OPTIONAL_CMD GET_DAQ_RESOLUTION_INFO
+        OPTIONAL_CMD GET_DAQ_PROCESSOR_INFO
+        OPTIONAL_CMD SHORT_UPLOAD
+        OPTIONAL_CMD UPLOAD
+        OPTIONAL_CMD SET_MTA
+        OPTIONAL_CMD GET_ID
+        OPTIONAL_CMD GET_COMM_MODE_INFO
+      /end PROTOCOL_LAYER
+      /begin DAQ
+        DYNAMIC
+        0x00
+        0x06
+        0x00
+        OPTIMISATION_TYPE_DEFAULT
+        ADDRESS_EXTENSION_FREE
+        IDENTIFICATION_FIELD_TYPE_ABSOLUTE
+        GRANULARITY_ODT_ENTRY_SIZE_DAQ_BYTE
+        0x07
+        OVERLOAD_INDICATION_PID
+        PRESCALER_SUPPORTED
+        /begin TIMESTAMP_SUPPORTED
+          0x01
+          SIZE_WORD
+          UNIT_100US
+        /end TIMESTAMP_SUPPORTED
+        /begin EVENT
+          "Key T"
+          "Key T"
+          0x00
+          DAQ
+          0xFF
+          0x00
+          0x06
+          0x00
+        /end EVENT
+        /begin EVENT
+          "10 ms"
+          "10 ms"
+          0x01
+          DAQ_STIM
+          0xFF
+          0x0A
+          0x06
+          0x00
+        /end EVENT
+        /begin EVENT
+          "100ms"
+          "100ms"
+          0x02
+          DAQ_STIM
+          0xFF
+          0x64
+          0x06
+          0x00
+        /end EVENT
+        /begin EVENT
+          "1ms"
+          "1ms"
+          0x03
+          DAQ_STIM
+          0xFF
+          0x01
+          0x06
+          0x00
+        /end EVENT
+        /begin EVENT
+          "FilterBypassDaq"
+          "FilterByp"
+          0x04
+          DAQ_STIM
+          0xFF
+          0x00
+          0x06
+          0x00
+        /end EVENT
+        /begin EVENT
+          "FilterBypassSt"
+          "FilterByp"
+          0x05
+          DAQ_STIM
+          0xFF
+          0x00
+          0x06
+          0x00
+        /end EVENT
+      /end DAQ
+      /begin PAG
+        0x01
+      /end PAG
+      /begin PGM
+        PGM_MODE_ABSOLUTE
+        0x01
+        0x00
+        /begin SECTOR
+          "Sector"
+          0x00
+          0x4B5024
+          0x01C1
+          0x00
+          0x00
+          0x00
+        /end SECTOR
+      /end PGM
+      /begin XCP_ON_CAN
+        0x0100
+        CAN_ID_MASTER 0x01
+        CAN_ID_SLAVE 0x02
+        BAUDRATE 0x07A120
+        SAMPLE_POINT 0x3E
+        SAMPLE_RATE SINGLE
+        BTL_CYCLES 0x08
+        SJW 0x01
+        SYNC_EDGE SINGLE
+      /end XCP_ON_CAN
+      /begin XCP_ON_UDP_IP
+        0x0100
+        0x15B3
+        ADDRESS "127.0.0.1"
+      /end XCP_ON_UDP_IP
+    /end IF_DATA
+    /begin IF_DATA CANAPE_ADDRESS_UPDATE
+    /end IF_DATA
+
+    /begin MOD_PAR ""
+      /begin MEMORY_SEGMENT
+        CALRAM ""
+        VARIABLES RAM INTERN 0x4B5024 0x1C1 -1 -1 -1 -1 -1
+        /begin IF_DATA XCP
+          /begin SEGMENT
+            0x00
+            0x01
+            0x00
+            0x00
+            0x00
+            /begin PAGE
+              0x01
+              ECU_ACCESS_WITH_XCP_ONLY
+              XCP_READ_ACCESS_WITH_ECU_ONLY
+              XCP_WRITE_ACCESS_WITH_ECU_ONLY
+              INIT_SEGMENT 0x00
+            /end PAGE
+            /begin ADDRESS_MAPPING
+              0x4B5024
+              0x4B5024
+              0x01C1
+            /end ADDRESS_MAPPING
+          /end SEGMENT
+        /end IF_DATA
+      /end MEMORY_SEGMENT
+    /end MOD_PAR
+
+
+
+    /begin COMPU_VTAB HighLow "High/Low for bits" TAB_VERB 2
+      0 "Low"
+      1 "High"
+      DEFAULT_VALUE ""
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB TestStatus.CONVERSION "" TAB_VERB 4
+      0 "Off"
+      1 "Silent"
+      2 "Pending"
+      3 "Running"
+      DEFAULT_VALUE ""
+    /end COMPU_VTAB
+
+    /begin COMPU_METHOD BitSlice.CONVERSION ""
+      RAT_FUNC "%6.2f" ""
+      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD Current "Convert Voltage into Current"
+      FORM "%7.3" ""
+      /begin FORMULA
+        "X*X*2"
+      /end FORMULA
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD DigitalFilterConversion ""
+      RAT_FUNC "%3.1" "Volt"
+      COEFFS 0 1000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD DtChannel1.CONVERSIONV "@@@@RuleName created by CANape"
+      FORM "%3.1" ""
+      /begin FORMULA
+        "time(X1)-time(X1[-1])"
+      /end FORMULA
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD Factor100 ""
+      RAT_FUNC "%3.1" ""
+      COEFFS 0 100 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD HighLow "High/Low for bits"
+      TAB_VERB "%7.3" ""
+      COMPU_TAB_REF HighLow
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD KF2_Y_AXIS.CONVERSION ""
+      RAT_FUNC "%6.2" ""
+      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD KF8_Conversion ""
+      RAT_FUNC "%3.1" "1/min"
+      COEFFS 0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD map1Conversion ""
+      RAT_FUNC "%3.1" "cm"
+      COEFFS 0 0.1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD map1Input_Conversion ""
+      RAT_FUNC "%3.1" "m"
+      COEFFS 0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD MaxChannel1.CONVERSIONV "@@@@RuleName created by CANape"
+      FORM "%3.1" ""
+      /begin FORMULA
+        "max(phy(X1))"
+      /end FORMULA
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD MinChannel1.CONVERSIONV "@@@@RuleName created by CANape"
+      FORM "%3.1" ""
+      /begin FORMULA
+        "min(phy(X1))"
+      /end FORMULA
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD Pressure "Convert Voltage into Pressure"
+      RAT_FUNC "%7.3" ""
+      COEFFS 0 8.09998623 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD sbytePWMLevel.CONVERSION ""
+      RAT_FUNC "%6.2" ""
+      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD TestStatus.CONVERSION ""
+      TAB_VERB "%3.1" ""
+      COMPU_TAB_REF TestStatus.CONVERSION
+    /end COMPU_METHOD
+
+    /begin MEASUREMENT BitSlice "Testsignal: 4 Bit on a byte boundary"
+      UWORD BitSlice.CONVERSION 0 0 0 15
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F32
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x26F32 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 15
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BitSlice0 "Testsignal: 5 Bit"
+      UWORD BitSlice.CONVERSION 0 0 0 31
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F32
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x26F32 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 31
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BitSlice1 "Testsignal: 5 Bit "
+      UWORD BitSlice.CONVERSION 0 0 0 31
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F32
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x26F32 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 31
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BitSlice2 "Testsignal: 5 Bit "
+      UWORD BitSlice.CONVERSION 0 0 0 63
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F33
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x26F32 0x0 0 0x1 1 0x8F 0x0
+        DISPLAY 0 0 31
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Counter_B4 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F30
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x26F30 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Counter_B5 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F30
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x26F30 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Counter_B6 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F30
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x26F30 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Counter_B7 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F30
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x26F30 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin AXIS_PTS Curve1 "Curve used as axis"
+      0x2419C NO_INPUT_QUANTITY SSV__UBYTE_S 0 BitSlice.CONVERSION 8 0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      DEPOSIT ABSOLUTE
+      BYTE_ORDER MSB_LAST
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve1_8_uc" 0x2419C 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end AXIS_PTS
+
+    /begin MEASUREMENT DtChannel1 "Time jitter of channel1"
+      FLOAT32_IEEE DtChannel1.CONVERSIONV 0 0 0 100
+      BYTE_ORDER MSB_LAST
+      /begin VIRTUAL
+         channel1
+      /end VIRTUAL 
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT FW1 "Testparameter"
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x2404F
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte4" 0x2404F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC KF2 "8*8 BYTE shared axis Curve1/Curve1"
+      MAP 0x24078 __UBYTE_Z 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+        AXIS_PTS_REF Curve1
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY KF2_Y_AXIS.CONVERSION  8 0 7
+        EXTENDED_LIMITS 0 7
+        READ_ONLY
+        FORMAT "%.2"
+        FIX_AXIS_PAR_DIST 0 1 8
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1_8_8_uc" 0x24078 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF3 "8*6 BYTE no axis"
+      MAP 0x24078 __UBYTE_Z 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 7
+        EXTENDED_LIMITS 0 7
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FORMAT "%.0"
+        FIX_AXIS_PAR_DIST 0 1 8
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  6 0 5
+        EXTENDED_LIMITS 0 5
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FORMAT "%.0"
+        FIX_AXIS_PAR_DIST 0 1 6
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1_8_8_uc" 0x24078 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF4 "8*6 BYTE shared axis Curve1"
+      MAP 0x24078 __UBYTE_Z 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+        AXIS_PTS_REF Curve1
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  6 0 5
+        EXTENDED_LIMITS 0 5
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FORMAT "%.0"
+        FIX_AXIS_PAR_DIST 0 1 6
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1_8_8_uc" 0x24078 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF5 "8*6 BYTE memory layout MapX8Y6V86ub"
+      MAP 0x240F8 MapX8Y6V86ub 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  6 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map4_80_uc" 0x240F8 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF6 "8*8 BYTE no axis"
+      MAP 0x24078 __UBYTE_Z 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 7
+        EXTENDED_LIMITS 0 7
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FORMAT "%.0"
+        FIX_AXIS_PAR_DIST 0 1 8
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 7
+        EXTENDED_LIMITS 0 7
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FORMAT "%.0"
+        FIX_AXIS_PAR_DIST 0 1 8
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1_8_8_uc" 0x24078 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF7 "8*8 BYTE memory layout MapV86ub, shared axis Curve1/Curve1"
+      MAP 0x240B8 MapV86ub 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+        AXIS_PTS_REF Curve1
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY KF2_Y_AXIS.CONVERSION  6 0 5
+        EXTENDED_LIMITS 0 5
+        READ_ONLY
+        FORMAT "%.2"
+        FIX_AXIS_PAR_DIST 0 1 6
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map2_8_8_uc" 0x240B8 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL1 "16 BYTE curve"
+      VAL_BLK 0x241C8 __UBYTE_Z 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      MATRIX_DIM 16 1 1
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve5_16_uc" 0x241C8 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT KL1Output "Value generated from curve KL1"
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F36
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curveOutput" 0x26F36 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC KL2 "8 BYTE shared axis Curve2"
+      VAL_BLK 0x2419C __UBYTE_Z 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      MATRIX_DIM 8 1 1
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve1_8_uc" 0x2419C 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL5 "8 BYTE CurveV8ub shared axis Curve2"
+      VAL_BLK 0x2419C CurveV8ub 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      MATRIX_DIM 8 1 1
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve1_8_uc" 0x2419C 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT MaxChannel1 "Maximum value of channel1"
+      FLOAT32_IEEE MaxChannel1.CONVERSIONV 0 0 -100 100
+      BYTE_ORDER MSB_LAST
+      /begin VIRTUAL
+         channel1
+      /end VIRTUAL 
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        DISPLAY 0 -100 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT MinChannel1 "Minimum value of channel1"
+      FLOAT32_IEEE MinChannel1.CONVERSIONV 0 0 -100 100
+      BYTE_ORDER MSB_LAST
+      /begin VIRTUAL
+         channel1
+      /end VIRTUAL 
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        DISPLAY 0 -100 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT PWM "Pulse width signal from PWM_level and Triangle"
+      UBYTE HighLow 0 0 0 255
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F10
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.0"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bytePWM" 0x26F10 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT PWMFiltered "Low pass filtered PWM signal"
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F35
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bytePWMFiltered" 0x26F35 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT PWM_Level ""
+      SBYTE BitSlice.CONVERSION 0 0 -50 50
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x25544
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.0"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "sbytePWMLevel" 0x25544 0x0 0 0x0 1 0xC7 0x0
+        DISPLAY 0 -50 50
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT ShiftByte ""
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F34
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x26F34 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B0 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F34
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x26F34 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B1 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F34
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x26F34 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B2 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F34
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x26F34 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B3 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE HighLow 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F34
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x26F34 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TestStatus "2 bit demo signal with symbolic conversion formula"
+      UBYTE TestStatus.CONVERSION 0 0 0 3
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F30
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.0"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x26F30 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 3
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Triangle "Triangle test signal used for PWM output PWM"
+      SBYTE BitSlice.CONVERSION 0 0 -50 50
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F29
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "sbyteTriangle" 0x26F29 0x0 0 0x0 1 0xC7 0x0
+        DISPLAY 0 -50 50
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC a0 "Digital Filter v=(vin*a0+v*b0)/c0"
+      VALUE 0x2404C __UWORD_S 0 DigitalFilterConversion 0 1
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 1
+      BYTE_ORDER MSB_LAST
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "a" 0x2404C 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT ampl "Amplitude of channel 1-3 "
+      FLOAT32_IEEE BitSlice.CONVERSION 0 0 0 200
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x24044
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "ampl" 0x24044 0x0 0 0x0 1 0x1 0x0
+        DISPLAY 0 0 200
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC b0 "Digital Filter v=(vin*a0+v*b0)/c0"
+      VALUE 0x24050 __UWORD_S 0 DigitalFilterConversion 0 1
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 1
+      BYTE_ORDER MSB_LAST
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "b" 0x24050 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT bit12Counter "Demo signal (12 bit, incrementing)"
+      UWORD BitSlice.CONVERSION 0 0 0 4095
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F32
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x26F32 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 4096
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte1 "Demo, read and write possible"
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x2401E
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte1" 0x2401E 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte2 "Demo, read and write possible"
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x2401F
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte2" 0x2401F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte3 "Demo, read and write possible"
+      SBYTE BitSlice.CONVERSION 0 0 0 255
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x2404E
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte3" 0x2404E 0x0 0 0x0 1 0xC7 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte4 "Demo, read and write possible"
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x2404F
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte4" 0x2404F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byteCounter "Demo signal (byte, incrementing)"
+      UBYTE BitSlice.CONVERSION 0 0 0 255
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F30
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x26F30 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT bytePWMFilter "Filter constant for PWM filter"
+      UBYTE BitSlice.CONVERSION 0 0 0 100
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x2401B
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bytePWMFilter" 0x2401B 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC c0 "Digital Filter v=(vin*a0+v*b0)/c0"
+      VALUE 0x24054 __UWORD_S 0 DigitalFilterConversion 0 1
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 1
+      BYTE_ORDER MSB_LAST
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "c" 0x24054 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT channel1 "FLOAT demo signal (sine wave)"
+      FLOAT32_IEEE BitSlice.CONVERSION 0 0 -1e+012 1e+012
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F20
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "channel1" 0x26F20 0x0 0 0x0 1 0x1 0x0
+        DISPLAY 0 -100 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT channel2 "FLOAT demo signal (sine wave)"
+      FLOAT32_IEEE BitSlice.CONVERSION 0 0 -1e+012 1e+012
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F14
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "channel2" 0x26F14 0x0 0 0x0 1 0x1 0x0
+        DISPLAY 0 -100 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT channel3 "FLOAT demo signal (sine wave)"
+      FLOAT32_IEEE BitSlice.CONVERSION 0 0 -100 100
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F04
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "channel3" 0x26F04 0x0 0 0x0 1 0x1 0x0
+        DISPLAY 0 -100 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT dwordCounter "Demo signal (dword, incrementing)"
+      ULONG BitSlice.CONVERSION 0 0 0 255
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F2C
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "dwordCounter" 0x26F2C 0x0 0 0x0 1 0x9F 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT limit "Limit for channel1"
+      FLOAT32_IEEE BitSlice.CONVERSION 0 0 -1e+012 1e+012
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x24048
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "limit" 0x24048 0x0 0 0x0 1 0x1 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC map1 "8*8 BYTE shared axis Curve1/Curve1"
+      MAP 0x24078 __UBYTE_Z 0 map1Conversion  0 2550
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 2550
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        FIX_AXIS map1InputX map1Input_Conversion  8 -12.8 12.7
+        EXTENDED_LIMITS -12.8 12.7
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FORMAT "%.3"
+        FIX_AXIS_PAR_DIST 0 1 8
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS map1InputY map1Input_Conversion  8 -12.8 12.7
+        EXTENDED_LIMITS -12.8 12.7
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FORMAT "%.3"
+        FIX_AXIS_PAR_DIST 0 1 8
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1_8_8_uc" 0x24078 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC map1Counter ""
+      VALUE 0x24052 __UBYTE_S 0 BitSlice.CONVERSION 0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1Counter" 0x24052 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT map1InputX ""
+      UBYTE map1Input_Conversion 0 0 0 25.5
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F38
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1InputX" 0x26F38 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 7
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT map1InputY ""
+      UBYTE map1Input_Conversion 0 0 0 25.5
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F1F
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1InputY" 0x26F1F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 7
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT map1Output ""
+      UBYTE map1Conversion 0 0 0 2550
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F26
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1Output" 0x26F26 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC map4_80_uc "8*8 BYTE memory layout map4_80_uc"
+      MAP 0x240F8 MapX8Y8V88ub 0 BitSlice.CONVERSION  0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY BitSlice.CONVERSION  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map4_80_uc" 0x240F8 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT offset "Offset for channel1"
+      FLOAT32_IEEE BitSlice.CONVERSION 0 0 -1e+012 1e+012
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x2553C
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "offset" 0x2553C 0x0 0 0x0 1 0x1 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT period "Period of channel 1-3"
+      FLOAT32_IEEE BitSlice.CONVERSION 0 0 0 100
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x24040
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "period" 0x24040 0x0 0 0x0 1 0x1 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT sbytePWMLevel ""
+      SBYTE sbytePWMLevel.CONVERSION 0 0 0 255
+      ECU_ADDRESS 0x25544
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.15"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "sbytePWMLevel" 0x25544 0x0 0 0x0 1 0xC7 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC testString "vcv"
+      ASCII 0x24010 __UBYTE_Z 0 NO_COMPU_METHOD 0 255
+      ECU_ADDRESS_EXTENSION 0x0
+      EXTENDED_LIMITS 0 255
+      NUMBER 10
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "testString" 0x24010 0x0 0 0x0 0 0x0 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT v "Digital Filter Outputvalue"
+      UWORD DigitalFilterConversion 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F1C
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "v" 0x26F1C 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT vin "Digital Filter Inputvalue"
+      UWORD DigitalFilterConversion 0 0 0 1
+      READ_WRITE
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F08
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "vin" 0x26F08 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT wordCounter "Demo signal (word, incrementing)"
+      UWORD BitSlice.CONVERSION 0 0 0 65535
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x26F32
+      ECU_ADDRESS_EXTENSION 0x0
+      FORMAT "%.3"
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x26F32 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin GROUP Axis "Shared Axis for Calibration Maps"
+      ROOT
+      /begin REF_CHARACTERISTIC
+        Curve1 
+      /end REF_CHARACTERISTIC
+    /end GROUP
+
+    /begin GROUP Bits "Single Bit Values"
+      /begin REF_MEASUREMENT
+        Counter_B4 Counter_B5 Counter_B6 Counter_B7 ShiftByte Shifter_B0 Shifter_B1 Shifter_B2 
+        Shifter_B3 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Bitslices "Multibit Values"
+      /begin REF_MEASUREMENT
+        BitSlice BitSlice0 BitSlice1 BitSlice2 TestStatus 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Curves "Calibration Curves"
+      ROOT
+      /begin REF_CHARACTERISTIC
+        KL1 KL2 KL5 
+      /end REF_CHARACTERISTIC
+    /end GROUP
+
+    /begin GROUP Example_Double "Kommentar"
+      ROOT
+    /end GROUP
+
+    /begin GROUP Example_Filter "Digital Filter v=(vin*a0+v*b0)/c0"
+      ROOT
+      /begin REF_CHARACTERISTIC
+        a0 b0 c0 
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        v vin 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Example_PWM "Generator for a PWM Signal"
+      ROOT
+      /begin SUB_GROUP
+        PWM_Parameters 
+        PWM_Signals 
+      /end SUB_GROUP
+    /end GROUP
+
+    /begin GROUP Maps "Calibration Maps"
+      ROOT
+      /begin SUB_GROUP
+        WorkingPoint 
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        KF2 KF3 KF4 KF5 KF6 KF7 map4_80_uc 
+      /end REF_CHARACTERISTIC
+    /end GROUP
+
+    /begin GROUP Measure "Measurement Values"
+      ROOT
+      /begin SUB_GROUP
+        Bits 
+        Bitslices 
+        Test_Signals 
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        channel1 channel2 channel3 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Parameters "Calibration Parameters"
+      ROOT
+      /begin SUB_GROUP
+        Test_Parameters 
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        ampl limit offset period 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP PWM_Parameters "Parametes for PWM Example"
+      /begin REF_MEASUREMENT
+        FW1 PWM_Level bytePWMFilter 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP PWM_Signals "Measurement Signals from PWM"
+      /begin REF_MEASUREMENT
+        PWM PWMFiltered Triangle 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Test_Parameters "Test Parameters, BYTE"
+    /end GROUP
+
+    /begin GROUP Test_Signals "Test Signals"
+      /begin REF_MEASUREMENT
+        KL1Output bit12Counter byte1 byte2 byte3 byte4 byteCounter dwordCounter 
+        wordCounter 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Virtual "Virtual Signals"
+      ROOT
+      /begin REF_MEASUREMENT
+        DtChannel1 MaxChannel1 MinChannel1 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP WorkingPoint "Example for working point"
+      /begin REF_CHARACTERISTIC
+        map1 map1Counter 
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        map1InputX map1InputY map1Output 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+
+
+    /begin RECORD_LAYOUT CurveNxVub
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      FNC_VALUES 2 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveNxXVub
+      AXIS_PTS_X 2 UBYTE INDEX_INCR DIRECT
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveV8ub
+      FIX_NO_AXIS_PTS_X 8
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveVub
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveX8ub
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveX8V8ub
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+      FNC_VALUES 2 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveX8V8ubAlternate
+      AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+      FNC_VALUES 2 UWORD ALTERNATE_WITH_X DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapColRowuw
+      FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapNxNyVub
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+      NO_AXIS_PTS_Y 2 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapNxNyXYVsb
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_FLOAT32_IEEE 1
+      ALIGNMENT_FLOAT64_IEEE 1
+      ALIGNMENT_LONG 1
+      ALIGNMENT_WORD 1
+      AXIS_PTS_X 3 SBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 4 SBYTE INDEX_INCR DIRECT
+      FNC_VALUES 5 SBYTE ROW_DIR DIRECT
+      NO_AXIS_PTS_X 1 SBYTE
+      NO_AXIS_PTS_Y 2 SBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapNxNyXYVub
+      AXIS_PTS_X 3 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 4 UBYTE INDEX_INCR DIRECT
+      FNC_VALUES 5 UBYTE ROW_DIR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+      NO_AXIS_PTS_Y 2 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapNxXNyYVuc
+      AXIS_PTS_X 2 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 4 UBYTE INDEX_INCR DIRECT
+      FNC_VALUES 5 UBYTE ROW_DIR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+      NO_AXIS_PTS_Y 3 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapRowColub
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapV86ub
+      FIX_NO_AXIS_PTS_X 8
+      FIX_NO_AXIS_PTS_Y 6
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapX8Y6V86ub
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 2 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+      FIX_NO_AXIS_PTS_Y 6
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapX8Y8V88ub
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 2 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+      FIX_NO_AXIS_PTS_Y 8
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapXYVub
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 2 UBYTE INDEX_INCR DIRECT
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+    /begin RECORD_LAYOUT __UBYTE_Z 
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UWORD_Z 
+      FNC_VALUES 1 UWORD ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __ULONG_Z 
+      FNC_VALUES 1 ULONG ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SBYTE_Z 
+      FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SWORD_Z 
+      FNC_VALUES 1 SWORD ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SLONG_Z 
+      FNC_VALUES 1 SLONG ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT32_IEEE_Z 
+      FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT64_IEEE_Z 
+      FNC_VALUES 1 FLOAT64_IEEE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UBYTE_S 
+      FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UWORD_S 
+      FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __ULONG_S 
+      FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SBYTE_S 
+      FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SWORD_S 
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SLONG_S 
+      FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT32_IEEE_S 
+      FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT64_IEEE_S 
+      FNC_VALUES 1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__UBYTE_S 
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__UWORD_S 
+      AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__ULONG_S 
+      AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SBYTE_S 
+      AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SWORD_S 
+      AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SLONG_S 
+      AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__FLOAT32_IEEE_S 
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__FLOAT64_IEEE_S 
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+  /end MODULE
+/end PROJECT

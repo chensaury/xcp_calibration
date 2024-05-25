@@ -1,0 +1,1352 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Vector>
+  <VXtools>
+    <VXconfigPlugin VersionNumber="1">
+      <CANapeEnabledVX>
+        <VXSystem canapename="ECU">
+          <Component layer="VXSystem" type="UserParams">
+            <Parameter name="paramsComment">
+              <TypeInfo type="Base" name="STRING" />
+              <Value>TriCore</Value>
+            </Parameter>
+            <Parameter name="nwLocalIpAddr">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>192.168.0.2</Value>
+            </Parameter>
+            <Parameter name="nwUsrDefTag">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="nwLicenseTcpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>2100</Value>
+            </Parameter>
+            <Parameter name="nwLicenseTcpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nwConfigTcpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>5556</Value>
+            </Parameter>
+            <Parameter name="nwConfigTcpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nwOnlineTcpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>5555</Value>
+            </Parameter>
+            <Parameter name="nwOnlineTcpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nwOnlineUdpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>5555</Value>
+            </Parameter>
+            <Parameter name="nwOnlineUdpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nwCanTcpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>4100</Value>
+            </Parameter>
+            <Parameter name="nwCanTcpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="xcpMaxCto">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>250</Value>
+            </Parameter>
+            <Parameter name="xcpMaxDto">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>250</Value>
+            </Parameter>
+            <Parameter name="xcpeEcuByteOrder">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpeTraceWinStart">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>2688548864</Value>
+            </Parameter>
+            <Parameter name="xcpeTraceWinSize">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>524288</Value>
+            </Parameter>
+            <Parameter name="xcpeParamStructAddr">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>3489665096</Value>
+            </Parameter>
+            <Parameter name="nexusResetMode">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nexusCpuTraceEnable">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusDmaTraceEnable">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusCpuTraceWinStart1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusCpuTraceWinSize1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusDmaTraceWinStart1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusDmaTraceWinSize1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusCpuTraceWinStart2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusCpuTraceWinSize2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusDmaTraceWinStart2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusDmaTraceWinSize2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusEventTriggerAddr">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpeTimestampSrc">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEcuTimestampUnit">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>6</Value>
+            </Parameter>
+            <Parameter name="xcpEcuTimestampTicks">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>45000</Value>
+            </Parameter>
+            <Parameter name="rtpRam1Start">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpRam2Start">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpRam3Start">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin1Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin2Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin3Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin4Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin1Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin2Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin3Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin4Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin1Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin2Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin3Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpWin4Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="debugMask">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>16777985</Value>
+            </Parameter>
+            <Parameter name="xcpPriorityThreshold">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEnableServText">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="xcpForceJtagReadAddrExt">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpeRamSynchEnabled">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin1Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin2Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin3Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin4Ram">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin1Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin2Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin3Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin4Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin1Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin2Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin3Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmWin4Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin1Start">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin2Start">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin3Start">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin4Start">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin1Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin2Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin3Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin4Size">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nwDhcpMode">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpeRamZeroEnabled">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="dmmSetup">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="rtpSetup">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpDtoIdType">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="xcpOverloadIndication">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfoNum">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo00Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo00NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo00TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo00TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo00Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo01Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo01NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo01TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo01TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo01Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo02Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo02NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo02TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo02TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo02Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo03Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo03NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo03TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo03TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo03Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo04Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo04NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo04TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo04TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo04Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo05Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo05NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo05TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo05TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo05Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo06Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo06NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo06TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo06TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo06Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo07Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo07NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo07TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo07TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo07Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo08Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo08NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo08TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo08TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo08Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo09Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo09NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo09TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo09TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo09Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo10Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo10NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo10TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo10TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo10Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo11Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo11NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo11TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo11TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo11Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo12Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo12NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo12TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo12TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo12Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo13Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo13NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo13TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo13TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo13Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo14Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo14NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo14TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo14TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo14Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo15Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo15NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo15TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo15TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo15Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo16Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo16NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo16TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo16TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo16Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo17Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo17NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo17TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo17TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo17Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo18Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo18NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo18TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo18TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo18Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo19Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo19NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo19TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo19TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo19Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo20Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo20NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo20TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo20TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo20Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo21Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo21NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo21TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo21TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo21Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo22Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo22NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo22TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo22TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo22Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo23Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo23NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo23TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo23TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo23Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo24Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo24NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo24TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo24TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo24Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo25Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo25NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo25TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo25TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo25Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo26Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo26NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo26TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo26TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo26Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo27Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo27NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo27TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo27TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo27Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo28Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo28NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo28TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo28TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo28Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo29Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo29NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo29TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo29TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo29Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo30Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo30NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo30TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo30TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo30Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo31Name">
+              <TypeInfo type="Base" name="STRING" />
+              <Value />
+            </Parameter>
+            <Parameter name="xcpEventInfo31NameLength">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo31TimeCycle">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo31TimeUnit_Dir">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xcpEventInfo31Priority">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin1Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin2Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin3Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nexusReadWriteWin4Offset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="canRxGatheringTimeoutUs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>2000</Value>
+            </Parameter>
+            <Parameter name="stimType">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="podParameterSource">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="rtpEnaSetup">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="nwTelnetTcpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>23</Value>
+            </Parameter>
+            <Parameter name="nwTelnetTcpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nwXcpLeanTcpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>5554</Value>
+            </Parameter>
+            <Parameter name="nwXcpLeanTcpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nwXcpLeanUdpPort">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>5554</Value>
+            </Parameter>
+            <Parameter name="nwXcpLeanUdpBehavior">
+              <TypeInfo type="Base" name="UINT8" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="nwDhcpFallbackTimeoutS">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>20</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceEnable">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlayEnable">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>2</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinStart1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>3623878656</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinSize1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>4096</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinStart2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinSize2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinStart3">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinSize3">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinStart4">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceWinSize4">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuType">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreTimestampType">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlayStart1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>2684878848</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlaySize1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>524288</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlayStart2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlaySize2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlayStart3">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlaySize3">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlayStart4">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreFlashOverlaySize4">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreCpuTraceOldaEnable">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinStart1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinSize1">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinStart2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinSize2">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinStart3">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinSize3">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinStart4">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreOldaWinSize4">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent00OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>40000</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent01OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>40000</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent02OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>40000</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent03OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>40000</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent04OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>40000</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent05OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent06OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent07OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent08OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent09OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent10OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent11OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent12OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent13OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent14OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent15OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent16OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent17OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent18OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent19OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent20OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent21OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent22OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent23OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent24OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent25OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent26OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent27OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent28OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent29OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent30OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreEvent31OldaTimeLimitNs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreDap3PinModeEnable">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tricoreMcdsResetDisable">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="externalDebuggerHandling">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="tricoreResetMode">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tmsX70DbgResetDelayMs">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="tmsX70ExtOscFreqHz">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>16000000</Value>
+            </Parameter>
+            <Parameter name="mpcExtOscFreqHz">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>4294967294</Value>
+            </Parameter>
+            <Parameter name="mpcOperatingFreqMaxHz">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>4294967294</Value>
+            </Parameter>
+            <Parameter name="flashProgrammingAddrOffset">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>0</Value>
+            </Parameter>
+            <Parameter name="xc2000ControllerType">
+              <TypeInfo type="Base" name="UINT16" />
+              <Value>7</Value>
+            </Parameter>
+            <Parameter name="xc2000ResetMode">
+              <TypeInfo type="Base" name="UINT4" />
+              <Value>0</Value>
+            </Parameter>
+          </Component>
+          <Component layer="VXSystem" type="GUI">
+            <Parameter name="VXPrimarySlave">
+              <TypeInfo type="Base" name="STRING" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="VXTarget">
+              <TypeInfo type="Base" name="STRING" />
+              <Value>Tc17x7</Value>
+            </Parameter>
+            <Parameter name="VXTargetClockFreqNumerator">
+              <TypeInfo type="Base" name="UINT0" />
+              <Value>45</Value>
+            </Parameter>
+            <Parameter name="VXTargetClockFreqDenominator">
+              <TypeInfo type="Base" name="UINT0" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="VXTargetClockFreqDivision">
+              <TypeInfo type="Base" name="UINT0" />
+              <Value>1</Value>
+            </Parameter>
+            <Parameter name="UseDefaultPorts">
+              <TypeInfo type="Base" name="UINT0" />
+              <Value>1</Value>
+            </Parameter>
+          </Component>
+        </VXSystem>
+      </CANapeEnabledVX>
+      <LogicalChannels />
+    </VXconfigPlugin>
+  </VXtools>
+</Vector>

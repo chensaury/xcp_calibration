@@ -1,0 +1,417 @@
+Link Date:	Mon May 10 18:30:30 2004
+Host OS:	GHS_WIN32
+Version:	ELXR 3.5 (c) 2001 Green Hills Software    Build: Jan 13 2003
+
+
+Load Map Mon May 10 18:30:30 2004
+Image Summary
+
+  Section              Base      Size(hex)    Size(dec)  SecOffs
+  .picbase             02018000  00000000            0   0000240
+  .text                02018000  000027ac        10156   0000240
+  .oscode              0201a7ac  00000000            0   00029ec
+  .osconst             0201a7ac  00000000            0   00029ec
+  .syscall             0201a7ac  00000008            8   00029ec
+  .intercall           0201a7b4  00000000            0   00029f4
+  .interfunc           0201a7b4  00000004            4   00029f4
+  .fixaddr             0201a7b8  0000001c           28   00029f8
+  .fixtype             0201a7d4  00000007            7   0002a14
+  .rodata              0201a7db  00000006            6   0002a1b
+  .secinfo             0201a7e4  00000018           24   0002a24
+  .pidbase             0201a800  00000000            0   0002a40
+  .sdabase             0201a800  00000000            0   0002a40
+  .sbss                0201a800  00000000            0   0002a40
+  .sdata               0201a800  00000000            0   0002a40
+  .data                0201a800  00000020           32   0002a40
+  .osdata              0201a820  00000000            0   0002a60
+  .osstack             0201a820  00000000            0   0002a60
+  .bss                 0201a820  00000ea4         3748   0002a60
+  .heap                0201b6d0  0000a000        40960   0002a6c
+  .stack               020256d0  00002000         8192   0002a6c
+  .svcstack            020276d0  00000020           32   0002a6c
+  .irqstack            020276f0  00000020           32   0002a6c
+  .fiqstack            02027710  00000020           32   0002a6c
+  .abrtstack           02027730  00000020           32   0002a6c
+  .undefstack          02027750  00000020           32   0002a6c
+  .comment             00000000  000000d0          208   0002a6c
+
+Load Map Mon May 10 18:30:30 2004
+Module Summary
+
+  Origin+Size    Section          Module
+02018000+0000a8  .text            crt0.o
+020180a8+0004d8  .text            Main.o
+0201b39c+000324  .bss             Main.o
+02018580+001130  .text            xcpbasic.o
+0201a7db+000003  .rodata          xcpbasic.o
+0201a7de+000003  .rodata          xcp_par.o
+020196b0+0003b8  .text            spi.o
+02019a68+000070  .text            ram_startup.o
+02019ad8+000020  .text            libmulti.a
+0201a800+000004  .data            libmulti.a
+02019af8+000388  .text            libstartup.a(ind_crt0.o)
+02019e80+000240  .text            libstartup.a(ind_mcpy.o)
+0201a0c0+00006c  .text            libstartup.a(ind_mset.o)
+0201a12c+0000d4  .text            libstartup.a(ind_uzip.o)
+0201a200+000120  .text            libsys.a(ind_crt1.o)
+0201a804+000018  .data            libsys.a(ind_crt1.o)
+0201a7b8+000018  .fixaddr         libsys.a(ind_crt1.o)
+0201a7d4+000006  .fixtype         libsys.a(ind_crt1.o)
+0201a7ac+000008  .syscall         libsys.a(ind_dots.o)
+0201a320+000104  .text            libsys.a(ind_exit.o)
+0201a81c+000004  .data            libsys.a(ind_exit.o)
+0201b6c0+000004  .bss             libsys.a(ind_exit.o)
+0201a7d0+000004  .fixaddr         libsys.a(ind_exit.o)
+0201a7da+000001  .fixtype         libsys.a(ind_exit.o)
+0201a424+00010c  .text            libsys.a(ind_thrd.o)
+0201a530+000020  .text            libsys.a(ind_call.o)
+0201a550+000094  .text            libsys.a(ind_errn.o)
+0201a5e4+0001c8  .text            libarch.a(indarch1.o)
+0201a7b4+000004  .interfunc       libarch.a(indarch4.o)
+
+Load Map Mon May 10 18:30:30 2004
+Global Symbols (sorted alphabetically)
+
+ .text            020196b0 ApplXcpGetPointer
+ .text            020196d0 ApplXcpSend
+ .text            020196b8 ApplXcpSendStall
+ .text            0201a408 DefaultSignalHandler
+ .text            0201a444 GetThreadLocalStorage
+ .bss             0201aecc GlobalTLS
+ .text            02018928 XcpAllocDaq..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            02018860 XcpAllocMemory..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            0201895c XcpAllocOdt..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            020189c8 XcpAllocOdtEntry..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            02018f08 XcpBackground
+ .text            02018f2c XcpCommand
+ .text            02018f10 XcpDisconnect
+ .text            02018ca0 XcpEvent
+ .text            02019520 XcpExit
+ .text            02018814 XcpFreeDaq..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            020194fc XcpInit
+ .text            020185d4 XcpMemClr..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            020185e8 XcpMemCpy
+ .text            02018580 XcpMemSet
+ .text            02018790 XcpQueueInit..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            020187dc XcpReadMta..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            0201949c XcpSendCallBack
+ .text            02018660 XcpSendCrm
+ .text            020186fc XcpSendDto
+ .text            02018710 XcpSendDtoFromQueue..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            020186ac XcpSendEv..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            02019524 XcpSendEvent
+ .text            02018a74 XcpStartAllSelectedDaq..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            02018a50 XcpStartDaq..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            02018c04 XcpStopAllDaq..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            02018ba4 XcpStopAllSelectedDaq..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            02018ad4 XcpStopDaq..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+ .text            020187a4 XcpWriteMta..D.3A.5CUSR.5CXCP_SPI.5Cobj.5Cxcpbasic.
+                  00000000 __alt_init
+                  00000000 __cpp_exception_cleanup
+                  00000000 __cpp_exception_init
+ .syscall         0201a7ac __dotsyscall
+ .text            0201a424 __get_eh_globals
+ .text            0201a550 __gh_errno_ptr
+                  00000000 __gh_error_init
+ .text            0201a5bc __gh_get_errno
+                  00000000 __gh_iob_init
+ .text            0201a4b4 __gh_lock_init
+ .text            0201a598 __gh_set_errno
+                  00000000 __gh_signal_init
+ .interfunc       0201a7b4 __ghsArmBLR
+ .text            0201a460 __ghsLock
+ .text            0201a474 __ghsUnlock
+ .text            0201a4a0 __ghs_RestoreSignalContext
+ .text            0201a488 __ghs_SaveSignalContext
+ .text            0201a3d8 __ghs_at_exit
+                  00000000 __ghs_checksum
+ .text            0201a12c __ghs_decompress
+ .text            0201a508 __ghs_flock_create
+ .text            0201a51c __ghs_flock_destroy
+ .text            0201a4c8 __ghs_flock_file
+ .text            0201a4f0 __ghs_ftrylock_file
+ .text            0201a4dc __ghs_funlock_file
+ .text            02019af8 __ghs_ind_crt0
+ .text            0201a200 __ghs_ind_crt1
+                  00000000 __ghs_rambootcodeend
+                  00000000 __ghs_rambootcodestart
+                  02080000 __ghs_ramend
+                  02000000 __ghs_ramstart
+                  00000000 __ghs_rombootcodeend
+                  00000000 __ghs_rombootcodestart
+                  01020000 __ghs_romend
+                  01000000 __ghs_romstart
+ .text            0201a530 __ghs_syscall
+ .fixaddr         0201a7b8 __ghsbegin_fixaddr
+ .fixtype         0201a7d4 __ghsbegin_fixtype
+ .picbase         02018000 __ghsbegin_picbase
+ .pidbase         0201a800 __ghsbegin_pidbase
+                  00000000 __ghsbegin_robase
+ .secinfo         0201a7e4 __ghsbegin_secinfo
+ .secinfo         0201a7e4 __ghsbinfo_clear
+ .secinfo         0201a7fc __ghsbinfo_comcopy
+ .secinfo         0201a7fc __ghsbinfo_comtcopy
+ .secinfo         0201a7fc __ghsbinfo_copy
+ .secinfo         0201a7fc __ghsbinfo_tcopy
+ .secinfo         0201a7fc __ghseinfo_clear
+ .secinfo         0201a7fc __ghseinfo_comcopy
+ .secinfo         0201a7fc __ghseinfo_copy
+ .abrtstack       02027750 __ghsend_abrtstack
+ .fiqstack        02027730 __ghsend_fiqstack
+ .fixaddr         0201a7d4 __ghsend_fixaddr
+ .fixtype         0201a7db __ghsend_fixtype
+ .irqstack        02027710 __ghsend_irqstack
+ .stack           020276d0 __ghsend_stack
+ .svcstack        020276f0 __ghsend_svcstack
+ .undefstack      02027770 __ghsend_undefstack
+ .text            0201a6bc __sdiv_32_32
+ .text            0201a798 __smod_32_32
+ .text            0201a5e4 __udiv_32_32
+ .text            0201a6a8 __umod_32_32
+ .text            02019a68 _begin
+ .text            0201a320 _enter
+ .text            0201a340 _exit
+ .bss             0201ae98 _multiArgs
+ .data            0201a800 _multibufSize
+ .bss             0201afb4 _multibuffer
+ .text            02019ad8 _multiend
+ .text            02019af0 _multiend2
+ .text            02018000 _start
+ .bss             0201a84c bEventSPIpacketLost
+ .bss             0201a848 bEventSPIxcpCmd
+ .bss             0201a82c bTimerTriggered0
+ .bss             0201a838 bTimerTriggered1
+ .bss             0201a844 bTimerTriggered2
+ .bss             0201aec8 environ
+ .bss             0201afac errno
+ .text            02018134 initLeds
+ .text            02018298 initTimerAndFlags
+ .bss             0201b39c intr_dis_ctr..D.3A.5CUSR.5CXCP_SPI.5Cobj.5CMain.
+ .rodata          0201a7dd kXcpBugfixVersion
+ .rodata          0201a7db kXcpMainVersion
+ .rodata          0201a7de kXcpStationId
+ .rodata          0201a7dc kXcpSubVersion
+ .text            020183a4 main
+ .text            02019e80 memcpy
+ .text            0201a0c0 memset
+ .bss             0201ad90 rx_buffer
+ .bss             0201ae14 rx_buffer_DMA
+ .bss             0201a854 rx_xcp_buffer
+ .text            02019984 spiInit
+ .text            020198a4 spiTransmitDummy
+ .text            020198d0 spi_isr
+ .text            020181a0 t3_isr
+ .bss             0201ad0c tx_buffer
+ .bss             0201afb2 uiSpiTxCounter
+ .bss             0201afb0 uiTxLength
+ .bss             0201b3a0 ulData000
+ .bss             0201b3a4 ulData001
+ .bss             0201b3a8 ulData002
+ .bss             0201b3ac ulData003
+ .bss             0201b3b0 ulData004
+ .bss             0201b3b4 ulData005
+ .bss             0201b3b8 ulData006
+ .bss             0201b3bc ulData007
+ .bss             0201b3c0 ulData008
+ .bss             0201b3c4 ulData009
+ .bss             0201b3c8 ulData010
+ .bss             0201b3cc ulData011
+ .bss             0201b3d0 ulData012
+ .bss             0201b3d4 ulData013
+ .bss             0201b3d8 ulData014
+ .bss             0201b3dc ulData015
+ .bss             0201b3e0 ulData016
+ .bss             0201b3e4 ulData017
+ .bss             0201b3e8 ulData018
+ .bss             0201b3ec ulData019
+ .bss             0201b3f0 ulData020
+ .bss             0201b3f4 ulData021
+ .bss             0201b3f8 ulData022
+ .bss             0201b3fc ulData023
+ .bss             0201b400 ulData024
+ .bss             0201b404 ulData025
+ .bss             0201b408 ulData026
+ .bss             0201b40c ulData027
+ .bss             0201b410 ulData028
+ .bss             0201b414 ulData029
+ .bss             0201b418 ulData030
+ .bss             0201b41c ulData031
+ .bss             0201b420 ulData032
+ .bss             0201b424 ulData033
+ .bss             0201b428 ulData034
+ .bss             0201b42c ulData035
+ .bss             0201b430 ulData036
+ .bss             0201b434 ulData037
+ .bss             0201b438 ulData038
+ .bss             0201b43c ulData039
+ .bss             0201b440 ulData040
+ .bss             0201b444 ulData041
+ .bss             0201b448 ulData042
+ .bss             0201b44c ulData043
+ .bss             0201b450 ulData044
+ .bss             0201b454 ulData045
+ .bss             0201b458 ulData046
+ .bss             0201b45c ulData047
+ .bss             0201b460 ulData048
+ .bss             0201b464 ulData049
+ .bss             0201b468 ulData050
+ .bss             0201b46c ulData051
+ .bss             0201b470 ulData052
+ .bss             0201b474 ulData053
+ .bss             0201b478 ulData054
+ .bss             0201b47c ulData055
+ .bss             0201b480 ulData056
+ .bss             0201b484 ulData057
+ .bss             0201b488 ulData058
+ .bss             0201b48c ulData059
+ .bss             0201b490 ulData060
+ .bss             0201b494 ulData061
+ .bss             0201b498 ulData062
+ .bss             0201b49c ulData063
+ .bss             0201b4a0 ulData064
+ .bss             0201b4a4 ulData065
+ .bss             0201b4a8 ulData066
+ .bss             0201b4ac ulData067
+ .bss             0201b4b0 ulData068
+ .bss             0201b4b4 ulData069
+ .bss             0201b4b8 ulData070
+ .bss             0201b4bc ulData071
+ .bss             0201b4c0 ulData072
+ .bss             0201b4c4 ulData073
+ .bss             0201b4c8 ulData074
+ .bss             0201b4cc ulData075
+ .bss             0201b4d0 ulData076
+ .bss             0201b4d4 ulData077
+ .bss             0201b4d8 ulData078
+ .bss             0201b4dc ulData079
+ .bss             0201b4e0 ulData080
+ .bss             0201b4e4 ulData081
+ .bss             0201b4e8 ulData082
+ .bss             0201b4ec ulData083
+ .bss             0201b4f0 ulData084
+ .bss             0201b4f4 ulData085
+ .bss             0201b4f8 ulData086
+ .bss             0201b4fc ulData087
+ .bss             0201b500 ulData088
+ .bss             0201b504 ulData089
+ .bss             0201b508 ulData090
+ .bss             0201b50c ulData091
+ .bss             0201b510 ulData092
+ .bss             0201b514 ulData093
+ .bss             0201b518 ulData094
+ .bss             0201b51c ulData095
+ .bss             0201b520 ulData096
+ .bss             0201b524 ulData097
+ .bss             0201b528 ulData098
+ .bss             0201b52c ulData099
+ .bss             0201b530 ulData100
+ .bss             0201b534 ulData101
+ .bss             0201b538 ulData102
+ .bss             0201b53c ulData103
+ .bss             0201b540 ulData104
+ .bss             0201b544 ulData105
+ .bss             0201b548 ulData106
+ .bss             0201b54c ulData107
+ .bss             0201b550 ulData108
+ .bss             0201b554 ulData109
+ .bss             0201b558 ulData110
+ .bss             0201b55c ulData111
+ .bss             0201b560 ulData112
+ .bss             0201b564 ulData113
+ .bss             0201b568 ulData114
+ .bss             0201b56c ulData115
+ .bss             0201b570 ulData116
+ .bss             0201b574 ulData117
+ .bss             0201b578 ulData118
+ .bss             0201b57c ulData119
+ .bss             0201b580 ulData120
+ .bss             0201b584 ulData121
+ .bss             0201b588 ulData122
+ .bss             0201b58c ulData123
+ .bss             0201b590 ulData124
+ .bss             0201b594 ulData125
+ .bss             0201b598 ulData126
+ .bss             0201b59c ulData127
+ .bss             0201b5a0 ulData128
+ .bss             0201b5a4 ulData129
+ .bss             0201b5a8 ulData130
+ .bss             0201b5ac ulData131
+ .bss             0201b5b0 ulData132
+ .bss             0201b5b4 ulData133
+ .bss             0201b5b8 ulData134
+ .bss             0201b5bc ulData135
+ .bss             0201b5c0 ulData136
+ .bss             0201b5c4 ulData137
+ .bss             0201b5c8 ulData138
+ .bss             0201b5cc ulData139
+ .bss             0201b5d0 ulData140
+ .bss             0201b5d4 ulData141
+ .bss             0201b5d8 ulData142
+ .bss             0201b5dc ulData143
+ .bss             0201b5e0 ulData144
+ .bss             0201b5e4 ulData145
+ .bss             0201b5e8 ulData146
+ .bss             0201b5ec ulData147
+ .bss             0201b5f0 ulData148
+ .bss             0201b5f4 ulData149
+ .bss             0201b5f8 ulData150
+ .bss             0201b5fc ulData151
+ .bss             0201b600 ulData152
+ .bss             0201b604 ulData153
+ .bss             0201b608 ulData154
+ .bss             0201b60c ulData155
+ .bss             0201b610 ulData156
+ .bss             0201b614 ulData157
+ .bss             0201b618 ulData158
+ .bss             0201b61c ulData159
+ .bss             0201b620 ulData160
+ .bss             0201b624 ulData161
+ .bss             0201b628 ulData162
+ .bss             0201b62c ulData163
+ .bss             0201b630 ulData164
+ .bss             0201b634 ulData165
+ .bss             0201b638 ulData166
+ .bss             0201b63c ulData167
+ .bss             0201b640 ulData168
+ .bss             0201b644 ulData169
+ .bss             0201b648 ulData170
+ .bss             0201b64c ulData171
+ .bss             0201b650 ulData172
+ .bss             0201b654 ulData173
+ .bss             0201b658 ulData174
+ .bss             0201b65c ulData175
+ .bss             0201b660 ulData176
+ .bss             0201b664 ulData177
+ .bss             0201b668 ulData178
+ .bss             0201b66c ulData179
+ .bss             0201b670 ulData180
+ .bss             0201b674 ulData181
+ .bss             0201b678 ulData182
+ .bss             0201b67c ulData183
+ .bss             0201b680 ulData184
+ .bss             0201b684 ulData185
+ .bss             0201b688 ulData186
+ .bss             0201b68c ulData187
+ .bss             0201b690 ulData188
+ .bss             0201b694 ulData189
+ .bss             0201b698 ulData190
+ .bss             0201b69c ulData191
+ .bss             0201b6a0 ulData192
+ .bss             0201b6a4 ulData193
+ .bss             0201b6a8 ulData194
+ .bss             0201b6ac ulData195
+ .bss             0201b6b0 ulData196
+ .bss             0201b6b4 ulData197
+ .bss             0201b6b8 ulData198
+ .bss             0201b6bc ulData199
+ .bss             0201a850 ulMainCounter
+ .bss             0201a828 ulMaxTimerCounter0
+ .bss             0201a834 ulMaxTimerCounter1
+ .bss             0201a840 ulMaxTimerCounter2
+ .bss             0201a820 ulMsCounter
+ .bss             0201a824 ulTimerCounter0
+ .bss             0201a830 ulTimerCounter1
+ .bss             0201a83c ulTimerCounter2
+ .text            020180a8 utils_disable_interrupts
+ .text            020180dc utils_enable_interrupts
+ .bss             0201a8d8 xcp

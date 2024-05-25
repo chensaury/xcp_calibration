@@ -1,0 +1,29 @@
+// Change all maps in calibration RAM to force the ECU out of memory
+
+int i,j;
+
+for (i=0;i<8;i++) {
+    for (j=0;j<16;j++) {
+
+        map1[i][j]  = 1;
+        map2[i][j]  = 1;
+        map3[i][j]  = 1;
+        map4[i][j]  = 1;
+        map5[i][j]  = 1;
+        map6[i][j]  = 1;
+        map7[i][j]  = 1;
+        map8[i][j]  = 1;
+        map9[i][j]  = 1;
+        map10[i][j] = 1;
+        map11[i][j] = 1;
+        map12[i][j] = 1;
+        map13[i][j] = 1;
+        map14[i][j] = 1;
+        map15[i][j] = 1;
+
+
+    }
+}
+
+Write("Ok\n");
+

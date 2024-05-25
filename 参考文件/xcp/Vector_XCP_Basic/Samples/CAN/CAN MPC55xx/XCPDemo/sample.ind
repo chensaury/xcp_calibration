@@ -1,0 +1,157 @@
+OUTPUT_FORMAT("elf32-powerpc")
+OUTPUT_ARCH(powerpc)
+ENTRY(_start)
+
+INPUT(&& &&Assembler files&)   
+INPUT(&& &&Source files&)
+
+/*
+  This examples creates 2 logical memory sections for the 64K internal RAM
+  0x40000000-0x4000FFFF cached
+  0x50000000-0x5000FFFF noncached
+*/
+
+/* FLASH */
+
+__TEXT_START__           = 0x00000000; /* Program code */
+
+__CALFLASH_INCIRCUIT_START__ = 0x0001C000; /* FLASH sector for INCIRCUIT pointer table */
+
+__INIT_DATA_START__      = 0x00080000; /* Initialized RAM data image in FLASH */
+
+__FLASH_START__          = 0x00100000; /* FLASH calibration data */
+
+__CALFLASH_START__       = 0x00180000; /* FLASH calibration data (AUTOSAR calibration concept) */
+
+
+/* EXTRAM */
+
+__EXTRAM_START__         = 0x3FF80000; /* 512K external RAM */
+
+
+/* RAM */
+
+__DATA_START__           = 0x40000000; /* Initialized RAM data */
+__BSS_START__            = 0x40004000; /* Zero initialized RAM data */
+__CALRAM_START__         = 0x4000E000; /* RAM calibration data (AUTOSAR calibration concept) */
+__VX1000_START__         = 0x4000F000; /* 4K Memory for VX1000 */
+                  
+  
+/* Stack Address Parameters */
+/* 4K of internal cache used for stack. */
+__SP_INIT__      = 0x40010000 + 0x1000;  
+__SP_END__       = 0x40010000; 
+__STACK_SIZE__   = 0x1000;
+              
+                      
+SECTIONS
+{
+
+
+  /* Read-only sections, merged into text segment */
+  .text __TEXT_START__ :
+  { 
+    *intvec.o(.text)
+    *(.text)
+    *(.text.*)
+  }
+  PROVIDE (__etext = .);
+
+  .flash_data : /* used for SRAM_LOAD */
+  {
+   *(.flash_data)
+  } 
+
+
+  /* FLASH sector for INCIRCUIT pointer table*/
+  .calflash_incircuit __CALFLASH_INCIRCUIT_START__ :
+  {
+    *(calflash_incircuit)
+  }
+    
+
+  /* FLASH */
+  .flash __FLASH_START__ :
+  {
+    *(flash_signature)
+    *(flash)
+  }
+
+  /* Overlaid FLASH */
+  .calflash __CALFLASH_START__ :
+  {
+    *(calflash_signature)
+    *(calflash)
+  }
+  . = ALIGN(8);  
+  .rodata : 
+  {           
+    *(.rodata) 
+    *(.rodata.*) 
+  }
+
+     
+  /* External RAM */
+  .extram __EXTRAM_START__ :
+  {
+    *(extram)
+  }
+  
+  /* initialized data will be copied by crt0 from __INIT_DATA_START__ to __DATA_START__ */   
+  .data __DATA_START__ : AT ( __INIT_DATA_START__ )
+  {
+    *(calram) 
+    *(.data)
+    *(.data.*)
+/*    SORT(CONSTRUCTORS) */
+    . = ALIGN(8);  
+  }
+  . = ALIGN(8);  
+  __DATA_END__ = .;  
+  
+  
+  /* noninitialized data will be zeroed by crt0 */
+  __bss_start__ = __BSS_START__ ;
+  .bss __BSS_START__  :
+  {
+   *(.bss)
+   *(.bss.*)
+   *(COMMON)
+   . = ALIGN(8);
+  }
+  . = ALIGN(8);
+  __bss_end__ = . ;
+ 
+  /* noninitialized small data will be zeroed by crt0 */
+  __sbss_start__ = .;
+  .sbss :
+  {
+   *(.sbss)
+   *(.sbss.*)
+   *(COMMON)
+   . = ALIGN(8);
+  }
+  . = ALIGN(8);
+  __sbss_end__ = . ;
+
+  PROVIDE (end = .); 
+
+  /* AUTOSAR calibration memory */
+  .ccram __CALRAM_START__ :
+  {
+   *(ccram)
+  }
+  /* VX1000 memory */
+  .vx1000 __VX1000_START__ :
+  {
+   *(vx1000)
+  }
+ 
+
+
+__SRAM_LOAD      = (end);
+__SRAM_LOAD_SIZE = (SIZEOF(.flash_data) / 4);
+
+
+}
+
