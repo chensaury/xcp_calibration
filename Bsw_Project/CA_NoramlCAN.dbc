@@ -1,0 +1,209 @@
+VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/4/%%%/4/'%**4YYY///"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: RLS ITMS ACP
+
+
+BO_ 998 B_RLS: 8 RLS
+ SG_ B_RLS_WindshieldTemp : 31|8@0+ (0.5,-40) [-40|87] ""  ITMS
+ SG_ B_RLS_SolarRight : 15|8@0+ (5,0) [0|1200] ""  ITMS
+ SG_ B_RLS_SolarLeft : 7|8@0+ (5,0) [0|1200] ""  ITMS
+ SG_ B_RLS_relativeHumidity : 23|8@0+ (0.5,-0.5) [-0.5|100] ""  ITMS
+ SG_ B_RLS_Offline_Calibration_Result : 49|2@0+ (1,0) [0|3] ""  ITMS
+ SG_ B_RLS_DewPoint : 33|10@0+ (0.1,-39.6) [-39.6|60.4] ""  ITMS
+
+BO_ 1790 XCP_R: 8 ITMS
+ SG_ XCP_RECEIVE : 7|8@0+ (1,0) [0|255] ""  ACP
+
+BO_ 1791 XCP_S: 8 ACP
+ SG_ XCP_SEND : 7|8@0+ (1,0) [0|255] ""  ITMS
+
+BO_ 807 ACP_327: 8 ACP
+ SG_ Ecomp_CompCst_W : 55|16@0+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Ecomp_InvSoftwareVer : 7|16@0+ (1,0) [0|65535] ""  ITMS
+ SG_ Ecomp_Complpt_A : 39|16@0+ (0.1,0) [0|6553.5] "A"  ITMS
+ SG_ Ecomp_CompIpt_V : 23|16@0+ (0.1,0) [0|6553.5] "V"  ITMS
+
+BO_ 848 ITMS_350: 8 ITMS
+ SG_ AC_max_perm_compressor_power : 7|8@0+ (0.1,0) [0|25.4] "kw"  ACP
+ SG_ TgtSpd_rpm : 55|16@0+ (1,0) [0|65535] "rpm"  ACP
+ SG_ AllowOperation_Flag : 24|1@0+ (1,0) [0|1] ""  ACP
+
+BO_ 814 ACP_32E: 8 ACP
+ SG_ Comp_error_code2 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ Comp_speed_of_compressor : 7|16@0+ (1,0) [0|65534] "rpm"  ITMS
+ SG_ Comp_work_status : 31|8@0+ (1,0) [0|3] ""  ITMS
+ SG_ Comp_error_code1 : 39|8@0+ (1,0) [0|255] ""  ITMS
+
+
+
+CM_ SG_ 998 B_RLS_WindshieldTemp "前挡风玻璃温度";
+CM_ SG_ 998 B_RLS_SolarRight "右侧光照强度";
+CM_ SG_ 998 B_RLS_SolarLeft "左侧光照强度";
+CM_ SG_ 998 B_RLS_relativeHumidity "相对湿度";
+CM_ SG_ 998 B_RLS_Offline_Calibration_Result "线下配置结果";
+CM_ SG_ 998 B_RLS_DewPoint "露点温度";
+CM_ SG_ 1790 XCP_RECEIVE "XCP响应报文";
+CM_ SG_ 1791 XCP_SEND "XCP发送报文";
+CM_ SG_ 807 Ecomp_CompCst_W "压缩机消耗功率";
+CM_ SG_ 807 Ecomp_Complpt_A "0x0~0xFFFE:current
+0xFFFF:error";
+CM_ SG_ 807 Ecomp_CompIpt_V "0x0~0xFFFE:voltage
+0xFFFF:error";
+CM_ SG_ 848 AC_max_perm_compressor_power "最大允许压缩机消耗功率";
+CM_ SG_ 848 TgtSpd_rpm "0x00~0xFFFE:0~65535rpm
+0xFFFF:error
+";
+CM_ SG_ 848 AllowOperation_Flag "压缩机开关机命令";
+CM_ SG_ 814 Comp_error_code2 "压缩机故障码2";
+CM_ SG_ 814 Comp_speed_of_compressor "压缩机目标转速";
+CM_ SG_ 814 Comp_error_code1 "压缩机故障码1";
+BA_DEF_ BO_  "XCPMsg" ENUM  "no","yes","vector_leerstring";
+BA_DEF_ BO_  "DiagResponse" ENUM  "no","yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "no","yes";
+BA_DEF_ BO_  "DiagState" ENUM  "no","yes";
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "no","yes";
+BA_DEF_ SG_  "GenSigTimeoutTime" INT 0 65535;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 65535;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 65535;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "ILUsed" ENUM  "No","Yes";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "GenNWMApBusSleep" STRING ;
+BA_DEF_  "GenNWMApCanNormal" STRING ;
+BA_DEF_  "GenNWMApCanOff" STRING ;
+BA_DEF_  "GenNWMApCanOn" STRING ;
+BA_DEF_  "GenNWMApCanSleep" STRING ;
+BA_DEF_  "GenNWMApCanWakeUp" STRING ;
+BA_DEF_  "GenNWMGotoMode_Awake" STRING ;
+BA_DEF_  "GenNWMGotoMode_BusSleep" STRING ;
+BA_DEF_  "GenNWMSleepTime" INT 0 1000000;
+BA_DEF_  "GenNWMTalkNM" STRING ;
+BA_DEF_ BU_  "GenNodSleepTime" INT 0 1000000;
+BA_DEF_ BO_  "NmMessage" ENUM  "No","Yes";
+BA_DEF_ BU_  "NmNode" ENUM  "No","Yes";
+BA_DEF_ SG_  "NWM - WakeupAllowed" ENUM  "No","Yes";
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 1 65535;
+BA_DEF_ BO_  "GenMsgNrOfRepetitions" INT 1 255;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","Direct","Mix","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 2147483647;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed";
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 2147483647;
+BA_DEF_ BO_  "GenMsgAltSetting" STRING ;
+BA_DEF_ BO_  "GenMsgAutoGenDsp" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgAutoGenSnd" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgConditionalSend" STRING ;
+BA_DEF_ BO_  "GenMsgEVName" STRING ;
+BA_DEF_ SG_  "GenSigAltSetting" STRING ;
+BA_DEF_ SG_  "GenSigAssignSetting" STRING ;
+BA_DEF_ SG_  "GenSigAutoGenDsp" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigAutoGenSnd" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigConditionalSend" STRING ;
+BA_DEF_ SG_  "GenSigEnvVarType" ENUM  "int","float","undef";
+BA_DEF_ SG_  "GenSigEVName" STRING ;
+BA_DEF_ SG_  "GenSigReceiveSetting" STRING ;
+BA_DEF_DEF_  "XCPMsg" "no";
+BA_DEF_DEF_  "DiagResponse" "no";
+BA_DEF_DEF_  "DiagRequest" "no";
+BA_DEF_DEF_  "DiagState" "no";
+BA_DEF_DEF_  "NmAsrMessage" "no";
+BA_DEF_DEF_  "GenSigTimeoutTime" 0;
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "ILUsed" "Yes";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "GenNWMApBusSleep" "apBusSleep()";
+BA_DEF_DEF_  "GenNWMApCanNormal" "apCanNormal()";
+BA_DEF_DEF_  "GenNWMApCanOff" "apCanOff()";
+BA_DEF_DEF_  "GenNWMApCanOn" "apCanOn()";
+BA_DEF_DEF_  "GenNWMApCanSleep" "apCanSleep()";
+BA_DEF_DEF_  "GenNWMApCanWakeUp" "apCanWakeUp()";
+BA_DEF_DEF_  "GenNWMGotoMode_Awake" "GotoMode_Awake()";
+BA_DEF_DEF_  "GenNWMGotoMode_BusSleep" "GotoMode_BusSleep()";
+BA_DEF_DEF_  "GenNWMSleepTime" 0;
+BA_DEF_DEF_  "GenNWMTalkNM" "TalkNM()";
+BA_DEF_DEF_  "GenNodSleepTime" 0;
+BA_DEF_DEF_  "NmMessage" "No";
+BA_DEF_DEF_  "NmNode" "No";
+BA_DEF_DEF_  "NWM - WakeupAllowed" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "GenMsgCycleTime" 100;
+BA_DEF_DEF_  "GenMsgDelayTime" 1;
+BA_DEF_DEF_  "GenMsgNrOfRepetitions" 1;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenMsgAltSetting" "";
+BA_DEF_DEF_  "GenMsgAutoGenDsp" "";
+BA_DEF_DEF_  "GenMsgAutoGenSnd" "";
+BA_DEF_DEF_  "GenMsgConditionalSend" "";
+BA_DEF_DEF_  "GenMsgEVName" "";
+BA_DEF_DEF_  "GenSigAltSetting" "";
+BA_DEF_DEF_  "GenSigAssignSetting" "";
+BA_DEF_DEF_  "GenSigAutoGenDsp" "";
+BA_DEF_DEF_  "GenSigAutoGenSnd" "";
+BA_DEF_DEF_  "GenSigConditionalSend" "";
+BA_DEF_DEF_  "GenSigEnvVarType" "undef";
+BA_DEF_DEF_  "GenSigEVName" "";
+BA_DEF_DEF_  "GenSigReceiveSetting" "";
+BA_ "XCPMsg" BO_ 1790 1;
+BA_ "GenMsgILSupport" BO_ 1790 0;
+BA_ "GenMsgSendType" BO_ 1790 10;
+BA_ "GenMsgCycleTime" BO_ 1790 0;
+BA_ "GenMsgILSupport" BO_ 1791 0;
+BA_ "GenMsgSendType" BO_ 1791 10;
+BA_ "XCPMsg" BO_ 1791 1;
+BA_ "GenMsgCycleTime" BO_ 1791 0;
+BA_ "GenMsgCycleTime" BO_ 807 100;
+BA_ "GenMsgSendType" BO_ 807 0;
+BA_ "GenMsgCycleTime" BO_ 848 100;
+BA_ "GenMsgCycleTime" BO_ 814 100;
+BA_ "GenSigStartValue" SG_ 998 B_RLS_WindshieldTemp 80;
+BA_ "GenSigStartValue" SG_ 998 B_RLS_relativeHumidity 1;
+BA_ "GenSigStartValue" SG_ 998 B_RLS_DewPoint 396;
+VAL_ 998 B_RLS_Offline_Calibration_Result 3 "Reserve" 2 "配置失败" 1 "配置成功" 0 "未配置" ;
+VAL_ 848 AllowOperation_Flag 0 "compressor is Off" 1 "compressor is On" ;
+VAL_ 814 Comp_error_code2 128 "低电压降速" 64 "过功率降频" 32 "12V电压故障" 16 "15V电压故障" 8 "转子异常" 4 "缺相" 2 "低温" 1 "高温" 0 "无错误" ;
+VAL_ 814 Comp_work_status 3 "故障" 1 "运转" 0 "停机" ;
+VAL_ 814 Comp_error_code1 0 "无错误" 1 "过相电流" 2 "运行过压 " 4 "运行欠压" 8 "待机过压" 16 "待机欠压" 32 "通信故障" 64 "过母线电流降频 " 128 "峰值电流保护" ;
+

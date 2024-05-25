@@ -1,0 +1,95 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *
+ *                 This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                 Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                 All other rights remain with Vector Informatik GmbH.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  LICENSE
+ *  -------------------------------------------------------------------------------------------------------------------
+ *            Module: Xcp
+ *           Program: MSR_Vector_SLP4
+ *          Customer: Aptiv (China) Technology Company Ltd.
+ *       Expiry Date: Not restricted
+ *  Ordered Derivat.: Aurix 2G/TC397 B-Step
+ *    License Scope : The usage is restricted to CBD1900078_D01
+ *
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *              File: CanXcp_CT_CAN00_617059cf_1791.a2l
+ *   Generation Time: 2023-05-24 20:20:16
+ *           Project: Bsw_Project - Version 1.0
+ *          Delivery: CBD1900078_D01
+ *      Tool Version: DaVinci Configurator (beta) 5.18.42 SP2
+ *
+ *
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ ! BETA VERSION                                                                                                       !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ ! This version of DaVinci Configurator Pro and/or the related Basic Software Package is BETA software.               !
+ ! BETA Software is basically operable, but not sufficiently tested, verified and/or qualified for use in series      !
+ ! production and/or in vehicles operating on public or non-public roads.                                             !
+ ! In particular, without limitation, BETA Software may cause unpredictable ECU behavior, may not provide all         !
+ ! functions necessary for use in series production and/or may not comply with quality requirements which are         !
+ ! necessary according to the state of the art. BETA Software must not be used in series production.                  !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************************************************************************************************/
+
+
+    /begin XCP_ON_CAN
+      0x0102 /* XCP on CAN version */
+      CAN_ID_MASTER   1791 /* CMD/STIM */
+      CAN_ID_SLAVE    1790 /* RES/ERR/EV/SERV/DAQ */
+      BAUDRATE        500000 /* BAUDRATE */
+      SAMPLE_POINT    80 /* SAMPLE_POINT */
+      SAMPLE_RATE     SINGLE /* SAMPLE_RATE */
+      BTL_CYCLES      5 /* BTL_CYCLES */
+      SJW             1 /* length synchr. segment */
+       
+      MAX_DLC_REQUIRED  /* master to slave frames always to have DLC = MAX_DLC = 8 */ 
+      /begin PROTOCOL_LAYER 
+        0x0101 
+        2000
+        10000
+        2000
+        2000
+        2000
+        2000
+        0
+        8 /* kXcpMaxCto */
+        8 /* kXcpMaxDto */
+        BYTE_ORDER_MSB_LAST /* Byte Order */
+        ADDRESS_GRANULARITY_BYTE
+        OPTIONAL_CMD SET_MTA
+        OPTIONAL_CMD UPLOAD
+        OPTIONAL_CMD SHORT_UPLOAD
+        OPTIONAL_CMD BUILD_CHECKSUM
+        OPTIONAL_CMD DOWNLOAD
+        OPTIONAL_CMD DOWNLOAD_NEXT
+        OPTIONAL_CMD SHORT_DOWNLOAD
+        OPTIONAL_CMD MODIFY_BITS
+        OPTIONAL_CMD SET_CAL_PAGE
+        OPTIONAL_CMD GET_CAL_PAGE
+        OPTIONAL_CMD COPY_CAL_PAGE
+        OPTIONAL_CMD SET_DAQ_PTR
+        OPTIONAL_CMD WRITE_DAQ
+        OPTIONAL_CMD SET_DAQ_LIST_MODE
+        OPTIONAL_CMD GET_DAQ_LIST_MODE
+        OPTIONAL_CMD START_STOP_DAQ_LIST
+        OPTIONAL_CMD START_STOP_SYNCH
+        OPTIONAL_CMD GET_DAQ_PROCESSOR_INFO
+        OPTIONAL_CMD GET_DAQ_EVENT_INFO
+        OPTIONAL_CMD FREE_DAQ
+        OPTIONAL_CMD ALLOC_DAQ
+        OPTIONAL_CMD ALLOC_ODT
+        OPTIONAL_CMD ALLOC_ODT_ENTRY
+        COMMUNICATION_MODE_SUPPORTED  BLOCK  
+      /end PROTOCOL_LAYER        
+    /end XCP_ON_CAN
+

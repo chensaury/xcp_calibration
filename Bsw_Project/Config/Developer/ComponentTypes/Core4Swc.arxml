@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00044.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="F32EF4F8-6642-4EAD-BB3F-1275DFD86EB7">
+      <SHORT-NAME>ComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="B9DBF11D-2C0A-4FFA-898B-A1A7E11AC845">
+          <SHORT-NAME>Core4Swc</SHORT-NAME>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="6C065098-A6C0-4C74-B867-76E5B7BD5C5D">
+              <SHORT-NAME>Core4Swc_InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <TIMING-EVENT UUID="F19189AA-616B-4D9A-AF3C-43396719D8EB">
+                  <SHORT-NAME>TMT_Core4Runnable</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Core4Swc/Core4Swc_InternalBehavior/Core4Runnable</START-ON-EVENT-REF>
+                  <PERIOD>2</PERIOD>
+                </TIMING-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="84835A92-21CA-49BA-82E5-7529A5468428">
+                  <SHORT-NAME>Core4Runnable</SHORT-NAME>
+                  <SYMBOL>Core4Runnable</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <SWC-IMPLEMENTATION UUID="6B99EE31-86E2-4B3D-8E2C-DF2D85DB807D">
+          <SHORT-NAME>Core4Swc_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/Core4Swc/Core4Swc_InternalBehavior</BEHAVIOR-REF>
+        </SWC-IMPLEMENTATION>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

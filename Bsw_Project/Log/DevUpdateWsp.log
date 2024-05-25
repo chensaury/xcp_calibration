@@ -1,0 +1,28 @@
+﻿24 May 2023 20:04:53 - Opening workspace 'C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Bsw_Project.dcf'...
+24 May 2023 20:04:56 - Loading file PlatformTypes_AR4.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\AUTOSAR\PlatformTypes_AR4.arxml)
+24 May 2023 20:04:56 - Loading file BswM_swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\ServiceComponents\BswM_swc.arxml)
+24 May 2023 20:04:56 - Loading file ComM_swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\ServiceComponents\ComM_swc.arxml)
+24 May 2023 20:04:56 - Loading file Det_swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\ServiceComponents\Det_swc.arxml)
+24 May 2023 20:04:56 - Loading file EcuM_swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\ServiceComponents\EcuM_swc.arxml)
+24 May 2023 20:04:56 - Loading file Os_swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\ServiceComponents\Os_swc.arxml)
+24 May 2023 20:04:56 - Loading file Communication.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Update\DevData\Communication.arxml)
+24 May 2023 20:04:56 - Loading file Bsw_Project.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Bsw_Project.arxml)
+24 May 2023 20:04:56 - Loading file Core0Swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Core0Swc.arxml)
+24 May 2023 20:04:56 - Loading file Core1Swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Core1Swc.arxml)
+24 May 2023 20:04:56 - Loading file Core2Swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Core2Swc.arxml)
+24 May 2023 20:04:56 - Loading file Core3Swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Core3Swc.arxml)
+24 May 2023 20:04:56 - Loading file Core4Swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Core4Swc.arxml)
+24 May 2023 20:04:56 - Loading file Core5Swc.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Core5Swc.arxml)
+24 May 2023 20:04:56 - Loading file DataTypes.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\DataTypes.arxml)
+24 May 2023 20:04:56 - Loading file Packages.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Packages.arxml)
+24 May 2023 20:04:56 - Loading file PortInterfaces.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\PortInterfaces.arxml)
+24 May 2023 20:04:57 - Opened workspace 'C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Bsw_Project.dcf' successfully.
+24 May 2023 20:04:58 - Start import
+24 May 2023 20:04:58 - Importing file (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\System\SystemExtract.arxml).
+24 May 2023 20:04:58 - Merging imported data
+24 May 2023 20:04:58 - Finished import
+24 May 2023 20:04:58 - Saving workspace 'C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Bsw_Project.dcf'...
+24 May 2023 20:04:58 - Saving file DataTypes.arxml (C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\DataTypes.arxml)
+24 May 2023 20:04:58 - Saved workspace 'C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Bsw_Project.dcf' successfully.
+24 May 2023 20:04:58 - Closing workspace 'C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Bsw_Project.dcf'...
+24 May 2023 20:04:58 - Closed workspace 'C:\Users\86183\AppData\Local\Temp\DaVinci\Cfg-9773085\Workflow\1684929859213-0\Config\Developer\Bsw_Project.dcf' successfully.

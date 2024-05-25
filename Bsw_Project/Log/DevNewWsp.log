@@ -1,0 +1,15 @@
+﻿21 Mar 2023 20:02:37 - Saving file AdminDataTemplates.xml (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\AdminDataTemplates.xml)
+21 Mar 2023 20:02:37 - Saving file Bsw_Project.dcf (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\Bsw_Project.dcf)
+21 Mar 2023 20:02:37 - Start import
+21 Mar 2023 20:02:38 - Importing file (C:\Program Files (x86)\Vector DaVinci Developer 4.7\Bin\Predefines\StandardPackages_AR4.arxml).
+21 Mar 2023 20:02:38 - Importing file (C:\Program Files (x86)\Vector DaVinci Developer 4.7\Bin\Predefines\ServicePortInterfaces_4.3.1.arxml).
+21 Mar 2023 20:02:38 - Importing file (C:\Program Files (x86)\Vector DaVinci Developer 4.7\Bin\Predefines\ApplicationPortInterfaces_4.3.1.arxml).
+21 Mar 2023 20:02:38 - Importing file (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\AUTOSAR\PlatformTypes_AR4.arxml).
+21 Mar 2023 20:02:38 - Merging imported data
+21 Mar 2023 20:02:39 - Finished import
+21 Mar 2023 20:02:39 - Saving file ProfileSettings.xml (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\ProfileSettings.xml)
+21 Mar 2023 20:02:40 - Saving file Packages.arxml (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\Packages.arxml)
+21 Mar 2023 20:02:40 - Saving file DataTypes.arxml (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\DataTypes.arxml)
+21 Mar 2023 20:02:40 - Saving file PortInterfaces.arxml (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\PortInterfaces.arxml)
+21 Mar 2023 20:02:40 - Saving file Bsw_Project.arxml (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\ECUProjects\Bsw_Project.arxml)
+21 Mar 2023 20:02:40 - Saving file Bsw_Project.dcf (E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Config\Developer\Bsw_Project.dcf)

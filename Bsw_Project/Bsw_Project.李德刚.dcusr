@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Settings>
+    <Settings Name="com.vector.cfg.gui.moduleimport.history">
+        <Settings Name="1679400288161">
+            <Settings Name="0">
+                <Settings Name="0">
+                    <Setting Value="true" Name="active"/>
+                    <Setting Value="/Dio/Dio" Name="ecucPath"/>
+                    <Setting Value="Add" Name="importMode"/>
+                </Settings>
+                <Settings Name="1">
+                    <Setting Value="true" Name="active"/>
+                    <Setting Value="/McalLib/McalLib" Name="ecucPath"/>
+                    <Setting Value="Add" Name="importMode"/>
+                </Settings>
+                <Settings Name="2">
+                    <Setting Value="true" Name="active"/>
+                    <Setting Value="/Mcu/Mcu" Name="ecucPath"/>
+                    <Setting Value="Add" Name="importMode"/>
+                </Settings>
+                <Settings Name="3">
+                    <Setting Value="true" Name="active"/>
+                    <Setting Value="/Port/Port" Name="ecucPath"/>
+                    <Setting Value="Add" Name="importMode"/>
+                </Settings>
+                <Settings Name="4">
+                    <Setting Value="true" Name="active"/>
+                    <Setting Value="/ResourceM/ResourceM" Name="ecucPath"/>
+                    <Setting Value="Add" Name="importMode"/>
+                </Settings>
+                <Setting Value="E:\Autosar_CP\TC397_Classic\SIP_0317\give_customer\Bsw_Project\Customer_Mcal_Output.arxml" Name="filePath"/>
+            </Settings>
+        </Settings>
+    </Settings>
+</Settings>

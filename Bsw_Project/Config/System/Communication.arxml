@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>VehicleProject</SHORT-NAME>
+      <ELEMENTS>
+        <SYSTEM>
+          <SHORT-NAME>System</SHORT-NAME>
+          <FIBEX-ELEMENTS>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-CLUSTER">/Cluster/CAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="ECU-INSTANCE">/ECU/ITMS</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU-GROUP">/IPDUGroup/ITMS_oCAN00_Rx</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU-GROUP">/IPDUGroup/ITMS_oCAN00_Tx</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/CanFrame/ACP_327_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/CanFrame/ACP_32E_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/CanFrame/B_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/CanFrame/ITMS_350_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/CanFrame/XCP_R_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/CanFrame/XCP_S_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_327_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_32E_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/PDU/B_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/PDU/ITMS_350_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="XCP-PDU">/PDU/XCP_R_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="XCP-PDU">/PDU/XCP_S_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/AC_max_perm_compressor_power_oITMS_350_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/AllowOperation_Flag_oITMS_350_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/B_RLS_DewPoint_oB_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/B_RLS_Offline_Calibration_Result_oB_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/B_RLS_relativeHumidity_oB_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/B_RLS_SolarLeft_oB_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/B_RLS_SolarRight_oB_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/B_RLS_WindshieldTemp_oB_RLS_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/Comp_error_code1_oACP_32E_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/Comp_speed_of_compressor_oACP_32E_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/Comp_work_status_oACP_32E_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/Ecomp_CompIpt_V_oACP_327_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/Ecomp_Complpt_A_oACP_327_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/Ecomp_InvSoftwareVer_oACP_327_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/ISignal/TgtSpd_rpm_oITMS_350_oCAN00</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+          </FIBEX-ELEMENTS>
+        </SYSTEM>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Cluster</SHORT-NAME>
+      <ELEMENTS>
+        <CAN-CLUSTER>
+          <SHORT-NAME>CAN00</SHORT-NAME>
+          <LONG-NAME>
+            <L-4 L="FOR-ALL">CA_NoramlCAN</L-4>
+          </LONG-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DV:ToolData">
+                <SD GID="DV:ToolName">Vector Legacy Database Converter</SD>
+                <SD GID="DV:ToolVersion">1.8.30.0</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <CAN-CLUSTER-VARIANTS>
+            <CAN-CLUSTER-CONDITIONAL>
+              <PHYSICAL-CHANNELS>
+                <CAN-PHYSICAL-CHANNEL>
+                  <SHORT-NAME>CHNL</SHORT-NAME>
+                  <COMM-CONNECTORS>
+                    <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                      <COMMUNICATION-CONNECTOR-REF DEST="CAN-COMMUNICATION-CONNECTOR">/ECU/ITMS/CN_CAN00</COMMUNICATION-CONNECTOR-REF>
+                    </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                  </COMM-CONNECTORS>
+                  <FRAME-TRIGGERINGS>
+                    <CAN-FRAME-TRIGGERING>
+                      <SHORT-NAME>FT_ACP_327</SHORT-NAME>
+                      <FRAME-PORT-REFS>
+                        <FRAME-PORT-REF DEST="FRAME-PORT">/ECU/ITMS/CN_CAN00/FP_ACP_327_Rx</FRAME-PORT-REF>
+                      </FRAME-PORT-REFS>
+                      <FRAME-REF DEST="CAN-FRAME">/CanFrame/ACP_327_oCAN00</FRAME-REF>
+                      <PDU-TRIGGERINGS>
+                        <PDU-TRIGGERING-REF-CONDITIONAL>
+                          <PDU-TRIGGERING-REF DEST="PDU-TRIGGERING">/Cluster/CAN00/CHNL/PT_ACP_327</PDU-TRIGGERING-REF>
+                        </PDU-TRIGGERING-REF-CONDITIONAL>
+                      </PDU-TRIGGERINGS>
+                      <CAN-ADDRESSING-MODE>STANDARD</CAN-ADDRESSING-MODE>
+                      <IDENTIFIER>807</IDENTIFIER>
+                    </CAN-FRAME-TRIGGERING>
+                    <CAN-FRAME-TRIGGERING>
+                      <SHORT-NAME>FT_ACP_32E</SHORT-NAME>
+                      <FRAME-PORT-REFS>
+                        <FRAME-PORT-REF DEST="FRAME-PORT">/ECU/ITMS/CN_CAN00/FP_ACP_32E_Rx</FRAME-PORT-REF>
+                      </FRAME-PORT-REFS>
+                      <FRAME-REF DEST="CAN-FRAME">/CanFrame/ACP_32E_oCAN00</FRAME-REF>
+                      <PDU-TRIGGERINGS>
+                        <PDU-TRIGGERING-REF-CONDITIONAL>
+                          <PDU-TRIGGERING-REF DEST="PDU-TRIGGERING">/Cluster/CAN00/CHNL/PT_ACP_32E</PDU-TRIGGERING-REF>
+                        </PDU-TRIGGERING-REF-CONDITIONAL>
+                      </PDU-TRIGGERINGS>
+                      <CAN-ADDRESSING-MODE>STANDARD</CAN-ADDRESSING-MODE>
+                      <IDENTIFIER>814</IDENTIFIER>
+                    </CAN-FRAME-TRIGGERING>
+                    <CAN-FRAME-TRIGGERING>
+                      <SHORT-NAME>FT_B_RLS</SHORT-NAME>
+                      <FRAME-PORT-REFS>
+                        <FRAME-PORT-REF DEST="FRAME-PORT">/ECU/ITMS/CN_CAN00/FP_B_RLS_Rx</FRAME-PORT-REF>
+                      </FRAME-PORT-REFS>
+                      <FRAME-REF DEST="CAN-FRAME">/CanFrame/B_RLS_oCAN00</FRAME-REF>
+                      <PDU-TRIGGERINGS>
+                        <PDU-TRIGGERING-REF-CONDITIONAL>
+                          <PDU-TRIGGERING-REF DEST="PDU-TRIGGERING">/Cluster/CAN00/CHNL/PT_B_RLS</PDU-TRIGGERING-REF>
+                        </PDU-TRIGGERING-REF-CONDITIONAL>
+                      </PDU-TRIGGERINGS>
+                      <CAN-ADDRESSING-MODE>STANDARD</CAN-ADDRESSING-MODE>
+                      <IDENTIFIER>998</IDENTIFIER>
+                    </CAN-FRAME-TRIGGERING>
+                    <CAN-FRAME-TRIGGERING>
+                      <SHORT-NAME>FT_ITMS_350</SHORT-NAME>
+                      <FRAME-PORT-REFS>
+                        <FRAME-PORT-REF DEST="FRAME-PORT">/ECU/ITMS/CN_CAN00/FP_ITMS_350_Tx</FRAME-PORT-REF>
+                      </FRAME-PORT-REFS>
+                      <FRAME-REF DEST="CAN-FRAME">/CanFrame/ITMS_350_oCAN00</FRAME-REF>
+                      <PDU-TRIGGERINGS>
+                        <PDU-TRIGGERING-REF-CONDITIONAL>
+                          <PDU-TRIGGERING-REF DEST="PDU-TRIGGERING">/Cluster/CAN00/CHNL/PT_ITMS_350</PDU-TRIGGERING-REF>
+                        </PDU-TRIGGERING-REF-CONDITIONAL>
+                      </PDU-TRIGGERINGS>
+                      <CAN-ADDRESSING-MODE>STANDARD</CAN-ADDRESSING-MODE>
+                      <IDENTIFIER>848</IDENTIFIER>
+                    </CAN-FRAME-TRIGGERING>
+                    <CAN-FRAME-TRIGGERING>
+                      <SHORT-NAME>FT_XCP_R</SHORT-NAME>
+                      <FRAME-PORT-REFS>
+                        <FRAME-PORT-REF DEST="FRAME-PORT">/ECU/ITMS/CN_CAN00/FP_XCP_R_Tx</FRAME-PORT-REF>
+                      </FRAME-PORT-REFS>
+                      <FRAME-REF DEST="CAN-FRAME">/CanFrame/XCP_R_oCAN00</FRAME-REF>
+                      <PDU-TRIGGERINGS>
+                        <PDU-TRIGGERING-REF-CONDITIONAL>
+                          <PDU-TRIGGERING-REF DEST="PDU-TRIGGERING">/Cluster/CAN00/CHNL/PT_XCP_R</PDU-TRIGGERING-REF>
+                        </PDU-TRIGGERING-REF-CONDITIONAL>
+                      </PDU-TRIGGERINGS>
+                      <CAN-ADDRESSING-MODE>STANDARD</CAN-ADDRESSING-MODE>
+                      <IDENTIFIER>1790</IDENTIFIER>
+                    </CAN-FRAME-TRIGGERING>
+                    <CAN-FRAME-TRIGGERING>
+                      <SHORT-NAME>FT_XCP_S</SHORT-NAME>
+                      <FRAME-PORT-REFS>
+                        <FRAME-PORT-REF DEST="FRAME-PORT">/ECU/ITMS/CN_CAN00/FP_XCP_S_Rx</FRAME-PORT-REF>
+                      </FRAME-PORT-REFS>
+                      <FRAME-REF DEST="CAN-FRAME">/CanFrame/XCP_S_oCAN00</FRAME-REF>
+                      <PDU-TRIGGERINGS>
+                        <PDU-TRIGGERING-REF-CONDITIONAL>
+                          <PDU-TRIGGERING-REF DEST="PDU-TRIGGERING">/Cluster/CAN00/CHNL/PT_XCP_S</PDU-TRIGGERING-REF>
+                        </PDU-TRIGGERING-REF-CONDITIONAL>
+                      </PDU-TRIGGERINGS>
+                      <CAN-ADDRESSING-MODE>STANDARD</CAN-ADDRESSING-MODE>
+                      <IDENTIFIER>1791</IDENTIFIER>
+                    </CAN-FRAME-TRIGGERING>
+                  </FRAME-TRIGGERINGS>
+                  <I-SIGNAL-TRIGGERINGS>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_AC_max_perm_compressor_power_oITMS_350</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_AC_max_perm_compressor_power_oITMS_350_Tx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/AC_max_perm_compressor_power_oITMS_350_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_AllowOperation_Flag_oITMS_350</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_AllowOperation_Flag_oITMS_350_Tx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/AllowOperation_Flag_oITMS_350_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_B_RLS_DewPoint_oB_RLS</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_B_RLS_DewPoint_oB_RLS_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_DewPoint_oB_RLS_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_B_RLS_Offline_Calibration_Result_oB_RLS</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_B_RLS_Offline_Calibration_Result_oB_RLS_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_Offline_Calibration_Result_oB_RLS_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_B_RLS_relativeHumidity_oB_RLS</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_B_RLS_relativeHumidity_oB_RLS_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_relativeHumidity_oB_RLS_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_B_RLS_SolarLeft_oB_RLS</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_B_RLS_SolarLeft_oB_RLS_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_SolarLeft_oB_RLS_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_B_RLS_SolarRight_oB_RLS</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_B_RLS_SolarRight_oB_RLS_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_SolarRight_oB_RLS_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_B_RLS_WindshieldTemp_oB_RLS</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_B_RLS_WindshieldTemp_oB_RLS_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_WindshieldTemp_oB_RLS_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_Comp_error_code1_oACP_32E</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_Comp_error_code1_oACP_32E_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Comp_error_code1_oACP_32E_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_Comp_speed_of_compressor_oACP_32E</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_Comp_speed_of_compressor_oACP_32E_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Comp_speed_of_compressor_oACP_32E_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_Comp_work_status_oACP_32E</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_Comp_work_status_oACP_32E_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Comp_work_status_oACP_32E_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_Ecomp_CompIpt_V_oACP_327</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_Ecomp_CompIpt_V_oACP_327_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Ecomp_CompIpt_V_oACP_327_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_Ecomp_Complpt_A_oACP_327</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_Ecomp_Complpt_A_oACP_327_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Ecomp_Complpt_A_oACP_327_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_Ecomp_InvSoftwareVer_oACP_327</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_Ecomp_InvSoftwareVer_oACP_327_Rx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Ecomp_InvSoftwareVer_oACP_327_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                    <I-SIGNAL-TRIGGERING>
+                      <SHORT-NAME>ST_TgtSpd_rpm_oITMS_350</SHORT-NAME>
+                      <I-SIGNAL-PORT-REFS>
+                        <I-SIGNAL-PORT-REF DEST="I-SIGNAL-PORT">/ECU/ITMS/CN_CAN00/SP_TgtSpd_rpm_oITMS_350_Tx</I-SIGNAL-PORT-REF>
+                      </I-SIGNAL-PORT-REFS>
+                      <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/TgtSpd_rpm_oITMS_350_oCAN00</I-SIGNAL-REF>
+                    </I-SIGNAL-TRIGGERING>
+                  </I-SIGNAL-TRIGGERINGS>
+                  <PDU-TRIGGERINGS>
+                    <PDU-TRIGGERING>
+                      <SHORT-NAME>PT_ACP_327</SHORT-NAME>
+                      <I-PDU-PORT-REFS>
+                        <I-PDU-PORT-REF DEST="I-PDU-PORT">/ECU/ITMS/CN_CAN00/PP_ACP_327_Rx</I-PDU-PORT-REF>
+                      </I-PDU-PORT-REFS>
+                      <I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_327_oCAN00</I-PDU-REF>
+                      <I-SIGNAL-TRIGGERINGS>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_Ecomp_CompIpt_V_oACP_327</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_Ecomp_Complpt_A_oACP_327</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_Ecomp_InvSoftwareVer_oACP_327</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                      </I-SIGNAL-TRIGGERINGS>
+                    </PDU-TRIGGERING>
+                    <PDU-TRIGGERING>
+                      <SHORT-NAME>PT_ACP_32E</SHORT-NAME>
+                      <I-PDU-PORT-REFS>
+                        <I-PDU-PORT-REF DEST="I-PDU-PORT">/ECU/ITMS/CN_CAN00/PP_ACP_32E_Rx</I-PDU-PORT-REF>
+                      </I-PDU-PORT-REFS>
+                      <I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_32E_oCAN00</I-PDU-REF>
+                      <I-SIGNAL-TRIGGERINGS>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_Comp_error_code1_oACP_32E</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_Comp_speed_of_compressor_oACP_32E</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_Comp_work_status_oACP_32E</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                      </I-SIGNAL-TRIGGERINGS>
+                    </PDU-TRIGGERING>
+                    <PDU-TRIGGERING>
+                      <SHORT-NAME>PT_B_RLS</SHORT-NAME>
+                      <I-PDU-PORT-REFS>
+                        <I-PDU-PORT-REF DEST="I-PDU-PORT">/ECU/ITMS/CN_CAN00/PP_B_RLS_Rx</I-PDU-PORT-REF>
+                      </I-PDU-PORT-REFS>
+                      <I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/B_RLS_oCAN00</I-PDU-REF>
+                      <I-SIGNAL-TRIGGERINGS>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_B_RLS_DewPoint_oB_RLS</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_B_RLS_Offline_Calibration_Result_oB_RLS</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_B_RLS_relativeHumidity_oB_RLS</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_B_RLS_SolarLeft_oB_RLS</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_B_RLS_SolarRight_oB_RLS</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_B_RLS_WindshieldTemp_oB_RLS</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                      </I-SIGNAL-TRIGGERINGS>
+                    </PDU-TRIGGERING>
+                    <PDU-TRIGGERING>
+                      <SHORT-NAME>PT_ITMS_350</SHORT-NAME>
+                      <I-PDU-PORT-REFS>
+                        <I-PDU-PORT-REF DEST="I-PDU-PORT">/ECU/ITMS/CN_CAN00/PP_ITMS_350_Tx</I-PDU-PORT-REF>
+                      </I-PDU-PORT-REFS>
+                      <I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ITMS_350_oCAN00</I-PDU-REF>
+                      <I-SIGNAL-TRIGGERINGS>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_AC_max_perm_compressor_power_oITMS_350</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_AllowOperation_Flag_oITMS_350</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                        <I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                          <I-SIGNAL-TRIGGERING-REF DEST="I-SIGNAL-TRIGGERING">/Cluster/CAN00/CHNL/ST_TgtSpd_rpm_oITMS_350</I-SIGNAL-TRIGGERING-REF>
+                        </I-SIGNAL-TRIGGERING-REF-CONDITIONAL>
+                      </I-SIGNAL-TRIGGERINGS>
+                    </PDU-TRIGGERING>
+                    <PDU-TRIGGERING>
+                      <SHORT-NAME>PT_XCP_R</SHORT-NAME>
+                      <I-PDU-PORT-REFS>
+                        <I-PDU-PORT-REF DEST="I-PDU-PORT">/ECU/ITMS/CN_CAN00/PP_XCP_R_Tx</I-PDU-PORT-REF>
+                      </I-PDU-PORT-REFS>
+                      <I-PDU-REF DEST="XCP-PDU">/PDU/XCP_R_oCAN00</I-PDU-REF>
+                    </PDU-TRIGGERING>
+                    <PDU-TRIGGERING>
+                      <SHORT-NAME>PT_XCP_S</SHORT-NAME>
+                      <I-PDU-PORT-REFS>
+                        <I-PDU-PORT-REF DEST="I-PDU-PORT">/ECU/ITMS/CN_CAN00/PP_XCP_S_Rx</I-PDU-PORT-REF>
+                      </I-PDU-PORT-REFS>
+                      <I-PDU-REF DEST="XCP-PDU">/PDU/XCP_S_oCAN00</I-PDU-REF>
+                    </PDU-TRIGGERING>
+                  </PDU-TRIGGERINGS>
+                </CAN-PHYSICAL-CHANNEL>
+              </PHYSICAL-CHANNELS>
+              <PROTOCOL-NAME>CAN</PROTOCOL-NAME>
+            </CAN-CLUSTER-CONDITIONAL>
+          </CAN-CLUSTER-VARIANTS>
+        </CAN-CLUSTER>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ECU</SHORT-NAME>
+      <ELEMENTS>
+        <ECU-INSTANCE>
+          <SHORT-NAME>ITMS</SHORT-NAME>
+          <ASSOCIATED-COM-I-PDU-GROUP-REFS>
+            <ASSOCIATED-COM-I-PDU-GROUP-REF DEST="I-SIGNAL-I-PDU-GROUP">/IPDUGroup/ITMS_oCAN00_Rx</ASSOCIATED-COM-I-PDU-GROUP-REF>
+            <ASSOCIATED-COM-I-PDU-GROUP-REF DEST="I-SIGNAL-I-PDU-GROUP">/IPDUGroup/ITMS_oCAN00_Tx</ASSOCIATED-COM-I-PDU-GROUP-REF>
+          </ASSOCIATED-COM-I-PDU-GROUP-REFS>
+          <COMM-CONTROLLERS>
+            <CAN-COMMUNICATION-CONTROLLER>
+              <SHORT-NAME>CT_CAN00</SHORT-NAME>
+              <CAN-COMMUNICATION-CONTROLLER-VARIANTS>
+                <CAN-COMMUNICATION-CONTROLLER-CONDITIONAL/>
+              </CAN-COMMUNICATION-CONTROLLER-VARIANTS>
+            </CAN-COMMUNICATION-CONTROLLER>
+          </COMM-CONTROLLERS>
+          <CONNECTORS>
+            <CAN-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>CN_CAN00</SHORT-NAME>
+              <COMM-CONTROLLER-REF DEST="CAN-COMMUNICATION-CONTROLLER">/ECU/ITMS/CT_CAN00</COMM-CONTROLLER-REF>
+              <ECU-COMM-PORT-INSTANCES>
+                <FRAME-PORT>
+                  <SHORT-NAME>FP_ACP_327_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <FRAME-PORT>
+                  <SHORT-NAME>FP_ACP_32E_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <FRAME-PORT>
+                  <SHORT-NAME>FP_B_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <FRAME-PORT>
+                  <SHORT-NAME>FP_ITMS_350_Tx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <FRAME-PORT>
+                  <SHORT-NAME>FP_XCP_R_Tx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <FRAME-PORT>
+                  <SHORT-NAME>FP_XCP_S_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT>
+                  <SHORT-NAME>PP_ACP_327_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-PDU-PORT>
+                  <SHORT-NAME>PP_ACP_32E_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-PDU-PORT>
+                  <SHORT-NAME>PP_B_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-PDU-PORT>
+                  <SHORT-NAME>PP_ITMS_350_Tx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-PDU-PORT>
+                  <SHORT-NAME>PP_XCP_R_Tx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-PDU-PORT>
+                  <SHORT-NAME>PP_XCP_S_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_AC_max_perm_compressor_power_oITMS_350_Tx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_AllowOperation_Flag_oITMS_350_Tx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_B_RLS_DewPoint_oB_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_B_RLS_Offline_Calibration_Result_oB_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_B_RLS_relativeHumidity_oB_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_B_RLS_SolarLeft_oB_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_B_RLS_SolarRight_oB_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_B_RLS_WindshieldTemp_oB_RLS_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_Comp_error_code1_oACP_32E_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_Comp_speed_of_compressor_oACP_32E_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_Comp_work_status_oACP_32E_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_Ecomp_CompIpt_V_oACP_327_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_Ecomp_Complpt_A_oACP_327_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_Ecomp_InvSoftwareVer_oACP_327_Rx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <TIMEOUT>0</TIMEOUT>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT>
+                  <SHORT-NAME>SP_TgtSpd_rpm_oITMS_350_Tx</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+              </ECU-COMM-PORT-INSTANCES>
+            </CAN-COMMUNICATION-CONNECTOR>
+          </CONNECTORS>
+        </ECU-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>IPDUGroup</SHORT-NAME>
+      <ELEMENTS>
+        <I-SIGNAL-I-PDU-GROUP>
+          <SHORT-NAME>ITMS_oCAN00_Rx</SHORT-NAME>
+          <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+          <I-SIGNAL-I-PDUS>
+            <I-SIGNAL-I-PDU-REF-CONDITIONAL>
+              <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_327_oCAN00</I-SIGNAL-I-PDU-REF>
+            </I-SIGNAL-I-PDU-REF-CONDITIONAL>
+            <I-SIGNAL-I-PDU-REF-CONDITIONAL>
+              <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_32E_oCAN00</I-SIGNAL-I-PDU-REF>
+            </I-SIGNAL-I-PDU-REF-CONDITIONAL>
+            <I-SIGNAL-I-PDU-REF-CONDITIONAL>
+              <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/B_RLS_oCAN00</I-SIGNAL-I-PDU-REF>
+            </I-SIGNAL-I-PDU-REF-CONDITIONAL>
+          </I-SIGNAL-I-PDUS>
+        </I-SIGNAL-I-PDU-GROUP>
+        <I-SIGNAL-I-PDU-GROUP>
+          <SHORT-NAME>ITMS_oCAN00_Tx</SHORT-NAME>
+          <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+          <I-SIGNAL-I-PDUS>
+            <I-SIGNAL-I-PDU-REF-CONDITIONAL>
+              <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ITMS_350_oCAN00</I-SIGNAL-I-PDU-REF>
+            </I-SIGNAL-I-PDU-REF-CONDITIONAL>
+          </I-SIGNAL-I-PDUS>
+        </I-SIGNAL-I-PDU-GROUP>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>CanFrame</SHORT-NAME>
+      <ELEMENTS>
+        <CAN-FRAME>
+          <SHORT-NAME>ACP_327_oCAN00</SHORT-NAME>
+          <FRAME-LENGTH>8</FRAME-LENGTH>
+          <PDU-TO-FRAME-MAPPINGS>
+            <PDU-TO-FRAME-MAPPING>
+              <SHORT-NAME>ACP_327</SHORT-NAME>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</PACKING-BYTE-ORDER>
+              <PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_327_oCAN00</PDU-REF>
+              <START-POSITION>0</START-POSITION>
+            </PDU-TO-FRAME-MAPPING>
+          </PDU-TO-FRAME-MAPPINGS>
+        </CAN-FRAME>
+        <CAN-FRAME>
+          <SHORT-NAME>ACP_32E_oCAN00</SHORT-NAME>
+          <FRAME-LENGTH>8</FRAME-LENGTH>
+          <PDU-TO-FRAME-MAPPINGS>
+            <PDU-TO-FRAME-MAPPING>
+              <SHORT-NAME>ACP_32E</SHORT-NAME>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</PACKING-BYTE-ORDER>
+              <PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ACP_32E_oCAN00</PDU-REF>
+              <START-POSITION>0</START-POSITION>
+            </PDU-TO-FRAME-MAPPING>
+          </PDU-TO-FRAME-MAPPINGS>
+        </CAN-FRAME>
+        <CAN-FRAME>
+          <SHORT-NAME>B_RLS_oCAN00</SHORT-NAME>
+          <FRAME-LENGTH>8</FRAME-LENGTH>
+          <PDU-TO-FRAME-MAPPINGS>
+            <PDU-TO-FRAME-MAPPING>
+              <SHORT-NAME>B_RLS</SHORT-NAME>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</PACKING-BYTE-ORDER>
+              <PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/B_RLS_oCAN00</PDU-REF>
+              <START-POSITION>0</START-POSITION>
+            </PDU-TO-FRAME-MAPPING>
+          </PDU-TO-FRAME-MAPPINGS>
+        </CAN-FRAME>
+        <CAN-FRAME>
+          <SHORT-NAME>ITMS_350_oCAN00</SHORT-NAME>
+          <FRAME-LENGTH>8</FRAME-LENGTH>
+          <PDU-TO-FRAME-MAPPINGS>
+            <PDU-TO-FRAME-MAPPING>
+              <SHORT-NAME>ITMS_350</SHORT-NAME>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</PACKING-BYTE-ORDER>
+              <PDU-REF DEST="I-SIGNAL-I-PDU">/PDU/ITMS_350_oCAN00</PDU-REF>
+              <START-POSITION>0</START-POSITION>
+            </PDU-TO-FRAME-MAPPING>
+          </PDU-TO-FRAME-MAPPINGS>
+        </CAN-FRAME>
+        <CAN-FRAME>
+          <SHORT-NAME>XCP_R_oCAN00</SHORT-NAME>
+          <FRAME-LENGTH>8</FRAME-LENGTH>
+          <PDU-TO-FRAME-MAPPINGS>
+            <PDU-TO-FRAME-MAPPING>
+              <SHORT-NAME>XCP_R</SHORT-NAME>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</PACKING-BYTE-ORDER>
+              <PDU-REF DEST="XCP-PDU">/PDU/XCP_R_oCAN00</PDU-REF>
+              <START-POSITION>0</START-POSITION>
+            </PDU-TO-FRAME-MAPPING>
+          </PDU-TO-FRAME-MAPPINGS>
+        </CAN-FRAME>
+        <CAN-FRAME>
+          <SHORT-NAME>XCP_S_oCAN00</SHORT-NAME>
+          <FRAME-LENGTH>8</FRAME-LENGTH>
+          <PDU-TO-FRAME-MAPPINGS>
+            <PDU-TO-FRAME-MAPPING>
+              <SHORT-NAME>XCP_S</SHORT-NAME>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</PACKING-BYTE-ORDER>
+              <PDU-REF DEST="XCP-PDU">/PDU/XCP_S_oCAN00</PDU-REF>
+              <START-POSITION>0</START-POSITION>
+            </PDU-TO-FRAME-MAPPING>
+          </PDU-TO-FRAME-MAPPINGS>
+        </CAN-FRAME>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>PDU</SHORT-NAME>
+      <ELEMENTS>
+        <I-SIGNAL-I-PDU>
+          <SHORT-NAME>ACP_327_oCAN00</SHORT-NAME>
+          <LENGTH>8</LENGTH>
+          <I-PDU-TIMING-SPECIFICATIONS>
+            <I-PDU-TIMING>
+              <MINIMUM-DELAY>0.001</MINIMUM-DELAY>
+              <TRANSMISSION-MODE-DECLARATION>
+                <TRANSMISSION-MODE-FALSE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-FALSE-TIMING>
+                <TRANSMISSION-MODE-TRUE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-TRUE-TIMING>
+              </TRANSMISSION-MODE-DECLARATION>
+            </I-PDU-TIMING>
+          </I-PDU-TIMING-SPECIFICATIONS>
+          <I-SIGNAL-TO-PDU-MAPPINGS>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>Ecomp_InvSoftwareVer</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Ecomp_InvSoftwareVer_oACP_327_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>7</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>Ecomp_CompIpt_V</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Ecomp_CompIpt_V_oACP_327_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>23</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>Ecomp_Complpt_A</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Ecomp_Complpt_A_oACP_327_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>39</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+          </I-SIGNAL-TO-PDU-MAPPINGS>
+          <UNUSED-BIT-PATTERN>0</UNUSED-BIT-PATTERN>
+        </I-SIGNAL-I-PDU>
+        <I-SIGNAL-I-PDU>
+          <SHORT-NAME>ACP_32E_oCAN00</SHORT-NAME>
+          <LENGTH>8</LENGTH>
+          <I-PDU-TIMING-SPECIFICATIONS>
+            <I-PDU-TIMING>
+              <MINIMUM-DELAY>0.001</MINIMUM-DELAY>
+              <TRANSMISSION-MODE-DECLARATION>
+                <TRANSMISSION-MODE-FALSE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-FALSE-TIMING>
+                <TRANSMISSION-MODE-TRUE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-TRUE-TIMING>
+              </TRANSMISSION-MODE-DECLARATION>
+            </I-PDU-TIMING>
+          </I-PDU-TIMING-SPECIFICATIONS>
+          <I-SIGNAL-TO-PDU-MAPPINGS>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>Comp_speed_of_compressor</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Comp_speed_of_compressor_oACP_32E_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>7</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>Comp_work_status</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Comp_work_status_oACP_32E_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>31</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>Comp_error_code1</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/Comp_error_code1_oACP_32E_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>39</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+          </I-SIGNAL-TO-PDU-MAPPINGS>
+          <UNUSED-BIT-PATTERN>0</UNUSED-BIT-PATTERN>
+        </I-SIGNAL-I-PDU>
+        <I-SIGNAL-I-PDU>
+          <SHORT-NAME>B_RLS_oCAN00</SHORT-NAME>
+          <LENGTH>8</LENGTH>
+          <I-PDU-TIMING-SPECIFICATIONS>
+            <I-PDU-TIMING>
+              <MINIMUM-DELAY>0.001</MINIMUM-DELAY>
+              <TRANSMISSION-MODE-DECLARATION>
+                <TRANSMISSION-MODE-FALSE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-FALSE-TIMING>
+                <TRANSMISSION-MODE-TRUE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-TRUE-TIMING>
+              </TRANSMISSION-MODE-DECLARATION>
+            </I-PDU-TIMING>
+          </I-PDU-TIMING-SPECIFICATIONS>
+          <I-SIGNAL-TO-PDU-MAPPINGS>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>B_RLS_SolarLeft</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_SolarLeft_oB_RLS_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>7</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>B_RLS_SolarRight</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_SolarRight_oB_RLS_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>15</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>B_RLS_relativeHumidity</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_relativeHumidity_oB_RLS_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>23</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>B_RLS_WindshieldTemp</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_WindshieldTemp_oB_RLS_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>31</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>B_RLS_DewPoint</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_DewPoint_oB_RLS_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>33</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>B_RLS_Offline_Calibration_Result</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/B_RLS_Offline_Calibration_Result_oB_RLS_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>49</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+          </I-SIGNAL-TO-PDU-MAPPINGS>
+          <UNUSED-BIT-PATTERN>0</UNUSED-BIT-PATTERN>
+        </I-SIGNAL-I-PDU>
+        <I-SIGNAL-I-PDU>
+          <SHORT-NAME>ITMS_350_oCAN00</SHORT-NAME>
+          <LENGTH>8</LENGTH>
+          <I-PDU-TIMING-SPECIFICATIONS>
+            <I-PDU-TIMING>
+              <MINIMUM-DELAY>0.001</MINIMUM-DELAY>
+              <TRANSMISSION-MODE-DECLARATION>
+                <TRANSMISSION-MODE-FALSE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-FALSE-TIMING>
+                <TRANSMISSION-MODE-TRUE-TIMING>
+                  <CYCLIC-TIMING>
+                    <TIME-OFFSET>
+                      <VALUE>0</VALUE>
+                    </TIME-OFFSET>
+                    <TIME-PERIOD>
+                      <VALUE>0.1</VALUE>
+                    </TIME-PERIOD>
+                  </CYCLIC-TIMING>
+                </TRANSMISSION-MODE-TRUE-TIMING>
+              </TRANSMISSION-MODE-DECLARATION>
+            </I-PDU-TIMING>
+          </I-PDU-TIMING-SPECIFICATIONS>
+          <I-SIGNAL-TO-PDU-MAPPINGS>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>AC_max_perm_compressor_power</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/AC_max_perm_compressor_power_oITMS_350_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>7</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>AllowOperation_Flag</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/AllowOperation_Flag_oITMS_350_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>24</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>TgtSpd_rpm</SHORT-NAME>
+              <I-SIGNAL-REF DEST="I-SIGNAL">/ISignal/TgtSpd_rpm_oITMS_350_oCAN00</I-SIGNAL-REF>
+              <PACKING-BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</PACKING-BYTE-ORDER>
+              <START-POSITION>55</START-POSITION>
+              <TRANSFER-PROPERTY>PENDING</TRANSFER-PROPERTY>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+          </I-SIGNAL-TO-PDU-MAPPINGS>
+          <UNUSED-BIT-PATTERN>0</UNUSED-BIT-PATTERN>
+        </I-SIGNAL-I-PDU>
+        <XCP-PDU>
+          <SHORT-NAME>XCP_R_oCAN00</SHORT-NAME>
+          <LENGTH>8</LENGTH>
+        </XCP-PDU>
+        <XCP-PDU>
+          <SHORT-NAME>XCP_S_oCAN00</SHORT-NAME>
+          <LENGTH>8</LENGTH>
+        </XCP-PDU>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ISignal</SHORT-NAME>
+      <ELEMENTS>
+        <I-SIGNAL>
+          <SHORT-NAME>AC_max_perm_compressor_power_oITMS_350_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>8</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/AC_max_perm_compressor_power</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>AllowOperation_Flag_oITMS_350_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>1</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/boolean</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/AllowOperation_Flag</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>B_RLS_DewPoint_oB_RLS_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>396</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>10</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint16</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/B_RLS_DewPoint</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>B_RLS_Offline_Calibration_Result_oB_RLS_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>2</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/B_RLS_Offline_Calibration_Result</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>B_RLS_relativeHumidity_oB_RLS_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>1</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>8</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/B_RLS_relativeHumidity</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>B_RLS_SolarLeft_oB_RLS_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>8</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/B_RLS_SolarLeft</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>B_RLS_SolarRight_oB_RLS_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>8</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/B_RLS_SolarRight</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>B_RLS_WindshieldTemp_oB_RLS_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>80</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>8</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/B_RLS_WindshieldTemp</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>Comp_error_code1_oACP_32E_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>8</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/Comp_error_code1</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>Comp_speed_of_compressor_oACP_32E_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>16</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint16</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/Comp_speed_of_compressor</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>Comp_work_status_oACP_32E_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>8</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint8</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/Comp_work_status</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>Ecomp_CompIpt_V_oACP_327_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>16</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint16</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/Ecomp_CompIpt_V</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>Ecomp_Complpt_A_oACP_327_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>16</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint16</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/Ecomp_Complpt_A</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>Ecomp_InvSoftwareVer_oACP_327_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>16</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint16</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/Ecomp_InvSoftwareVer</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+        <I-SIGNAL>
+          <SHORT-NAME>TgtSpd_rpm_oITMS_350_oCAN00</SHORT-NAME>
+          <DATA-TYPE-POLICY>LEGACY</DATA-TYPE-POLICY>
+          <INIT-VALUE>
+            <NUMERICAL-VALUE-SPECIFICATION>
+              <VALUE>0</VALUE>
+            </NUMERICAL-VALUE-SPECIFICATION>
+          </INIT-VALUE>
+          <LENGTH>16</LENGTH>
+          <NETWORK-REPRESENTATION-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataType/uint16</BASE-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </NETWORK-REPRESENTATION-PROPS>
+          <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/Signal/TgtSpd_rpm</SYSTEM-SIGNAL-REF>
+        </I-SIGNAL>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Signal</SHORT-NAME>
+      <ELEMENTS>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>AC_max_perm_compressor_power</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">×î´óÔÊÐíÑ¹Ëõ»úÏûºÄ¹¦ÂÊ</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_AC_max_perm_compressor_power</COMPU-METHOD-REF>
+                <UNIT-REF DEST="UNIT">/DataType/Unit/U_kw</UNIT-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>AllowOperation_Flag</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">Ñ¹Ëõ»ú¿ª¹Ø»úÃüÁî</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_AllowOperation_Flag</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>B_RLS_DewPoint</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">Â¶µãÎÂ¶È</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_B_RLS_DewPoint</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>B_RLS_Offline_Calibration_Result</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">ÏßÏÂÅäÖÃ½á¹û</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_B_RLS_Offline_Calibration_Result</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>B_RLS_relativeHumidity</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">Ïà¶ÔÊª¶È</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_B_RLS_relativeHumidity</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>B_RLS_SolarLeft</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">×ó²à¹âÕÕÇ¿¶È</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_B_RLS_SolarLeft</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>B_RLS_SolarRight</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">ÓÒ²à¹âÕÕÇ¿¶È</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_B_RLS_SolarRight</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>B_RLS_WindshieldTemp</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">Ç°µ²·ç²£Á§ÎÂ¶È</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_B_RLS_WindshieldTemp</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>Comp_error_code1</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">Ñ¹Ëõ»ú¹ÊÕÏÂë1</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_Comp_error_code1</COMPU-METHOD-REF>
+                <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataType/Constraint/DC_Comp_error_code1</DATA-CONSTR-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>Comp_speed_of_compressor</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">Ñ¹Ëõ»úÄ¿±ê×ªËÙ</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_Comp_speed_of_compressor</COMPU-METHOD-REF>
+                <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataType/Constraint/DC_Comp_speed_of_compressor</DATA-CONSTR-REF>
+                <UNIT-REF DEST="UNIT">/DataType/Unit/U_rpm</UNIT-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>Comp_work_status</SHORT-NAME>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_Comp_work_status</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>Ecomp_CompIpt_V</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">0x0~0xFFFE:voltage
+0xFFFF:error</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_Ecomp_CompIpt_V</COMPU-METHOD-REF>
+                <UNIT-REF DEST="UNIT">/DataType/Unit/U_V</UNIT-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>Ecomp_Complpt_A</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">0x0~0xFFFE:current
+0xFFFF:error</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_Ecomp_Complpt_A</COMPU-METHOD-REF>
+                <UNIT-REF DEST="UNIT">/DataType/Unit/U_A</UNIT-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>Ecomp_InvSoftwareVer</SHORT-NAME>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_Ecomp_InvSoftwareVer</COMPU-METHOD-REF>
+                <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataType/Constraint/DC_Ecomp_InvSoftwareVer</DATA-CONSTR-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+        <SYSTEM-SIGNAL>
+          <SHORT-NAME>TgtSpd_rpm</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">0x00~0xFFFE:0~65535rpm
+0xFFFF:error
+</L-2>
+          </DESC>
+          <DYNAMIC-LENGTH>false</DYNAMIC-LENGTH>
+          <PHYSICAL-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/CM_TgtSpd_rpm</COMPU-METHOD-REF>
+                <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataType/Constraint/DC_TgtSpd_rpm</DATA-CONSTR-REF>
+                <UNIT-REF DEST="UNIT">/DataType/Unit/U_rpm</UNIT-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </PHYSICAL-PROPS>
+        </SYSTEM-SIGNAL>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

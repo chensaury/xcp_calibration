@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00044.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="F32EF4F8-6642-4EAD-BB3F-1275DFD86EB7">
+      <SHORT-NAME>ComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="656431FA-EC41-45F0-85BC-DAF18BF032FA">
+          <SHORT-NAME>Core5Swc</SHORT-NAME>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="A40ACD4A-D760-4D77-9392-62E8FE8BE2CB">
+              <SHORT-NAME>Core5Swc_InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <TIMING-EVENT UUID="D8B50777-363F-4A31-AA20-A16F3E84B3FE">
+                  <SHORT-NAME>TMT_Core5Runnable</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Core5Swc/Core5Swc_InternalBehavior/Core5Runnable</START-ON-EVENT-REF>
+                  <PERIOD>5</PERIOD>
+                </TIMING-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="707532F2-946D-4EC7-BDF9-D3363F7C84D2">
+                  <SHORT-NAME>Core5Runnable</SHORT-NAME>
+                  <SYMBOL>Core5Runnable</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <SWC-IMPLEMENTATION UUID="AF5E8BB6-C322-4049-B400-01610DBEE9DB">
+          <SHORT-NAME>Core5Swc_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/Core5Swc/Core5Swc_InternalBehavior</BEHAVIOR-REF>
+        </SWC-IMPLEMENTATION>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

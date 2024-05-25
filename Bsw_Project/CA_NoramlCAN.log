@@ -1,0 +1,6 @@
+Conversion Warnings Log
+
+OBJECT ID : BU_	PARAM_NAME :"NmStationAddress"
+	Description: Invalid Data Ranges	 Action Taken : Reset to default value
+OBJECT ID : SG_	PARAM_NAME :"GenSigStartValue"
+	Description: Invalid Data Ranges	 Action Taken : Reset to default value
