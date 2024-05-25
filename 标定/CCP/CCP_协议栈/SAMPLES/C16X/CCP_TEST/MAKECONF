@@ -1,0 +1,18 @@
+
+##############################################################################
+#  define target hardware
+##############################################################################
+
+HARDWARE_FLASH = 1
+USE_C167       = 1                # codegeneration for 80C167
+
+#############################################################################
+## the following macros for path definitions are dependend on the local     #
+##                         configuration                                    #
+#############################################################################
+
+C166_PATH      = c:\uti\c166            # Tasking C166 - compiler path
+                     
+APPL_PATH      = source
+INC_PATH       = include
+

@@ -1,0 +1,829 @@
+Archive member included because of file (symbol)
+
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o (memcpy)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o (memset)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o (__addsf3)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o (__mulsf3)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o (__gtsf2)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o (__floatsisf)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o (__extendsfdf2)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o) (__thenan_sf)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o (__adddf3)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o) (__make_dp)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+                              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o (__truncdfsf2)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o) (__thenan_df)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o) (__ucmpdi2)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o) (__pack_f)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o) (__unpack_f)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o) (__fpcmp_parts_f)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o) (__make_fp)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o) (__pack_d)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o) (__unpack_d)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o) (__lshrdi3)
+c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+                              c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o) (__ashldi3)
+
+Allocating common symbols
+Common symbol       size              file
+
+g_result3           0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+pCanObject          0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+gVX1000_DETECT_StartTime
+                    0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+g_result4           0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+g_result5           0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+g_result0           0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+gVX1000_OLDA_Duration
+                    0x7c              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+gVX1000_DETECT_ChecksumDoneTime
+                    0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+txObjActive         0x1               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+g_result2           0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+gVX1000_OLDA_TransferSize
+                    0x7c              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+gVX1000_OLDA_TransferCount
+                    0x7c              D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+g_adc_mode          0x2               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+gVX1000_DETECT_ToolDetectTime
+                    0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+g_result1           0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+xcp                 0x848             D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+gVX1000_DETECT_EndTime
+                    0x4               D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+LOAD D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+                0x00000000                __TEXT_START__ = 0x0
+                0x0001c000                __CALFLASH_INCIRCUIT_START__ = 0x1c000
+                0x00080000                __INIT_DATA_START__ = 0x80000
+                0x00100000                __FLASH_START__ = 0x100000
+                0x00180000                __CALFLASH_START__ = 0x180000
+                0x3ff80000                __EXTRAM_START__ = 0x3ff80000
+                0x40000000                __DATA_START__ = 0x40000000
+                0x40004000                __BSS_START__ = 0x40004000
+                0x4000e000                __CALRAM_START__ = 0x4000e000
+                0x4000f000                __VX1000_START__ = 0x4000f000
+                0x40011000                __SP_INIT__ = 0x40011000
+                0x40010000                __SP_END__ = 0x40010000
+                0x00001000                __STACK_SIZE__ = 0x1000
+
+.text           0x00000000     0x41b0
+ *intvec.o(.text)
+ *(.text)
+ .text          0x00000000      0x100 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+                0x00000000                _start
+                0x000000d4                mfDBCR0
+                0x000000cc                otm
+ .text          0x00000100       0x38 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+                0x00000110                InitTB
+                0x00000100                GetTBL
+ *fill*         0x00000138        0x8 00
+ .text          0x00000140       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+                0x00000150                mtMAS2
+                0x00000140                mtMAS0
+                0x00000148                mtMAS1
+                0x00000158                mtMAS3
+ .text          0x00000160      0x464 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+                0x00000160                FatalError
+                0x00000198                main
+                0x00000194                __eabi
+ .text          0x000005c4       0xd8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+ .text          0x0000069c       0xd8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+ .text          0x00000774      0x278 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+                0x0000093c                CanMsgTransmitted
+                0x0000097c                CanGetRxMsg
+                0x000008a8                CanTransmit
+                0x00000774                CanInit
+ .text          0x000009ec       0xb0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+                0x00000a70                ApplXcpSend
+                0x00000a28                XcpRxHandler
+                0x000009f0                ApplXcpGetPointer
+                0x000009ec                ApplXcpSendStall
+                0x000009fc                XcpTxHandler
+                0x000009f8                ApplXcpStartDaq
+ .text          0x00000a9c      0x298 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+                0x00000c40                Stop_Conversion
+                0x00000c5c                INTERRUPT_QADC_FISR0
+                0x00000cec                INTERRUPT_QADC_FISR4
+                0x00000b88                Start_Conversion
+                0x00000d10                INTERRUPT_QADC_FISR5
+                0x00000ca4                INTERRUPT_QADC_FISR2
+                0x00000bf8                Read_poll_Result
+                0x00000cc8                INTERRUPT_QADC_FISR3
+                0x00000a9c                Init_AD
+                0x00000c80                INTERRUPT_QADC_FISR1
+ .text          0x00000d34       0xc8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+                0x00000d70                filter_calc
+                0x00000d34                filter_init
+ .text          0x00000dfc      0x3d4 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+                0x00000dfc                cfg_XCLKS
+                0x00000eec                cfg_mpc5500ccd
+                0x00000e1c                cfg_PCR
+                0x00001068                cfg_PCR_CTRL
+                0x000010f8                cfg_CSn_BR
+                0x00000fbc                cfg_PCR_ADDR
+                0x0000114c                cfg_PBRIDGE
+                0x000010cc                cfg_EBI_mod
+                0x00001194                cfg_XBAR
+                0x00000f70                cfg_EBI
+                0x00001008                cfg_PCR_DATA
+                0x00001128                cfg_CSn_OR
+ .text          0x000011d0      0x508 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+                0x00001250                VX1000_ClockInit
+                0x00001290                vx1000_OldaEvent
+                0x000011d0                vx1000_OldaInit
+                0x00001270                VX1000_Clock
+                0x00001618                vx1000_Init
+                0x0000141c                vx1000_DetectVx
+ .text          0x000016d8     0x1228 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+                0x00001a24                XcpSendCrm
+                0x00001748                XcpGetActiveTl
+                0x0000173c                XcpSetActiveTl
+                0x00001bcc                XcpBackground
+                0x0000170c                XcpMemCpy
+                0x000016d8                XcpMemSet
+                0x00001c78                XcpInit
+                0x00002670                XcpEvent
+                0x000018f8                XcpSendEvent
+                0x00001cd0                XcpCommand
+                0x000019fc                XcpSendDto
+                0x0000185c                XcpExit
+                0x00001aa0                XcpSendCallBack
+                0x000017fc                XcpDisconnect
+ .text          0x00002900      0x244 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+                0x00002a84                cc_copy_cal_page
+                0x0000292c                cc_set_cal_page
+                0x00002aec                cc_init_cal_page
+                0x00002900                cc_get_cal_page
+ .text          0x00002b44        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+ .text          0x00002b44      0x118 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+                0x00002b44                memcpy
+ .text          0x00002c5c      0x12c c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+                0x00002c5c                memset
+ .text          0x00002d88      0x340 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+                0x00002fdc                __subsf3
+                0x00003058                __addsf3
+ .text          0x000030c8      0x2a8 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+                0x000030cc                __mulsf3
+ .text          0x00003370       0x88 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+                0x00003370                __gtsf2
+ .text          0x000033f8       0x94 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+                0x000033f8                __floatsisf
+ .text          0x0000348c       0x48 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+                0x0000348c                __extendsfdf2
+ .text          0x000034d4        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+ .text          0x000034d4      0x538 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+                0x00003994                __adddf3
+                0x00003910                __subdf3
+ .text          0x00003a0c       0x38 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+                0x00003a0c                __make_dp
+ .text          0x00003a44       0x60 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+                0x00003a44                __truncdfsf2
+ .text          0x00003aa4        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+ .text          0x00003aa4       0x30 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+                0x00003aa4                __ucmpdi2
+ .text          0x00003ad4      0x13c c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+                0x00003ad4                __pack_f
+ .text          0x00003c10       0xc8 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+                0x00003c10                __unpack_f
+ .text          0x00003cd8       0xe0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+                0x00003cd8                __fpcmp_parts_f
+ .text          0x00003db8       0x34 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+                0x00003db8                __make_fp
+ .text          0x00003dec      0x258 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+                0x00003dec                __pack_d
+ .text          0x00004044       0xfc c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+                0x00004044                __unpack_d
+ .text          0x00004140       0x38 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+                0x00004140                __lshrdi3
+ .text          0x00004178       0x38 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+                0x00004178                __ashldi3
+ *(.text.*)
+                0x000041b0                PROVIDE (__etext, .)
+
+.init           0x000041b0      0x45c
+ .init          0x000041b0      0x45c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+                0x000042c8                cfg_FLASH
+                0x000042a4                cfg_SRAM
+                0x000043a8                cfg_MMU
+                0x00004324                cfg_STACK
+                0x000041b0                cfg_CACHE
+                0x000041ec                cfg_FMPLL
+
+.flash_data     0x0000460c        0xc
+ *(.flash_data)
+ .flash_data    0x0000460c        0xc D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+                0x0000460c                cfg_SRAM_LOAD
+
+.calflash_incircuit
+ *(calflash_incircuit)
+
+.flash
+ *(flash_signature)
+ *(flash)
+
+.calflash       0x00180000     0x1138
+ *(calflash_signature)
+ calflash_signature
+                0x00180000       0x21 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+                0x00180000                calflash_sign
+                0x00180014                epk
+ *fill*         0x00180021        0x3 00
+ calflash_signature
+                0x00180024       0x58 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+                0x0018003c                gCC
+                0x00180024                gCC_SetPtrFlashTable
+                0x00180034                gCC_SetSizeFlashTable
+ *(calflash)
+ *fill*         0x0018007c        0x4 00
+ calflash       0x00180080     0x10b8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+                0x00180538                map2
+                0x00180b38                map5
+                0x001800a0                cal_set_demo
+                0x00180d38                map6
+                0x00180738                map3
+                0x0018008c                cal_set_led
+                0x00180138                map0
+                0x00180f38                map7
+                0x001800f8                cal_set_demo2
+                0x00180938                map4
+                0x00180080                cal_set_adc
+                0x00180338                map1
+                0x00181138                . = ALIGN (0x8)
+
+.rodata         0x00181138       0xf0
+ *(.rodata)
+ .rodata        0x00181138        0x8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+                0x00181138                gVX1000_ECUID
+ .rodata        0x00181140       0xb3 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+                0x001811f0                kXcpMainVersion
+                0x001811f2                kXcpReleaseVersion
+                0x001811f1                kXcpSubVersion
+ *fill*         0x001811f3        0x1 00
+ .rodata        0x001811f4        0x7 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+                0x001811f4                kXcpStationId
+ *fill*         0x001811fb        0x1 00
+ .rodata        0x001811fc       0x10 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+                0x001811fc                __thenan_sf
+ *fill*         0x0018120c        0x4 00
+ .rodata        0x00181210       0x18 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+                0x00181210                __thenan_df
+ *(.rodata.*)
+
+.eh_frame       0x00181228      0x8a4
+ .eh_frame      0x00181228       0x78 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .eh_frame      0x001812a0       0x50 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+                                 0x64 (size before relaxing)
+ .eh_frame      0x001812f0       0x8c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+                                 0xa0 (size before relaxing)
+ .eh_frame      0x0018137c       0xc8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+                                 0xdc (size before relaxing)
+ .eh_frame      0x00181444       0x28 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+                                 0x3c (size before relaxing)
+ .eh_frame      0x0018146c       0xf4 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+                                0x108 (size before relaxing)
+ .eh_frame      0x00181560       0xb0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+                                 0xc4 (size before relaxing)
+ .eh_frame      0x00181610      0x19c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+                                0x1b0 (size before relaxing)
+ .eh_frame      0x001817ac       0x88 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+                                 0x9c (size before relaxing)
+ .eh_frame      0x00181834       0x1c c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+                                 0x30 (size before relaxing)
+ .eh_frame      0x00181850       0x1c c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+                                 0x30 (size before relaxing)
+ .eh_frame      0x0018186c       0x68 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+                                 0x7c (size before relaxing)
+ .eh_frame      0x001818d4       0x24 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x001818f8       0x24 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0018191c       0x18 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+                                 0x2c (size before relaxing)
+ .eh_frame      0x00181934       0x18 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+                                 0x2c (size before relaxing)
+ .eh_frame      0x0018194c       0x80 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+                                 0x94 (size before relaxing)
+ .eh_frame      0x001819cc       0x18 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+                                 0x2c (size before relaxing)
+ .eh_frame      0x001819e4       0x18 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+                                 0x2c (size before relaxing)
+ .eh_frame      0x001819fc       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+                                 0x28 (size before relaxing)
+ .eh_frame      0x00181a10       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+                                 0x28 (size before relaxing)
+ .eh_frame      0x00181a24       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+                                 0x28 (size before relaxing)
+ .eh_frame      0x00181a38       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+                                 0x28 (size before relaxing)
+ .eh_frame      0x00181a4c       0x18 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+                                 0x2c (size before relaxing)
+ .eh_frame      0x00181a64       0x2c c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+                                 0x40 (size before relaxing)
+ .eh_frame      0x00181a90       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+                                 0x28 (size before relaxing)
+ .eh_frame      0x00181aa4       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+                                 0x28 (size before relaxing)
+ .eh_frame      0x00181ab8       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+                                 0x28 (size before relaxing)
+
+.eh_frame_hdr   0x00181acc      0x2c4
+ .eh_frame_hdr  0x00181acc      0x2c4 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+
+.rela.dyn       0x00181d90        0x0
+ .rela.text     0x00000000        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .rela.init     0x00000000        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .rela.got2     0x00000000        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+
+.extram
+ *(extram)
+
+.data           0x40000000     0x2068 load address 0x00080000
+ *(calram)
+ calram         0x40000000     0x2028 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+                0x40000628                map11
+                0x40000828                map12
+                0x40001028                reserved
+                0x40000000                adc_filter_depth
+                0x40000e28                map15
+                0x40000014                msg_data
+                0x4000000c                msg_trigger
+                0x4000001c                msg_len
+                0x40000010                msg_enable
+                0x40000008                adc_factor
+                0x40000c28                map14
+                0x40000028                map8
+                0x40000a28                map13
+                0x40000024                h
+                0x40000428                map10
+                0x40000004                main_cycle_time
+                0x40000228                map9
+                0x40000020                adc_cycle_time
+ *(.data)
+ .data          0x40002028        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .data          0x40002028        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+ .data          0x40002028        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+ .data          0x40002028       0x38 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+                0x40002040                test_array
+                0x4000202e                test_word
+                0x4000202c                test_byte
+                0x40002030                test_dword
+                0x40002028                test_bits
+                0x40002038                test_double
+                0x40002034                test_float
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .data          0x40002060        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .data          0x40002060        0x4 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+                0x40002060                gCC_Pointer
+ .data          0x40002064        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+ .data          0x40002064        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+ *(.data.*)
+                0x40002068                . = ALIGN (0x8)
+ *fill*         0x40002064        0x4 00
+
+.got2           0x40002068        0xc load address 0x00082068
+ .got2          0x40002068        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+ .got2          0x40002068        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+ .got2          0x40002068        0x4 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+ .got2          0x4000206c        0x4 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+ .got2          0x40002070        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+ .got2          0x40002070        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+ .got2          0x40002070        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+ .got2          0x40002070        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+ .got2          0x40002070        0x4 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+ .got2          0x40002074        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+                0x40002078                . = ALIGN (0x8)
+                0x40002078                __DATA_END__ = .
+                0x40004000                __bss_start__ = __BSS_START__
+
+.bss            0x40004000      0xa10 load address 0x00084000
+ *(.bss)
+ .bss           0x40004000        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .bss           0x40004000        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+ .bss           0x40004000        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+ .bss           0x40004000       0x4c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+                0x40004010                adc0_conversion
+                0x4000400c                adc0_timeout
+                0x4000403c                counter0
+                0x4000403d                counter1
+                0x40004048                adc
+                0x40004008                adc0
+                0x4000400a                adc0_filtered
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .bss           0x4000404c        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .bss           0x4000404c        0x1 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+                0x4000404c                gCC_RamValid
+ .bss           0x4000404d        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+ .bss           0x4000404d        0x0 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+ *(.bss.*)
+ *(COMMON)
+ *fill*         0x4000404d        0x3 00
+ COMMON         0x40004050      0x174 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+                0x40004050                gVX1000_OLDA_Duration
+                0x400040cc                gVX1000_OLDA_TransferSize
+                0x40004148                gVX1000_OLDA_TransferCount
+ COMMON         0x400041c4      0x848 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+                0x400041c4                xcp
+                0x40004a10                . = ALIGN (0x8)
+ *fill*         0x40004a0c        0x4 00
+                0x40004a10                . = ALIGN (0x8)
+                0x40004a10                __bss_end__ = .
+                0x40004a10                __sbss_start__ = .
+
+.sbss           0x40004a10       0x38 load address 0x00084a10
+ *(.sbss)
+ .sbss          0x00000000        0x0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .sbss          0x40004a10        0x5 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+                0x40004a10                pCanObject
+                0x40004a14                txObjActive
+ *fill*         0x40004a15        0x3 00
+ .sbss          0x40004a18       0x1c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+                0x40004a18                g_result3
+                0x40004a1c                g_result4
+                0x40004a20                g_result5
+                0x40004a24                g_result0
+                0x40004a28                g_result2
+                0x40004a2c                g_adc_mode
+                0x40004a30                g_result1
+ .sbss          0x40004a34       0x10 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+                0x40004a34                gVX1000_DETECT_StartTime
+                0x40004a38                gVX1000_DETECT_ChecksumDoneTime
+                0x40004a3c                gVX1000_DETECT_ToolDetectTime
+                0x40004a40                gVX1000_DETECT_EndTime
+ *(.sbss.*)
+ *(COMMON)
+                0x40004a48                . = ALIGN (0x8)
+ *fill*         0x40004a44        0x4 00
+                0x40004a48                . = ALIGN (0x8)
+                0x40004a48                __sbss_end__ = .
+                0x40004a48                PROVIDE (end, .)
+
+.ccram          0x4000e000      0x210 load address 0x0008e000
+ *(ccram)
+ ccram          0x4000e000      0x210 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+                0x4000e010                gCC_Ram
+                0x4000e000                gCC_SetPtrRamTable
+
+.vx1000         0x4000f000       0x60 load address 0x0008f000
+ *(vx1000)
+ vx1000         0x4000f000       0x60 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+                0x4000f000                gVX1000
+                0x40004a48                __SRAM_LOAD = end
+                0x00000003                __SRAM_LOAD_SIZE = (SIZEOF (.flash_data) / 0x4)
+LOAD c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a
+LOAD c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libnosys.a
+LOAD c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a
+LOAD c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libc.a
+LOAD c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a
+OUTPUT(sample.elf elf32-powerpc)
+
+.debug_line     0x00000000     0x160a
+ .debug_line    0x00000000       0xac D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .debug_line    0x000000ac       0x82 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+ .debug_line    0x0000012e       0x7e D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+ .debug_line    0x000001ac      0x19e D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .debug_line    0x0000034a      0x1b2 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+ .debug_line    0x000004fc       0x88 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+ .debug_line    0x00000584      0x14d D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .debug_line    0x000006d1       0xe7 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .debug_line    0x000007b8      0x15c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .debug_line    0x00000914       0xf5 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .debug_line    0x00000a09      0x1cb D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .debug_line    0x00000bd4      0x236 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .debug_line    0x00000e0a      0x5ec D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .debug_line    0x000013f6      0x158 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+ .debug_line    0x0000154e       0xbc D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+
+.debug_info     0x00000000     0x8854
+ .debug_info    0x00000000       0xb3 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .debug_info    0x000000b3       0xb2 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+ .debug_info    0x00000165       0xb2 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+ .debug_info    0x00000217      0x7bf D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .debug_info    0x000009d6       0xbd D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+ .debug_info    0x00000a93       0xc0 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+ .debug_info    0x00000b53     0x15bf D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .debug_info    0x00002112      0x1bf D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .debug_info    0x000022d1      0xfda D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .debug_info    0x000032ab      0x1db D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .debug_info    0x00003486     0x33a7 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .debug_info    0x0000682d      0x920 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .debug_info    0x0000714d     0x102a D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .debug_info    0x00008177      0x620 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+ .debug_info    0x00008797       0xbd D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+
+.debug_abbrev   0x00000000     0x11f2
+ .debug_abbrev  0x00000000       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .debug_abbrev  0x00000014       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+ .debug_abbrev  0x00000028       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+ .debug_abbrev  0x0000003c      0x18c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .debug_abbrev  0x000001c8       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+ .debug_abbrev  0x000001dc       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+ .debug_abbrev  0x000001f0      0x1e8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .debug_abbrev  0x000003d8      0x10f D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .debug_abbrev  0x000004e7      0x202 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .debug_abbrev  0x000006e9      0x128 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .debug_abbrev  0x00000811      0x2bf D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .debug_abbrev  0x00000ad0      0x1d5 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .debug_abbrev  0x00000ca5      0x361 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .debug_abbrev  0x00001006      0x182 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+ .debug_abbrev  0x00001188       0x6a D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+
+.debug_aranges  0x00000000      0x1c0
+ .debug_aranges
+                0x00000000       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\crt0.o
+ .debug_aranges
+                0x00000020       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tbu.o
+ .debug_aranges
+                0x00000040       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\tlb.o
+ .debug_aranges
+                0x00000060       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .debug_aranges
+                0x00000080       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o
+ .debug_aranges
+                0x000000a0       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_SRAM_load.o
+ .debug_aranges
+                0x000000c0       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .debug_aranges
+                0x000000e0       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .debug_aranges
+                0x00000100       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .debug_aranges
+                0x00000120       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .debug_aranges
+                0x00000140       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .debug_aranges
+                0x00000160       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .debug_aranges
+                0x00000180       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .debug_aranges
+                0x000001a0       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+
+.debug_loc      0x00000000     0x131a
+ .debug_loc     0x00000000       0x3e D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .debug_loc     0x0000003e       0x98 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .debug_loc     0x000000d6       0x80 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .debug_loc     0x00000156      0x136 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .debug_loc     0x0000028c       0x44 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .debug_loc     0x000002d0      0x330 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .debug_loc     0x00000600      0x162 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .debug_loc     0x00000762      0xabb D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .debug_loc     0x0000121d       0xfd D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+
+.debug_pubnames
+                0x00000000      0x981
+ .debug_pubnames
+                0x00000000      0x287 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .debug_pubnames
+                0x00000287       0x73 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .debug_pubnames
+                0x000002fa       0x83 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .debug_pubnames
+                0x0000037d      0x155 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .debug_pubnames
+                0x000004d2       0x32 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .debug_pubnames
+                0x00000504       0xc9 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .debug_pubnames
+                0x000005cd      0x178 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .debug_pubnames
+                0x00000745      0x135 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .debug_pubnames
+                0x0000087a       0xe3 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+ .debug_pubnames
+                0x0000095d       0x24 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+
+.debug_ranges   0x00000000      0x568
+ .debug_ranges  0x00000000       0x20 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .debug_ranges  0x00000020      0x1a8 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .debug_ranges  0x000001c8       0x18 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .debug_ranges  0x000001e0      0x388 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+
+.debug_str      0x00000000     0x1d05
+ .debug_str     0x00000000      0x358 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+                                0x3d9 (size before relaxing)
+ .debug_str     0x00000358      0x610 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+                                0x72c (size before relaxing)
+ .debug_str     0x00000968       0xb2 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+                                0x1b9 (size before relaxing)
+ .debug_str     0x00000a1a      0x48e D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+                                0x50e (size before relaxing)
+ .debug_str     0x00000ea8       0x63 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+                                0x171 (size before relaxing)
+ .debug_str     0x00000f0b      0x46f D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+                                0xa11 (size before relaxing)
+ .debug_str     0x0000137a      0x4a5 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+                                0x5e9 (size before relaxing)
+ .debug_str     0x0000181f      0x2e3 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+                                0x58f (size before relaxing)
+ .debug_str     0x00001b02      0x1b7 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+                                0x3e5 (size before relaxing)
+ .debug_str     0x00001cb9       0x4c D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+                                0x151 (size before relaxing)
+
+.comment        0x00000000      0x22e
+ .comment       0x00000000       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .comment       0x00000012       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .comment       0x00000024       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .comment       0x00000036       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .comment       0x00000048       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .comment       0x0000005a       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .comment       0x0000006c       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .comment       0x0000007e       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .comment       0x00000090       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+ .comment       0x000000a2       0x12 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+ .comment       0x000000b4       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+ .comment       0x000000c6       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+ .comment       0x000000d8       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+ .comment       0x000000ea       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+ .comment       0x000000fc       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+ .comment       0x0000010e       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+ .comment       0x00000120       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+ .comment       0x00000132       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+ .comment       0x00000144       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+ .comment       0x00000156       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+ .comment       0x00000168       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+ .comment       0x0000017a       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+ .comment       0x0000018c       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+ .comment       0x0000019e       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+ .comment       0x000001b0       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+ .comment       0x000001c2       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+ .comment       0x000001d4       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+ .comment       0x000001e6       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+ .comment       0x000001f8       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+ .comment       0x0000020a       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+ .comment       0x0000021c       0x12 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+
+.gnu.attributes
+                0x00000000       0x12
+ .gnu.attributes
+                0x00000000       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\main.o
+ .gnu.attributes
+                0x00000014       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\can.o
+ .gnu.attributes
+                0x00000028       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_if.o
+ .gnu.attributes
+                0x0000003c       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\AD.o
+ .gnu.attributes
+                0x00000050       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\filter.o
+ .gnu.attributes
+                0x00000064       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_ccdcfg.o
+ .gnu.attributes
+                0x00000078       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\vx1000_mpc5xxx.o
+ .gnu.attributes
+                0x0000008c       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcpBasic.o
+ .gnu.attributes
+                0x000000a0       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\cc_autosar.o
+ .gnu.attributes
+                0x000000b4       0x14 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\xcp_par.o
+ .gnu.attributes
+                0x000000c8       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memcpy.o)
+ .gnu.attributes
+                0x000000dc       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/../../../../powerpc-eabi/lib/nof\libg.a(lib_a-memset.o)
+ .gnu.attributes
+                0x000000f0       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_sf.o)
+ .gnu.attributes
+                0x00000104       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_mul_sf.o)
+ .gnu.attributes
+                0x00000118       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_gt_sf.o)
+ .gnu.attributes
+                0x0000012c       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_si_to_sf.o)
+ .gnu.attributes
+                0x00000140       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_sf_to_df.o)
+ .gnu.attributes
+                0x00000154       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_sf.o)
+ .gnu.attributes
+                0x00000168       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_addsub_df.o)
+ .gnu.attributes
+                0x0000017c       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_df.o)
+ .gnu.attributes
+                0x00000190       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_df_to_sf.o)
+ .gnu.attributes
+                0x000001a4       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_thenan_df.o)
+ .gnu.attributes
+                0x000001b8       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ucmpdi2.o)
+ .gnu.attributes
+                0x000001cc       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_sf.o)
+ .gnu.attributes
+                0x000001e0       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_sf.o)
+ .gnu.attributes
+                0x000001f4       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_fpcmp_parts_sf.o)
+ .gnu.attributes
+                0x00000208       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_make_sf.o)
+ .gnu.attributes
+                0x0000021c       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_pack_df.o)
+ .gnu.attributes
+                0x00000230       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_unpack_df.o)
+ .gnu.attributes
+                0x00000244       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_lshrdi3.o)
+ .gnu.attributes
+                0x00000258       0x14 c:/winidea/2011/gcc/ppc/bin/../lib/gcc/powerpc-eabi/4.4.0/nof\libgcc.a(_ashldi3.o)
+
+.PPC.EMB.apuinfo
+                0x00000000       0x18
+ .PPC.EMB.apuinfo
+                0x00000000       0x18 D:\usr\EcuDriver\XCP\XCP_Delivery\Samples\CAN\CAN MPC55xx\XCPDemo\Debug\mpc5500_asmcfg.o

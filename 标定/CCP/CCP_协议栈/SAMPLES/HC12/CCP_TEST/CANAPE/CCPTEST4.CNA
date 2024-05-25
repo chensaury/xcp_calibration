@@ -1,0 +1,125 @@
+VERSION 144
+
+[Options]
+16 0 0 0 0 1 0 0 1
+1 0 0 800 618
+
+[Print]
+0 1 0 0 0 0 0 0 0 1
+
+@@@@
+@@@@
+0
+
+[MDF2ASC]
+~
+%.6f
+0.000 0.000
+15 2 1 0 1 1 0 0 1
+
+[Database]
+"CCPSample.DB"
+1
+
+[Trigger]
+0 50 1 1000 2000 0 1 @ 0
+1000 3600000 15000 0 5120 0 0 2 1 1
+100 500 200 1 80 100 1 0 1000
+2
+
+[Alarm]
+0 0.00000000 2 5000 500 4294967295 @ 0
+0
+
+[Calibration]
+49
+1 2 2 0 0 a0
+1 2 2 0 0 b0
+1 2 2 0 0 bytePWMFilter
+1 2 2 0 0 c0
+1 2 2 0 0 FW1
+1 2 2 0 0 PWM_Level
+1 2 2 0 0 testbit0
+1 2 2 0 0 testbit1
+1 2 2 0 0 testbit2
+1 2 2 0 0 testbit3
+1 2 2 0 0 testbit4
+1 2 2 0 0 testbit5
+1 2 2 0 0 testbit6
+1 2 2 0 0 testbit7
+1 2 2 0 0 testbitslice0
+1 2 2 0 0 testbitslice1
+1 2 2 0 0 testbitslice2
+1 2 2 0 0 testbyte0
+1 2 2 0 0 testbyte1
+1 2 2 0 0 testbyte2
+1 2 2 0 0 testbyte3
+1 2 2 0 0 testbyte4
+1 2 2 0 0 testbyte5
+1 2 2 0 0 testbyte6
+1 2 2 0 0 testbyte7
+1 2 2 0 0 testdword0
+1 2 2 0 0 testdword1
+1 2 2 0 0 testubitslice0
+1 2 2 0 0 testubitslice1
+1 2 2 0 0 testubitslice2
+1 2 2 0 0 testubyte0
+1 2 2 0 0 testubyte1
+1 2 2 0 0 testubyte2
+1 2 2 0 0 testubyte3
+1 2 2 0 0 testubyte4
+1 2 2 0 0 testubyte5
+1 2 2 0 0 testubyte6
+1 2 2 0 0 testubyte7
+1 2 2 0 0 testudword0
+1 2 2 0 0 testudword1
+1 2 2 0 0 testuword0
+1 2 2 0 0 testuword1
+1 2 2 0 0 testuword2
+1 2 2 0 0 testuword3
+1 2 2 0 0 testword0
+1 2 2 0 0 testword1
+1 2 2 0 0 testword2
+1 2 2 0 0 testword3
+1 2 2 0 0 vin
+
+[Windows]
+3
+8 1 0 0 206 284 0
+119 75 -45 -75
+1
+0 PWM_Parameters
+PWM_Parameters
+8 2 206 0 206 284 0
+119 75 -45 -75
+1
+0 Example_Filter
+Example_Filter
+8 3 412 0 206 458 0
+99 75 -45 -75
+1
+0 Test_Parameters
+Test_Parameters
+
+[Measurement]
+0
+
+[MDF]
+0
+
+[Datafile]
+"CANape02.MDF"
+Zaiser
+Vector
+
+
+Testkomentar
+@@@@
+
+[Parameterfile]
+Zaiser
+
+
+
+Parameter
+@@@@

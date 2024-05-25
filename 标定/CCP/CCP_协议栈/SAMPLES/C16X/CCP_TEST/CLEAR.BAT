@@ -1,0 +1,14 @@
+del *.tmp
+del *.bak
+del *.h86
+del *.695
+del *.err
+del *.erl
+del *.lst
+del *.obj
+del *.mpe
+del *.hex
+del *.inv
+del *.map
+del *.out
+del *.src

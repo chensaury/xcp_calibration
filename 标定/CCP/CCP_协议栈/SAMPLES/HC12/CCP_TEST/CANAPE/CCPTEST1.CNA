@@ -1,0 +1,114 @@
+VERSION 144
+
+[Options]
+16 0 0 0 0 1 1 0 1
+1 0 0 800 600
+
+[Print]
+0 1 0 0 0 0 0 0 0 1
+
+@@@@
+
+
+
+
+
+
+
+
+
+
+
+@@@@
+0
+
+[MDF2ASC]
+~
+%.6f
+0.000 0.000
+15 2 1 0 1 1 0 0 1
+
+[Database]
+"CCPSample.DB"
+1
+
+[Trigger]
+0 0.5 0 1000 1000 0 1 PWM 0
+1000 3600000 10000 0 5120 1 0 1 1 1
+100 500 500 1 80 20 1 0 1000
+2
+
+[Alarm]
+0 64.00000000 1 0 0 32 PWM_Level 0
+0
+
+[Calibration]
+9
+1 2 2 0 0 bytePWMFilter
+1 2 2 0 0 Curve1
+1 2 2 0 0 Curve1
+1 2 2 0 0 Curve1
+1 2 2 0 0 Curve2
+1 2 2 0 0 Curve2
+1 2 2 0 0 Curve2
+5 2 2 0 0 KF2
+1 2 2 0 0 PWM_Level
+
+[Windows]
+4
+8 1 361 0 251 233 0
+121 87 31 -75
+0
+0 bytePWMFilter
+0 PWM_Level
+0 ~
+PWM Parameters
+16 2 412 0 376 253 0
+0 KF2 0 40 40 8
+KF2 Table
+64 3 0 0 361 352 0
+0 KF2
+2 5 2 40 45 0.65
+
+1 4 0 254 788 235 0
+0 15108 0 9773 1 1 1 2 168 0 1
+PWM Measurement
+
+[Measurement]
+4
+10 1 0 0 Triangle 0 ~ 0 0
+1
+4 2 65535
+2 -50 50 -50 50 0 3
+10 1 0 0 PWM 0 ~ 0 0
+1
+4 1 2303
+2 -2 12 -2 12 0 3
+10 1 0 0 PWMFiltered 0 ~ 0 0
+1
+4 3 16776960
+2 -20 120 -20 120 0 3
+1 1 10 0 PWM_Level 0 ~ 0 0
+1
+4 0 589568
+2 -50 50 -50 50 0 3
+
+[MDF]
+0
+
+[Datafile]
+"CANape.MDF"
+Zaiser
+Vector
+CANape
+CCPsim
+Test
+@@@@
+
+[Parameterfile]
+Zaiser
+
+
+
+
+@@@@

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "ccp_can_interface.C": "cpp",
+        "TIMER.C": "cpp",
+        "CCP_TEST.C": "cpp"
+    }
+}

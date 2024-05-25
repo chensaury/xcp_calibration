@@ -1,0 +1,70 @@
+VERSION 144
+
+[Options]
+16 0 0 0 0 1 1 0 1
+1 0 0 800 600
+
+[Print]
+0 1 0 0 0 0 0 0 0 1
+
+@@@@
+@@@@
+0
+
+[MDF2ASC]
+~
+%.6f
+0.000 0.000
+15 2 1 0 1 1 0 0 1
+
+[Database]
+"CANbox.DB"
+1
+
+[Trigger]
+0 0 0 0 0 0 1 @ 0
+1000 3600000 10000 0 5120 1 0 1 1 1
+100 500 500 1 80 20 1 0 1000
+2
+
+[Alarm]
+0 0.00000000 2 5000 500 4294967295 @ 0
+0
+
+[Calibration]
+1
+1 2 2 0 0 map4_80_uc
+
+[Windows]
+2
+64 1 7 10 368 374 0
+0 map4_80_uc
+2 1 2 20 60 0.666667
+
+16 2 388 199 382 249 0
+0 map4_80_uc 0 40 40 10
+
+
+[Measurement]
+0
+
+[MDF]
+0
+
+[Datafile]
+"CANape.MDF"
+Zaiser
+Vector
+CANape
+CCPsim
+Test
+@@@@
+
+[Parameterfile]
+Zaiser
+
+
+
+KF2
+rdgdfgdfgdf
+@@@@

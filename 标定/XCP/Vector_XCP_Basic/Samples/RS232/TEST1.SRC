@@ -1,0 +1,16 @@
+[Files]
+test1.c
+xcp_if.c
+uartintr.c
+xcpBasic.c
+xcp_par.c
+[Headers]
+xcp_cfg.h
+xcp_def.h
+xcp_par.h
+uartintr.h
+project.h
+test1.h
+XcpBasic.h
+[Documents]
+README.TXT

@@ -1,0 +1,322 @@
+[CALIBRATION_LIST]
+Count=2
+
+[CALIBRATION_OBJECT_1]
+EditOffset=5
+EditFactor=2
+EditFormat=2
+ShowWorkingPoint=0
+Module=Environment
+Name=triangle_vmax
+
+[CALIBRATION_OBJECT_2]
+EditOffset=5
+EditFactor=2
+EditFormat=2
+ShowWorkingPoint=0
+Module=Environment
+Name=triangle_vmin
+
+[DISPLAY_PAGE_1]
+Name=
+Comment=
+
+[DISPLAY_PAGES]
+Count=1
+Active=-1
+
+[FILE_INFO]
+Identification=CANape-Configuration-File
+FileName=CCPsim8.cna
+FileVersion=302
+PrgVersion=Version 3.2.06.005
+PrgDate=09.10.2001
+Description=
+CreationTime=16:08
+CreationDate=10/11/2001 ; Month/Day/Year
+ModificationTime=16:21
+ModificationDate=10/11/2001 ; Month/Day/Year
+
+[FUNCTION_1]
+NAME=Triangle
+COMMENT=Triangle Signal Generator 
+COUNT=22
+1=function Triangle () {
+2=
+3=  double inc = 1;
+4=
+5=  double v = 0;
+6=  double d = 1;
+7=  v = v+d;
+8=
+9=  if (v<triangle_vmin) {
+10=  d = +inc;
+11=    v = triangle_vmin+d;
+12=  }
+13=  if (v>triangle_vmax) {
+14=    d = -inc;
+15=    v = triangle_vmax+d;
+16=  }
+17=
+18=
+19=  return v;
+20=
+21=
+22=}
+
+[FUNCTION_OBJECT_1]
+Name=TriangleInit
+Comment=Triangle Signal Generator Init
+Unit=
+TextFormula=TriangleInit
+DataType=1
+ObjectType=1
+Number=3
+Mode=65537
+Archive=1
+Rate=0
+NumberOfInputSignals=0
+TimeObjectIndex=-1
+Formula=0
+DisplayCount=0
+
+[FUNCTION_OBJECT_LIST]
+count=2
+
+[FUNCTIONS]
+COUNT=2
+
+[MDF_COMMENT]
+Name=Zaiser
+Division=Vector
+Project=CANape
+Subject=CCPsim
+Comment_1="Test"
+Comment_2=""
+Comment_Count=2
+
+[MDF_LIST]
+Count=0
+
+[MEASUREMENT_LIST]
+Count=3
+
+[MEASUREMENT_OBJECT_1]
+Module=CCPsim
+Name=channel1
+Row=0
+Column=0
+MeaReferenced=1
+Mode=3
+Archive=1
+Rate=10
+DisplayCount=0
+
+[MEASUREMENT_OPTIONS]
+MaxTime=0
+BufferSize=30000
+TimeAxis=20000
+TimeLimited=0
+BufferSizeMem=5120
+SaveMeasureData=1
+TimeMode=0
+YMode=1
+PollingAlways=1
+DrawLastValue=1
+AutoSaveTime=600000
+AutoIncName=0
+ConverterId=
+UpdateCycleBar=100
+UpdateCycleVal=500
+UpdateCycleGraph=1000
+UpdateCycleArr=1000
+UpdateCycleWrt=100
+UpdateCycleTxt=1000
+TimeScrollSoft=0
+TimeScrollAt=100
+TimeScrollBy=100
+FitTimeAxis=1
+FitYAxis=0
+AutoInsertComment=1
+DataFileName=CANape.MDF
+
+[OPTIONS]
+CalibrationModeDirect=1
+WindowTextExtended=1
+WindowSymbols=1
+MainWindowPos=2, 0, 0, 800, 600 ;cmd, x, y, w, h
+
+[PAR_COMMENT]
+Name=Zaiser
+Division=
+Project=
+Subject=
+Comment_1=""
+Comment_Count=1
+
+[PRINTFORMAT]
+FormatPortrait=0
+PageSame=1
+ColorMono=0
+PreviewSignals=0
+CompanyAlignement=0
+NbrPages=1
+CompanyLogo=
+CompanyComment_1="Ausdruck Seite: {PAGE}    {DATE}  {TIME}"
+CompanyComment_2="Lizenznehmer: {LICENSENAME}"
+CompanyComment_3="Seriennummer: {LICENSENO}"
+CompanyComment_Count=3
+TreeCount=0
+
+[TRIGGER_LIST]
+Active=0
+PreTriggerTime=5000
+PostTriggerTime=5000
+BlockCountActiv=0
+BlockCount=1
+ManualTrigger=1
+Count=0
+
+[VIRTUAL_MDF_LIST]
+Count=0
+
+[WINDOW_1]
+Title=Triangle Signalgenerator
+Type=1
+Comment=Grafikfenster
+Number=1
+Position=0, 1, 1, 1018, 355 ;cmd, x, y, w, h
+DisplayMask=4294967295
+XLen=20000
+XMin=0
+XMax=32647
+Grid=1
+Mark=1
+YValue=1
+ShowLegend=2
+LegendPixWidth=112
+LegendPos=2
+Optimize=1
+XYModeIndexP1=-1
+DisplayModeAuto=0
+XStart=0
+AbsoluteTimeMode=0
+ObjectMode=0
+DisplayMode=0
+
+[WINDOW_2]
+Title=Global Variables
+Type=8
+Comment=Verstellfenster
+Number=2
+Position=0, 1, 357, 265, 162 ;cmd, x, y, w, h
+DisplayMask=4294967295
+ColumnWidth=178 75 -45 -75
+Group=0
+Sorted=0
+ObjectCount=2
+
+[WINDOW_2_OBJECT_1]
+Module=Environment
+Name=triangle_vmax
+
+[WINDOW_2_OBJECT_2]
+Module=Environment
+Name=triangle_vmin
+
+[WINDOWS]
+Count=2
+
+[FUNCTION_2]
+NAME=TriangleInit
+COMMENT=Triangle Signal Generator Init
+COUNT=5
+1=function TriangleInit () {
+2=
+3=  triangle_vmin = -100;
+4=  triangle_vmax = +100;
+5=}
+
+[FUNCTION_OBJECT_2]
+Name=TriangleSignal
+Comment=Triangle Signal Generator 
+Unit=
+TextFormula=Triangle
+DataType=1
+ObjectType=1
+Number=4
+Mode=1
+Archive=1
+Rate=5
+NumberOfInputSignals=0
+TimeObjectIndex=-1
+Formula=0
+DisplayCount=1
+
+[FUNCTION_OBJECT_2_DISPLAY_1]
+Window=1
+Index=0
+Color=589568
+LineTyp=2
+YMinHome=-100
+YMaxHome=100
+YMin=-100
+YMax=100
+XOffset=0
+ValueFormat=3
+BitMask=1
+ShowYAxis=1
+Width=10
+
+[MEASUREMENT_OBJECT_2]
+Module=Environment
+Name=triangle_vmax
+Row=0
+Column=0
+MeaReferenced=1
+Mode=1
+Archive=1
+Rate=1
+DisplayCount=1
+
+[MEASUREMENT_OBJECT_2_DISPLAY_1]
+Window=1
+Index=1
+Color=2303
+LineTyp=2
+YMinHome=-100
+YMaxHome=100
+YMin=-100
+YMax=100
+XOffset=0
+ValueFormat=3
+BitMask=1
+ShowYAxis=1
+Width=10
+
+[MEASUREMENT_OBJECT_3]
+Module=Environment
+Name=triangle_vmin
+Row=0
+Column=0
+MeaReferenced=1
+Mode=1
+Archive=1
+Rate=1
+DisplayCount=1
+
+[MEASUREMENT_OBJECT_3_DISPLAY_1]
+Window=1
+Index=2
+Color=65535
+LineTyp=2
+YMinHome=-100
+YMaxHome=100
+YMin=-100
+YMax=100
+XOffset=0
+ValueFormat=3
+BitMask=1
+ShowYAxis=1
+Width=10
+

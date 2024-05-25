@@ -1,0 +1,400 @@
+//----------------------------------------
+// DEMO.SCR
+// CANapes Scripting Sample
+//-----------------------------------------
+
+
+/* 
+   General:
+   - Devicenames and internal Functionnames are case insensitive !
+   - Symbolnames are case sensitive !
+   - A write access to a calibration object will be executed immediately,
+     regardless if CANape is in direct or indirect calibration mode
+   - A write access to a CAN signal will cause the CAN message to be sent
+
+*/
+
+
+
+// Global variables
+/* Global variables are defined in the function browser and stored in ENVIRONMENT.DB */
+
+
+// Local variables
+
+// Local variables are defined at the beginning of a script or function
+
+
+// Scalar variables
+
+double v,d; // IEEE 8 Byte
+double t, t0 = 0, t1 = 0;
+// float f; // IEEE 4 Byte NOT IMPLEMENTED
+char c;     // 1 Byte
+unsigned char uc;
+int i,j;    // 2 Byte
+
+unsigned int ui,uj;
+long l;     // 4 Byte
+unsigned long ul;
+
+
+// Arrays and matrix variables
+
+double d0 = 0;
+double d1[2] = {1,2};
+double d2[] = {1,2,3,4,5,6,7,8,9,10};
+double d3[2][3] = {{1,2,3},{1,2,3}};
+double d4[][] = {{1,2,3},{1,2,3}};
+
+
+
+// Prepare the write window
+OpenWriteWindow();
+ClearWriteWindow();
+
+// Display a message box
+Print("Press OK to start xcpsim/DEMO.SCR");
+
+// Print into the write window
+Write("------------------------------------");
+Write("CANape Scripting Demonstration");
+
+
+// Write with parameters
+
+d = 1.2345678;
+
+Write("%%x    d = %x",d);
+
+Write("%%X    d = %X",d);
+
+Write("%%02X  d = %02X",d);
+
+Write("%%d    d = %d",d);
+
+Write("%%u    d = %u",d);
+
+Write("%%f    d = %f",d);
+
+Write("%%g    d = %g",d);
+
+Write("%%2.6f d = %2.6g",d);
+
+
+
+// Write linefeed control
+
+Write("*");      // -> Linefeed
+Writef("*");     // -> No Linefeed
+Writef("*\n");   // -> Force Linefeed
+Writef("*\n*\n");// -> Multiline
+
+Write("Variables");
+
+
+// Variables
+
+
+
+// Scalar
+
+i = 1;
+
+i = -1;
+
+i = 0x8000;
+
+ui = 0xFFFF;
+ui = -1;
+ul = 0xFFFFFFFF;
+d = 1.23456789E-23;
+
+
+// 1 dim Arrays
+
+d2[1] = 0;
+
+d2[2+1] = 0;
+
+
+i = 1;
+d2[i] = 0;
+
+
+
+// 2 dim Arrays
+
+d4[i][j] = 0;
+
+
+
+
+Write("Math operators");
+i = i + rnd();
+i = +i + (i - 2*i) * 5/3;
+i = -i % 1000;
+i = (i>0) ? i : -1;
+i = i++;
+i = i--;
+i = ++i;
+i = --i;
+i += 1;
+i -= 1;
+i *= 2;
+i /= 2;
+i %= 2;
+// i ^= 2;
+
+
+
+Write("Internal math functions");
+i = 0.5;
+
+i = acos(i);
+i = asin(i);
+i = atan(0.5);
+i = cos(i);
+i = sin(i);
+i = tan(1);
+i = cosh(.5);
+i = sinh(.5);
+i = tanh(.5);
+i = exp(i);
+i = log(i);
+i = ln(10);
+i = sqr(2);
+i = pow(2,2);
+i = abs(-i);
+i = min(i);
+i = max(i);
+i = ceil(i+.5);
+i = floor(i-.5);
+
+
+Write("Logical Operations");
+i = i && 1;
+
+i = i || 1;
+
+i = !i;
+
+
+
+Write("Binary Operations");
+i = i & 1;
+i = i | 1;
+i = i ^ 0xAA;
+i = ~i;
+i = i >> 2;
+i = i << 2;
+
+
+i >>= 2;
+i <<= 2;
+i &= 0xFF;
+
+i |= 0xFF;
+
+i ^= 0xFF;
+
+
+
+i = j > 3;
+i = j >= 3;
+i = j <= 3;
+i = j < 3;
+i = j == 3;
+i = j != 3;
+
+
+// Conditions
+Write("------------------------------------");
+Write("Conditions");
+if ( !(i!=1) && (i!=0 || i<=0.4)) {
+  i--;
+
+} 
+
+else {
+  Write("Nok");
+}
+
+// A2L Symbols
+Write("------------------------------------");
+Write("Symbols");
+
+
+// Access to measurement values
+d = channel1; // Modulename prefix is optional, if name is unambigous
+d = xcpsim.channel1;
+//d = xcpsim.'channels.channel[1]'; // A2L Symbolnames may contain special characters 
+
+
+
+// Access to measurement buffers
+Write ("Size of channel1 measurement buffer: %d", sizeof(xcpsim.channel1));
+for (i=0;i<sizeof(xcpsim.channel1);i++) {
+  d = xcpsim.channel1.mbuffer[i];
+  t = time(xcpsim.channel1.mbuffer[i]);
+  xcpsim.channel1.mbuffer[i] = 0; // Measurement buffers may be modified
+}
+xcpsim.channel1.mbuffer[-1] = 0; // Negative Indices are equal to sizeof()-1-index
+
+
+
+// Access to calibration values
+
+xcpsim.ampl = xcpsim.ampl+1;
+// xcpsim.ampl++;   Not allowed
+
+// xcpsim.ampl+=1; Not allowed
+
+
+ampl = ampl+1; // Modulename prefix is optional, if name is unambigous
+
+// Access to curve and map values
+d = xcpsim.KL2[2];
+d = xcpsim.KF2[2][3];
+i=0;
+while (i<ysizeof(xcpsim.KF2)) {
+  j=0;
+  while (j<xsizeof(xcpsim.KF2)) {
+    ui = hex(xcpsim.KF2[i][j]);
+    d = xcpsim.KF2[i][j];
+    xcpsim.KF2[i][j] = 0;
+    j++;
+  }
+  i++;
+}
+
+
+
+// Access to axis values
+for (i=0;i<xsizeof(xcpsim.KF2);i++) d = xcpsim.KF2.xaxis[i];
+for (i=0;i<ysizeof(xcpsim.KF2);i++) d = xcpsim.KF2.yaxis[i];
+
+UpdateCalibrationWindows();
+
+
+// Loops
+Write("------------------------------------");
+Write("Loops");
+do {
+  break;
+  continue;
+} while (i>0 || i<=0);
+while( i<0) i = i+1;
+// for (;;); NOT IMPL
+for (i=0;i<2;i++);
+
+
+// Switch
+Write("------------------------------------");
+Write("Switch");
+switch (ui) {
+  case 1: 
+    break;
+  case 2: 
+  case 3:
+    i = 0;
+    break;
+  default:
+    i = 1;
+}
+
+
+// Internal Functions
+Write("------------------------------------");
+Write("Internal Functions");
+if (0) {
+
+    d = Getclock();
+    d = time();
+
+    Exit(); // Terminate CANape
+    Trigger(); // Fire trigger
+    Stop(); // Stop the measurement
+    Beep(1000); // Frequency in ms
+    Sleep(1000); // Delay in ms
+
+    OpenWriteWindow();
+    ClearWriteWindow();
+
+    UpdateCalibrationWindows();
+    SaveDisplayBuffers("NAME.MDF");
+    ConvertMeasurementFile("NAME.MDF",0);
+    Call("notepad.exe"); // .SCR, .LNK
+
+    xcpsim.SaveParameterset("NAME.PAR"); // .HEX, .S, .TXT, .DCM, .CSV, ...
+    xcpsim.LoadParameterset("NAME.PAR");
+    xcpsim.FlashParameterset("NAME.PAR");
+    xcpsim.UploadFile("NAME.HEX"); // from Flash
+    xcpsim.DownloadFile("NAME.HEX"); // to Flash
+
+    xcpsim.ExportDatabase("NAME.A2L"); // .DB
+    xcpsim.ImportDatabase("NAME.A2L");
+
+    // CAN.SendMessage(1,0,1,2,3,4,5,6,7);
+
+    // Switching on-/offline state is ignored during measurement
+    if (xcpsim.IsOnline()) { // testing if device is online
+      xcpsim.Offline();      // switch device offline 
+    }
+    else {
+      xcpsim.Online();       // switch device online
+    }
+
+    PrintLayout("DemoLayout");
+}
+
+
+// Example: while loop timing measurement
+Write("------------------------------------");
+Write("While loop");
+t0 = GetClock(); // 1ms Resolution
+t1 = t0;
+
+l = 0;
+Write("t0=%g",t0);
+while (l<1E6) {
+  l = l+1;
+  t1 = GetClock();
+  if ((t1-t0) > 1000) break;
+}
+Write("l=%g,t1=%g",l,t1);
+Write("time=%gms, loops=%g, %gus/loop",(t1-t0),l,(t1-t0)*1000/l);
+
+
+// Example: calibration on device xcpsim
+Write("------------------------------------");
+Write("Calibration");
+Write("ampl=%g",xcpsim.ampl);
+xcpsim.ampl = 100;
+Write("ampl=%g",xcpsim.ampl);
+UpdateCalibrationWindows();
+
+// Save xcpsim's parameterset to disk
+xcpsim.SaveParameterset("xcpsim.PAR");
+
+
+// Example: transmit a CAN message
+Write("------------------------------------");
+Write("Transmit a 4 byte CAN message with id=0x100");
+//CAN.SendMessage(0x100,0,0,0,0);
+
+
+// For Functions only
+Write("------------------------------------");
+Write("Internal Functions for Functions");
+if (0) {
+
+  i = time();
+  settime(i);
+  cancel;
+
+}
+
+Write("------------------------------------");
+
+

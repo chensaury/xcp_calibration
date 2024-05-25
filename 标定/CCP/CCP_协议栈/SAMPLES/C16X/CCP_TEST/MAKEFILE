@@ -1,0 +1,272 @@
+
+include     makeconf
+
+ifdef USE_C167
+
+ifdef HARDWARE_FLASH
+CSTART   = cstartxf        ## Chip Selects for Flash
+HW_NAME  = F               ## Flash
+HW_CODE  = 1
+else
+ifdef EVA_BOARD
+CSTART   = cstartex        ## Chip Selects for RAM
+HW_NAME  = R               ## RAM
+HW_CODE  = 2
+else
+ifdef HARDWARE_RAM
+CSTART   = cstartex        ## Chip Selects for RAM
+HW_NAME  = R               ## RAM
+HW_CODE  = 2
+endif
+endif
+endif
+
+else
+
+CSTART   = cstart          ## Chip Selects for RAM
+HW_NAME  = R               ## RAM
+HW_CODE  = 2
+
+endif
+
+
+## uses always the debug version
+DEB_FLAG  = d
+
+CFLAGS_HW = -DHW=$(HW_CODE)
+
+INCLUDE   = $(SYS_PATH)\include
+
+ASOURCES  = $(CSTART).asm
+CAN_OBJ   = can_drv.obj
+
+#############################################################################
+#            compiler path definitions                                      #
+#############################################################################
+
+BINPATH  = $(C166_PATH)\bin               # C166 binaries real mode
+BIN386P  = $(C166_PATH)\bin               # C166 binaries protected mode
+
+ifdef USE_C167
+LIB_PATH  = $(C166_PATH)\lib\ext          # C167 library
+# LIB_PATH  = $(C166_PATH)\lib\pcodeext   # C167 library
+else
+LIB_PATH  = $(C166_PATH)\lib\pcode        # C166 library (changed from \np)
+endif
+
+
+#############################################################################
+#- test makes comand line params -------------------------------------------#
+#############################################################################
+
+# CFLAGS_QDEB = -DqDebug=$(qDebug)
+# MFLAGS_QDEB = DEFINE(qDebug,$(qDebug)) DEFINE(C167,1)
+
+
+ifndef name                # if not defined name as makes command line param
+OUTNAME  = test_$(HW_NAME) # use default name
+endif
+
+ifdef name                 # if defined name as makes command line param
+OUTNAME  = $(name)         # use defined name
+endif
+
+#############################################################################
+#
+# NOTE: the environment variables C166INC and M166INC must be set according
+#        to the local system configuration
+#
+#############################################################################
+#----------------------- Translator Definitions ----------------------------#
+#############################################################################
+
+CL       = $(BIN386P)\c166     #  C166 c-compiler protected mode
+ASM      = $(BIN386P)\m166     #  C166 macro assembler
+ASS      = $(BIN386P)\a166     #  C166 assembler
+LINKL    = $(BIN386P)\l166     #  C166 linker  protected mode
+LOCATEL  = $(BIN386P)\l166     #  C166 locator protected mode
+GENKON   = $(TOOL_PATH)\kse695 #  Kontron filter
+
+#############################################################################
+#-- set options for the translators ----------------------------------------#
+#############################################################################
+# -P Option in Zeilen CDEF_C167 entfernt
+
+ifdef USE_C167
+MDEF_C167  = DEF(C167,1)
+CDEF_C167  = -x  -DC167        # -x includes -ifmp
+else
+MDEF_C167  = DEF(C167,0)
+CDEF_C167  =
+endif
+
+MFLAGS_NDE = CASE EP $(MFLAGS_QDEB) $(MDEF_EVA) $(MDEF_C167) DEF(HW,$(HW_CODE))
+MFLAGS_DEB = $(MFLAGS_NDE)
+
+AFLAGS_NDE = CASE EP
+AFLAGS_DEB = CASE DEBUG LINES LOCALS SYMB LIST EP           # assembler flags
+                                                            # EP = error output into file
+
+CFLAGS_NDE = -I -err -s -RcoPR=C $(CFLAGS_HW) $(CDEF_C167)
+CFLAGS_DEB = $(CFLAGS_NDE) -gb                              # c compiler flags
+
+LNKFLAGS   = LINK   LSY sc(1) PW(132) NOPA CA               # link flags
+LOCFLAGS   = LOCATE LSY NOPA CA NOWA(176) NOWA(120 exp(1)) NOWA(117 exp(1)) # NOWA(177)    # locate flags
+#
+#                   LSY:  LISTSYMBOLS
+#                   SC:   SYMBOLCOLOMS
+#                   PW:   PAGEWIDTH
+#                   CA:   CASE
+#                   NOPA: NOPAGES
+#                   NOWA: NOWARNING 176: Sectionsize decreased
+#                                   177: Section not found
+#                                   120: external with type mismatch
+#                                   117: external multiply defined with
+#                                        type mismatch
+
+MFLAGS     = $(MFLAGS_DEB)                                  # macro assembler flags
+AFLAGS     = $(AFLAGS_DEB)                                  # assembler flags
+CFLAGS     = $(CFLAGS_DEB)                                  # c compiler flags
+
+
+##############################################################################
+# rule to generate objects from .c / .asm files ------------------------------
+##############################################################################
+
+.c.obj:
+	$(CL)  $(CFLAGS_DEB) $*.c
+        copy $*.src $*.asm
+	$(ASM) $*.asm $(MFLAGS)
+        del $*.asm
+	$(ASS) $*.src $(AFLAGS)
+
+.asm.obj:
+	$(ASM) $*.asm $(MFLAGS)
+	$(ASS) $*.src $(AFLAGS)
+
+##############################################################################
+# ----------------------------------------------------------------------------
+#               generate output files
+# ----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
+#                      hex-file for prommer
+# ----------------------------------------------------------------------------
+$(OUTNAME).hex: $(OUTNAME).out  $(OUTNAME).abs
+   $(BIN386P)\ihex166 $(OUTNAME).out $(OUTNAME).hex
+
+# ----------------------------------------------------------------------------
+#                      kontron files
+# ----------------------------------------------------------------------------
+# $(OUTNAME).o:   $(OUTNAME).abs $(OUTNAME).sym
+# rem $(GENKON) -v -t t -x . -s $(OUTNAME).sym -o $(OUTNAME).o $(OUTNAME).abs
+
+# ----------------------------------------------------------------------------
+#                      ieee files
+# ----------------------------------------------------------------------------
+$(OUTNAME).abs: $(OUTNAME).out
+	$(BIN386P)\ieee166 $(OUTNAME).out $(OUTNAME).abs
+
+
+# ---------------------------------------------------------------------------
+#                       locate it all together
+# !!!!!!! define memory layout and interrupt numbers !!!!!!!!!!!!!!!!!!!!!!!!
+# ---------------------------------------------------------------------------
+locate.inv : makefile makeconf
+
+  echo SECSIZE(C166_US(10));                                                          >> LOCATE.INV
+  echo PUBTOGLB $(CSTART).obj                                                         >> LOCATE.INV
+  echo PUBTOGLB fake_os.obj can.obj ecu.obj ccp.obj applmain.obj                      >> LOCATE.INV
+  echo $(LIB_PATH)\c166s.lib                                                          >> LOCATE.INV
+
+  echo snd(DPP0(0),DPP1(5),DPP2(16),DPP3(3))                                          >> LOCATE.INV
+  echo IRAMSIZE(2048)                                                                 >> LOCATE.INV
+
+  echo CLASSES (CPROGRAM SHAREDRTLIB CINITROM CNEARROM CROM (00400H TO 03fffH)) ;     >> LOCATE.INV
+  echo CLASSES (CALROM                       (14000H TO 17fffH)) ;                    >> LOCATE.INV
+# echo CLASSES (CALRAM                       (44000H TO 47fffH)) ;                    >> LOCATE.INV
+
+  echo CLASSES (CNEAR CINITIRAM              (40000H TO 41fffH)) ;                    >> LOCATE.INV
+  echo CLASSES (CUSTACK                      (42000H TO 43fffH)) ;                    >> LOCATE.INV
+
+
+# Link with flat modell
+$(OUTNAME).out: locate.inv fake_os.obj can.obj ecu.obj ccp.obj applmain.obj $(CSTART).obj
+   $(LOCATEL) $(LOCFLAGS) @LOCATE.INV TO $(OUTNAME).out
+
+# -----------------------------------------------------------------------
+# c-sources (application)
+# -----------------------------------------------------------------------
+
+
+can.obj : $(APPL_PATH)\can.c
+        $(CL)  $(CFLAGS_DEB) $(APPL_PATH)\$*.c
+        copy $*.src $*.asm
+	$(ASM) $*.asm $(MFLAGS)
+        del $*.asm
+	$(ASS) $*.src $(AFLAGS)
+
+
+ecu.obj : $(APPL_PATH)\ecu.c
+        $(CL)  $(CFLAGS_DEB) $(APPL_PATH)\$*.c
+        copy $*.src $*.asm
+	$(ASM) $*.asm $(MFLAGS)
+        del $*.asm
+	$(ASS) $*.src $(AFLAGS)
+
+ccp.obj : $(APPL_PATH)\ccp.c
+        $(CL)  $(CFLAGS_DEB) $(APPL_PATH)\$*.c
+        copy $*.src $*.asm
+	$(ASM) $*.asm $(MFLAGS)
+        del $*.asm
+	$(ASS) $*.src $(AFLAGS)
+
+
+applmain.obj : $(APPL_PATH)\applmain.c
+       $(CL)  $(CFLAGS_DEB) $(APPL_PATH)\$*.c
+        copy $*.src $*.asm
+	$(ASM) $*.asm $(MFLAGS)
+        del $*.asm
+	$(ASS) $*.src $(AFLAGS)
+
+fake_os.obj : $(APPL_PATH)\fake_os.c
+        $(CL)  $(CFLAGS_DEB) $(APPL_PATH)\$*.c
+        copy $*.src $*.asm
+	$(ASM) $*.asm $(MFLAGS)
+        del $*.asm
+	$(ASS) $*.src $(AFLAGS)
+
+
+# ---------------------------------------------------------------------------
+# startup code
+# ---------------------------------------------------------------------------
+$(CSTART).obj: $(APPL_PATH)\$(CSTART).asm
+	$(ASM) $(APPL_PATH)\$(CSTART).asm $(MFLAGS)
+	$(ASS) $*.src $(AFLAGS)
+
+
+# ---------------------------------------------------------------------------
+clean:
+	del *.obj
+	del *.lst
+	del *.map
+	del *.bak
+	del *.~*
+	del *.src
+	del *.err
+	del *.abs
+	del *.inv
+	del *.dsk
+	del *.map
+	del *.cfg
+	del *.lib
+	del *.lno
+	del *.hex
+	del *.tmp
+	del *.erl
+	del *.out
+	del *.mpe
+	del *.i3e
+
+
+###############################################################################
+Help:

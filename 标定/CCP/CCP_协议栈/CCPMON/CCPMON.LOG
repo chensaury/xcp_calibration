@@ -1,0 +1,14 @@
+CCPmon - CCP Monitor
+Vector Informatik GmbH, 1999-2000, Za
+
+Build Nov 27 2002 10:11:53
+
+ECU Parameters:
+ BITRATE=1000000
+ CRO=0x0667
+ DTO=0x07E1
+ ADDR=0x0000
+ MOTOROLA=0
+ERROR: No hardware channel assigned to CCPmon
+ERROR: VSUCCESS
+ERROR: VERR_INVALID_PORT

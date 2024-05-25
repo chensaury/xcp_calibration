@@ -1,0 +1,373 @@
+; Database D:\USR\Canape\Beispiele\CCPsim\Ccpsim.db
+; 
+
+VERSION 103 COMMENT ""
+
+MAP 1 "CCPSIM.MAP"
+
+
+GROUP 'Axis' : "Shared Axis for Calibration Maps" 
+GROUP 'Curves' : "Calibration Curves" 
+GROUP 'Example_Filter' : "Digital Filter v=(vin*a0+v*b0)/c0" 
+GROUP 'Example_PWM' : "Generator for a PWM Signal"  {
+  GROUP 'PWM_Parameters' : "Parametes for PWM Example" 
+  GROUP 'PWM_Signals' : "Measurement Signals from PWM" 
+}
+GROUP 'Maps' : "Calibration Maps"  {
+  GROUP 'WorkingPoint' : "Example for working point" 
+}
+GROUP 'Measure' : "Measurement Values"  {
+  GROUP 'Bits' : "Single Bit Values" 
+  GROUP 'Bitslices' : "Multibit Values" 
+  GROUP 'Test_Signals' : "Test Signals" 
+}
+GROUP 'Parameters' : "Calibration Parameters"  {
+  GROUP 'Test_Parameters' : "Test Parameters, BYTE" 
+}
+GROUP 'Virtual' : "Virtual Signals" 
+
+FORMULA 1 0 '' "@@@@RuleName created by CANape" "" "" LINEAR 1 0
+FORMULA 2 0 'Current' "Convert Voltage into Current" "" "%7.3" TEXT "X*X*2"
+FORMULA 3 0 'DigitalFilterConversion' "" "Volt" "%3.1f" LINEAR 0.001 0
+FORMULA 4 0 'Factor100' "" "" "%3.1f" LINEAR 0.01 0
+FORMULA 5 0 'HighLow' "High/Low for bits" "" "%7.3" VTAB 0 'Low' 1 'High' DEFAULT ""
+FORMULA 6 0 '' "@@@@RuleName created by CANape" "" "" LINEAR 1 0
+FORMULA 7 0 'KF8_Conversion' "" "1/min" "%3.1f" LINEAR 0.1 0
+FORMULA 8 0 '' "@@@@RuleName created by CANape" "Nm" "%3.1f" LINEAR 0.1 0
+FORMULA 9 0 '' "@@@@RuleName created by CANape" "Volt" "%3.1f" LINEAR 1 0
+FORMULA 10 0 'Pressure' "Convert Voltage into Pressure" "" "%7.3" LINEAR 0.123457 0
+FORMULA 11 0 '' "@@@@RuleName created by CANape" "" "%3.1f" VTAB 0 'Off' 1 'Silent' 2 'Pending' 3 'Running' DEFAULT ""
+FORMULA 12 0 '' "@@@@RuleName created by CANape" "Volt" "%3.1f" LINEAR 1 0
+FORMULA 13 0 '' "@@@@RuleName created by CANape" "Volt" "%3.1f" LINEAR 1 0
+FORMULA 14 0 '' "@@@@RuleName created by CANape" "Volt" "%3.1f" LINEAR 1 0
+FORMULA 15 0 '' "@@@@RuleName created by CANape" "Volt" "%3.1f" LINEAR 1 0
+FORMULA 16 0 'map1Conversion' "" "cm" "%3.1f" LINEAR 10 0
+FORMULA 17 0 'map1Input_Conversion' "" "m" "%3.1f" LINEAR 0.1 0
+FORMULA 18 0 '' "@@@@RuleName created by CANape" "Volt" "%3.1f" LINEAR 1 0
+FORMULA 19 0 '' "@@@@RuleName created by CANape" "s" "%3.1f" LINEAR 1 0
+FORMULA 20 0 '' "@@@@RuleName created by CANape" "" "%3.1f" TEXT "time(channel1)-time(channel1[-1])"
+FORMULA 21 0 '' "@@@@RuleName created by CANape" "" "%3.1f" TEXT "max(phy(channel1))"
+FORMULA 22 0 '' "@@@@RuleName created by CANape" "" "%3.1f" TEXT "min(phy(channel1))"
+
+LAYOUT CurveNxVub {
+ FNC_VALUES 2 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 1 UBYTE 1 DIRECT 0
+}
+LAYOUT CurveNxXVub {
+ FNC_VALUES 3 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 2 UBYTE 1 DIRECT 0
+ NO_AXIS_PTS_X 1 UBYTE
+}
+LAYOUT CurveV8ub {
+ FNC_VALUES 1 UBYTE ROW_DIR DIRECT 0
+ FIX_NO_AXIS_PTS_X 8
+}
+LAYOUT CurveVub {
+ FNC_VALUES 1 UBYTE ROW_DIR DIRECT 0
+}
+LAYOUT CurveX8V8ub {
+ FNC_VALUES 2 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 1 UBYTE 1 DIRECT 0
+ FIX_NO_AXIS_PTS_X 8
+}
+LAYOUT CurveX8V8uwAlternate {
+ FNC_VALUES 2 UWORD ALTERNATE_WITH_X DIRECT 0
+ AXIS_PTS_X 1 UWORD 1 DIRECT 0
+ FIX_NO_AXIS_PTS_X 8
+ ALIGNMENT_BYTE 1
+ ALIGNMENT_WORD 1
+ ALIGNMENT_LONG 1
+ ALIGNMENT_FLOAT32_IEEE 1
+ ALIGNMENT_FLOAT64_IEEE 1
+}
+LAYOUT CurveX8ub {
+ AXIS_PTS_X 1 UBYTE 1 DIRECT 0
+ FIX_NO_AXIS_PTS_X 8
+}
+LAYOUT MapColRowuw {
+ FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 0
+}
+LAYOUT MapNxNyVub {
+ FNC_VALUES 3 UBYTE ROW_DIR DIRECT 0
+ NO_AXIS_PTS_X 1 UBYTE
+ NO_AXIS_PTS_Y 2 UBYTE
+}
+LAYOUT MapNxNyXYVub {
+ FNC_VALUES 5 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 3 UBYTE 1 DIRECT 0
+ AXIS_PTS_Y 4 UBYTE 1 DIRECT 0
+ NO_AXIS_PTS_X 1 UBYTE
+ NO_AXIS_PTS_Y 2 UBYTE
+}
+LAYOUT MapNxXNyYVuc {
+ FNC_VALUES 5 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 2 UBYTE 1 DIRECT 0
+ AXIS_PTS_Y 4 UBYTE 1 DIRECT 0
+ NO_AXIS_PTS_X 1 UBYTE
+ NO_AXIS_PTS_Y 3 UBYTE
+}
+LAYOUT MapRowColub {
+ FNC_VALUES 1 UBYTE ROW_DIR DIRECT 0
+}
+LAYOUT MapV86ub {
+ FNC_VALUES 1 UBYTE ROW_DIR DIRECT 0
+ FIX_NO_AXIS_PTS_X 8
+ FIX_NO_AXIS_PTS_Y 6
+}
+LAYOUT MapX8Y6V86ub {
+ FNC_VALUES 3 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 1 UBYTE 1 DIRECT 0
+ AXIS_PTS_Y 2 UBYTE 1 DIRECT 0
+ FIX_NO_AXIS_PTS_X 8
+ FIX_NO_AXIS_PTS_Y 6
+}
+LAYOUT MapX8Y8V88ub {
+ FNC_VALUES 3 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 1 UBYTE 1 DIRECT 0
+ AXIS_PTS_Y 2 UBYTE 1 DIRECT 0
+ FIX_NO_AXIS_PTS_X 8
+ FIX_NO_AXIS_PTS_Y 8
+}
+LAYOUT MapXYVub {
+ FNC_VALUES 3 UBYTE ROW_DIR DIRECT 0
+ AXIS_PTS_X 1 UBYTE 1 DIRECT 0
+ AXIS_PTS_Y 2 UBYTE 1 DIRECT 0
+}
+
+SEGMENT 'a' 0x410CA
+SEGMENT 'ampl' 0x410A4
+SEGMENT 'b' 0x410CC
+SEGMENT 'byte1' 0x410D2
+SEGMENT 'byte2' 0x410D3
+SEGMENT 'byte3' 0x410D4
+SEGMENT 'byte4' 0x410D5
+SEGMENT 'byte5' 0x410D6
+SEGMENT 'byteCounter' 0xC4CF1
+SEGMENT 'bytePWM' 0xC4D0F
+SEGMENT 'bytePWMFilter' 0x410D1
+SEGMENT 'bytePWMFiltered' 0xC4D10
+SEGMENT 'byteShift' 0xC4D00
+SEGMENT 'c' 0x410CE
+SEGMENT 'calram' 0x415D2
+SEGMENT 'channel1' 0xC4CD8
+SEGMENT 'channel2' 0xC4CDC
+SEGMENT 'channel3' 0xC4CE0
+SEGMENT 'curve1_8_uc' 0x41371
+SEGMENT 'curve2_8_uc' 0x41379
+SEGMENT 'curve3_8_uc' 0x41391
+SEGMENT 'curve5_16_uc' 0x413D1
+SEGMENT 'curveOutput' 0xC4D08
+SEGMENT 'curve_kl2' 0x41381
+SEGMENT 'curve_kl3' 0x413B1
+SEGMENT 'curve_kl4' 0x413C1
+SEGMENT 'curve_kl5' 0x41389
+SEGMENT 'curve_kl6' 0x413A9
+SEGMENT 'curve_kl7' 0x413E2
+SEGMENT 'curve_kl8' 0x41402
+SEGMENT 'dwordCounter' 0xC4CF4
+SEGMENT 'limit' 0x410A8
+SEGMENT 'map1Counter' 0x410F0
+SEGMENT 'map1InputX' 0xC4D04
+SEGMENT 'map1InputY' 0xC4D05
+SEGMENT 'map1Output' 0xC4D06
+SEGMENT 'map1_8_8_uc' 0x410F1
+SEGMENT 'map2_8_8_uc' 0x412F1
+SEGMENT 'map4_80_uc' 0x41455
+SEGMENT 'map5_82_uc' 0x414F5
+SEGMENT 'map_kf1' 0x41131
+SEGMENT 'map_kf2' 0x41171
+SEGMENT 'map_kf3' 0x411B1
+SEGMENT 'map_kf4' 0x411F1
+SEGMENT 'map_kf5' 0x414A5
+SEGMENT 'map_kf6' 0x41231
+SEGMENT 'map_kf8' 0x412B1
+SEGMENT 'noise' 0xC4CEC
+SEGMENT 'offset' 0x410AC
+SEGMENT 'period' 0x410A0
+SEGMENT 'sbytePWMLevel' 0x410D0
+SEGMENT 'sbyteTriangle' 0xC4D0E
+SEGMENT 'v' 0xC4D1E
+SEGMENT 'vin' 0xC4D1C
+SEGMENT 'wordCounter' 0xC4CF2
+
+
+['Bits'] 
+VARIABLE 0x0 'Counter_B4' 'byteCounter' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1,4) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'Counter_B5' 'byteCounter' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1,5) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'Counter_B6' 'byteCounter' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1,6) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'Counter_B7' 'byteCounter' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1,7) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'ShiftByte' 'byteShift' : 0 "" UINT(8) "" 1 0 255 PREC 3 MEASUREMENT WEAK_LIMITS 0 255
+VARIABLE 0x0 'Shifter_B0' 'byteShift' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'Shifter_B1' 'byteShift' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1,1) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'Shifter_B2' 'byteShift' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1,2) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'Shifter_B3' 'byteShift' : 0 "Single bit demo signal (bit from a byte shifting)" UINT(1,3) "" 5 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+
+['Bitslices'] 
+VARIABLE 0x0 'BitSlice' 'wordCounter' : 0 "Testsignal: 4 Bit on a byte boundary" UINT(4,6) "" 1 0 15 PREC 3 MEASUREMENT WEAK_LIMITS 0 15
+VARIABLE 0x0 'BitSlice0' 'wordCounter' : 0 "Testsignal: 5 Bit" UINT(5) "" 1 0 31 PREC 3 MEASUREMENT WEAK_LIMITS 0 31
+VARIABLE 0x0 'BitSlice1' 'wordCounter' : 0 "Testsignal: 5 Bit " UINT(5,5) "" 1 0 31 PREC 3 MEASUREMENT WEAK_LIMITS 0 31
+VARIABLE 0x0 'BitSlice2' 'wordCounter' : 1 "Testsignal: 5 Bit " UINT(6,2) "" 1 0 63 (0 31) PREC 3 MEASUREMENT WEAK_LIMITS 0 63
+VARIABLE 0x0 'TestStatus' 'byteCounter' : 0 "2 bit demo signal with symbolic conversion formula" UINT(2,6) "" 11 0 3 PREC 0 CHARACTERISTIC WEAK_LIMITS 0 3
+
+['Example_Filter'] 
+VARIABLE 0x0 'a0' 'a' : 0 "Digital Filter v=(vin*a0+v*b0)/c0" UINT(16) "Volt" 3 0 1 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'b0' 'b' : 0 "Digital Filter v=(vin*a0+v*b0)/c0" UINT(16) "Volt" 3 0 1 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'c0' 'c' : 0 "Digital Filter v=(vin*a0+v*b0)/c0" UINT(16) "Volt" 3 0 1 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'v'  "Digital Filter Outputvalue" UINT(16) "Volt" 3 0 1 PREC 3 MEASUREMENT WEAK_LIMITS 0 1
+VARIABLE 0x0 'vin'  "Digital Filter Inputvalue" UINT(16) "Volt" 3 0 1 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+
+['Measure'] 
+VARIABLE 0x0 'channel1'  "FLOAT demo signal (sine wave)" FLOAT "Volt" 13 -1e+012 1e+012 (-100 100) PREC 3 MEASUREMENT WEAK_LIMITS -1e+012 1e+012
+VARIABLE 0x0 'channel2'  "FLOAT demo signal (sine wave)" FLOAT "Volt" 14 -1e+012 1e+012 (-100 100) PREC 3 MEASUREMENT WEAK_LIMITS -1e+012 1e+012
+VARIABLE 0x0 'channel3'  "FLOAT demo signal (sine wave)" FLOAT "Volt" 15 -100 100 PREC 3 MEASUREMENT WEAK_LIMITS -100 100
+VARIABLE 0x0 'noise'  "Random numbers" FLOAT "" 1 0 255 PREC 3 MEASUREMENT WEAK_LIMITS 0 255
+
+['PWM_Parameters'] 
+VARIABLE 0x0 'FW1' 'byte5' : 0 "Testparameter (Basis byte5)" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'PWM_Level' 'sbytePWMLevel' : 0 "" INT(8) "Volt" 9 -50 50 PREC 3 CHARACTERISTIC WEAK_LIMITS -50 50
+VARIABLE 0x0 'bytePWMFilter'  "Filter constant for PWM filter" UINT(8) "" 1 0 100 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 100
+
+['PWM_Signals'] 
+VARIABLE 0x0 'PWM' 'bytePWM' : 0 "Pulse width signal from PWM_level and Triangle" UINT(8) "" 5 0 255 (0 100) PREC 0 MEASUREMENT WEAK_LIMITS 0 255
+VARIABLE 0x0 'PWMFiltered' 'bytePWMFiltered' : 0 "Low pass filtered PWM signal" UINT(8) "" 1 0 255 (0 100) PREC 3 MEASUREMENT WEAK_LIMITS 0 255
+VARIABLE 0x0 'Triangle' 'sbyteTriangle' : 0 "Triangle test signal used for PWM output PWM" INT(8) "" 1 -50 50 PREC 3 MEASUREMENT WEAK_LIMITS -50 50
+
+['Parameters'] 
+VARIABLE 0x0 'ampl'  "Amplitude of channel 1-3" FLOAT "Volt" 12 0 200 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 200
+VARIABLE 0x0 'limit'  "Limit for channel1" FLOAT "" 1 -1e+012 1e+012 (0 100) PREC 3 CHARACTERISTIC WEAK_LIMITS -1e+012 1e+012
+VARIABLE 0x0 'offset'  "Offset for channel1" FLOAT "Volt" 18 -1e+012 1e+012 (0 100) PREC 3 CHARACTERISTIC WEAK_LIMITS -1e+012 1e+012
+VARIABLE 0x0 'period'  "Period of channel 1-3" FLOAT "s" 19 0 100 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 100
+
+['Test_Parameters'] 
+VARIABLE 0x0 'testbit0' 'calram' : 53 "offset 53" UINT(1) "" 1 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'testbit1' 'calram' : 53 "offset 53" UINT(1,1) "" 1 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'testbit2' 'calram' : 53 "offset 53" UINT(1,2) "" 1 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'testbit3' 'calram' : 53 "offset 53" UINT(1,3) "" 1 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'testbit4' 'calram' : 53 "offset 53" UINT(1,4) "" 1 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'testbit5' 'calram' : 6 "offset 6" UINT(1,5) "" 1 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'testbit6' 'calram' : 7 "offset 7" UINT(1,5) "" 1 0 1 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 1
+VARIABLE 0x0 'testbit7' 'calram' : 7 "offset 7" UINT(2,6) "" 1 0 3 (0 20) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 3
+VARIABLE 0x0 'testbitslice0' 'calram' : 43 "offset 43" INT(5) "" 1 -16 15 (0 32) PREC 3 CHARACTERISTIC WEAK_LIMITS -16 15
+VARIABLE 0x0 'testbitslice1' 'calram' : 7 "offset 7" INT(5) "" 1 -16 15 (0 32) PREC 3 CHARACTERISTIC WEAK_LIMITS -16 15
+VARIABLE 0x0 'testbitslice2' 'calram' : 10 "offset 10" INT(6,2) "" 1 -32 31 (0 32) PREC 3 CHARACTERISTIC WEAK_LIMITS -32 31
+VARIABLE 0x0 'testbyte0' 'calram' : 50 "offset 50" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testbyte1' 'calram' : 8 "offset 8" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testbyte2' 'calram' : 15 "offset15" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testbyte3' 'calram' : 19 "offset 19" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testbyte4' 'calram' : 33 "offset 33" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testbyte5' 'calram' : 35 "offset 35" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testbyte6' 'calram' : 42 "offset 42" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testbyte7' 'calram' : 44 "offset 44" INT(8) "" 1 -128 127 (0 255) PREC 3 CHARACTERISTIC WEAK_LIMITS -128 127
+VARIABLE 0x0 'testdword0' 'calram' : 0 "offset 0" INT(32) "" 1 -2147480000 2147480000 (0 1000000) PREC 3 CHARACTERISTIC WEAK_LIMITS -2147480000 2147480000
+VARIABLE 0x0 'testdword1' 'calram' : 20 "offset 20" INT(32) "" 1 -2147480000 2147480000 (0 1000000) PREC 3 CHARACTERISTIC WEAK_LIMITS -2147480000 2147480000
+VARIABLE 0x0 'testubitslice0' 'calram' : 34 "offset 34" UINT(5) "" 1 0 31 (0 32) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 31
+VARIABLE 0x0 'testubitslice1' 'calram' : 6 "offset 6" UINT(5) "" 1 0 31 (0 32) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 31
+VARIABLE 0x0 'testubitslice2' 'calram' : 11 "offset 11" UINT(6,2) "" 1 0 63 (0 32) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 63
+VARIABLE 0x0 'testubyte0' 'calram' : 25 "offset 25" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testubyte1' 'calram' : 9 "offset 9" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testubyte2' 'calram' : 12 "offset 12" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testubyte3' 'calram' : 18 "offset 18" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testubyte4' 'calram' : 24 "offset 24" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testubyte5' 'calram' : 36 "offset 36" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testubyte6' 'calram' : 37 "offset 37" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testubyte7' 'calram' : 45 "offset45" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'testudword0' 'calram' : 46 "offset 46" UINT(32) "" 1 0 3294970000 (0 1000000) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 3294970000
+VARIABLE 0x0 'testudword1' 'calram' : 26 "offset 26" UINT(32) "" 1 0 4294970000 (0 1000000) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 4294970000
+VARIABLE 0x0 'testuword0' 'calram' : 4 "offset 4" UINT(16) "" 1 0 65535 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 65535
+VARIABLE 0x0 'testuword1' 'calram' : 13 "offset 13" UINT(16) "" 1 0 65535 (0 65536) PREC 3 CHARACTERISTIC WEAK_LIMITS 0 65535
+VARIABLE 0x0 'testuword2' 'calram' : 32 "offset 32" UINT(16) "" 1 0 65536 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 65536
+VARIABLE 0x0 'testuword3' 'calram' : 40 "offset 40" UINT(16) "" 1 0 65536 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 65536
+VARIABLE 0x0 'testword0' 'calram' : 51 "offset 51" INT(16) "" 1 -32768 32767 (0 65536) PREC 3 CHARACTERISTIC WEAK_LIMITS -32768 32767
+VARIABLE 0x0 'testword1' 'calram' : 16 "offset 16" INT(16) "" 1 -32768 32767 (0 65536) PREC 3 CHARACTERISTIC WEAK_LIMITS -32768 32767
+VARIABLE 0x0 'testword2' 'calram' : 30 "offset 30" INT(16) "" 1 -32768 32767 (0 65536) PREC 3 CHARACTERISTIC WEAK_LIMITS -32768 32767
+VARIABLE 0x0 'testword3' 'calram' : 38 "offset 38" INT(16) "" 1 -32768 32767 (0 65536) PREC 3 CHARACTERISTIC WEAK_LIMITS -32768 32767
+
+['Test_Signals'] 
+VARIABLE 0x0 'KL1Output' 'curveOutput' : 0 "Value generated from curve KL1" UINT(8) "" 1 0 255 PREC 3 MEASUREMENT WEAK_LIMITS 0 255
+VARIABLE 0x0 'bit12Counter' 'wordCounter' : 0 "Demo signal (12 bit, incrementing)" UINT(12) "" 1 0 4095 (0 4096) PREC 3 MEASUREMENT WEAK_LIMITS 0 4095
+VARIABLE 0x0 'byte1'  "Demo, read and write possible" UINT(8) "" 1 0 255 PREC 3 MEASUREMENT READ_WRITE WEAK_LIMITS 0 255
+VARIABLE 0x0 'byte2'  "Demo, read and write possible" UINT(8) "" 1 0 255 PREC 3 MEASUREMENT READ_WRITE WEAK_LIMITS 0 255
+VARIABLE 0x0 'byte3'  "Demo, read and write possible" UINT(8) "" 1 0 255 PREC 3 MEASUREMENT READ_WRITE WEAK_LIMITS 0 255
+VARIABLE 0x0 'byte4'  "Demo, read and write possible" UINT(8) "" 1 0 255 PREC 3 MEASUREMENT READ_WRITE WEAK_LIMITS 0 255
+VARIABLE 0x0 'byteCounter'  "Demo signal (byte, incrementing)" UINT(8) "" 1 0 255 PREC 3 MEASUREMENT WEAK_LIMITS 0 255
+VARIABLE 0x0 'dwordCounter'  "Demo signal (dword, incrementing)" UINT(32) "" 1 0 255 PREC 3 MEASUREMENT WEAK_LIMITS 0 255
+VARIABLE 0x0 'wordCounter'  "Demo signal (word, incrementing)" UINT(16) "" 1 0 65535 (0 255) PREC 3 MEASUREMENT WEAK_LIMITS 0 65535
+
+['Virtual'] 
+VARIABLE 0x0 'DtChannel1' 0x0000 "Time jitter of channel1" FLOAT "" 0 0 100 PREC 3 VIRTUAL 20 MEASUREMENT WEAK_LIMITS 0 100
+VARIABLE 0x0 'MaxChannel1' 0x0000 "Maximum value of channel1" FLOAT "" 0 -100 100 PREC 3 VIRTUAL 21 MEASUREMENT WEAK_LIMITS -100 100
+VARIABLE 0x0 'MinChannel1' 0x0000 "Minimum value of channel1" FLOAT "" 0 -100 100 PREC 3 VIRTUAL 22 MEASUREMENT WEAK_LIMITS -100 100
+
+['WorkingPoint'] 
+VARIABLE 0x0 'map1Counter'  "" UINT(8) "" 1 0 255 PREC 3 CHARACTERISTIC WEAK_LIMITS 0 255
+VARIABLE 0x0 'map1InputX'  "" UINT(8) "m" 17 0 25.5 (0 7) PREC 3 MEASUREMENT WEAK_LIMITS 0 25.5
+VARIABLE 0x0 'map1InputY'  "" UINT(8) "m" 17 0 25.5 (0 7) PREC 3 MEASUREMENT WEAK_LIMITS 0 25.5
+VARIABLE 0x0 'map1Output'  "" UINT(8) "cm" 16 0 2550 (0 255) PREC 3 MEASUREMENT WEAK_LIMITS 0 2550
+
+['Axis'] 
+COM_AXIS 'Curve1' 'curve1_8_uc' : 0 "Curve used as axis" UINT(8) "" 1 0 255 8 0 PREC 3 '' 0 0 1 0x0 WEAK_LIMITS 0 255 
+COM_AXIS 'Curve2' 'curve2_8_uc' : 0 "Curve used as axis" UINT(8) "" 1 0 255 8 0 PREC 3 '' 0 0 1 0x0 CurveX8ub WEAK_LIMITS 0 255 
+COM_AXIS 'Curve3' 'curve3_8_uc' : 0 "Curve used as axis" UINT(8) "" 1 0 255 6 0 PREC 3 '' 0 0 1 0x0 WEAK_LIMITS 0 255 
+
+['Curves'] 
+ARRAY 'KL1' 'curve5_16_uc' : 0 "16 BYTE curve no axis" UINT(8) "" 1 0 255 16 1 0 PREC 3 WEAK_LIMITS 0 255 
+  AXIS
+  AXIS
+ARRAY 'KL2' 'curve_kl2' : 0 "8 BYTE shared axis Curve2" UINT(8) "" 1 0 255 8 1 0 PREC 3 WEAK_LIMITS 0 255 
+  AXIS 'Curve2' 
+  AXIS
+ARRAY 'KL3' 'curve_kl3' : 0 "8 BYTE memory layout CurveX8V8ub" UINT(8) "" 1 0 255 8 1 0 PREC 3 CurveX8V8ub WEAK_LIMITS 0 255 
+  AXIS 'KL3_X_AXIS' 0x413B1 "" UINT(8) "" 1 0 255 8 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 255 
+  AXIS
+ARRAY 'KL4' 'curve_kl4' : 0 "8 BYTE memory layout CurveV8ub" UINT(8) "" 1 0 255 8 1 0 PREC 3 CurveV8ub WEAK_LIMITS 0 255 
+  AXIS
+  AXIS
+ARRAY 'KL5' 'curve_kl5' : 0 "8 BYTE memory layout CurveV8ub shared xaxis Curve2" UINT(8) "" 1 0 255 8 1 0 PREC 3 CurveV8ub WEAK_LIMITS 0 255 
+  AXIS 'Curve2' 
+  AXIS
+ARRAY 'KL6' 'curve_kl6' : 0 "8 BYTE memory layout CurveV8ub fixed axis" UINT(8) "" 1 0 255 8 1 0 PREC 3 CurveV8ub WEAK_LIMITS 0 255 
+  AXIS 'KL6_X_AXIS' 0x413A9 "" INT(16) "" 1 0 255 8 0 PREC 3 '' 2 0 128 8 0x04 READ_ONLY  WEAK_LIMITS 0 255 
+  AXIS
+ARRAY 'KL7' 'curve_kl7' : 0 "" UINT(16) "" 4 0 500 8 1 0 PREC 3 CurveX8V8uwAlternate WEAK_LIMITS 0 500 
+  AXIS 'KL7_X_AXIS' 0x413E2 "" UINT(16) "" 4 0 655.35 8 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 655.35 
+  AXIS
+ARRAY 'KL8' 'curve_kl8' : 0 "" UINT(16) "" 4 0 655.35 8 1 0 PREC 3 WEAK_LIMITS 0 655.35 
+  AXIS 'KL8_X_AXIS' 0x41402 "" INT(16) "" 1 0 1 8 0 PREC 3 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 1 
+  AXIS
+
+['Maps'] 
+ARRAY 'KF1' 'map_kf1' : 0 "8*8 BYTE fixed axis" UINT(8) "" 4 0 2.55 8 8 0 PREC 3 WEAK_LIMITS 0 2.55 
+  AXIS 'KF1_X_AXIS' 0x41131 "" INT(16) "" 1 0 7 8 0 PREC 3 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 7 
+  AXIS 'KF1_Y_AXIS' 0x41131 "" INT(16) "" 1 0 7 8 0 PREC 3 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 7 
+ARRAY 'KF2' 'map1_8_8_uc' : 0 "8*8 BYTE shared axis Curve1/Curve2" UINT(8) "" 1 0 255 8 8 0 PREC 3 WEAK_LIMITS 0 255 
+  AXIS 'Curve1' 
+  AXIS 'Curve2' 
+ARRAY 'KF3' 'map_kf3' : 0 "8*6 BYTE fixed axis" UINT(8) "" 1 0 255 8 6 0 PREC 3 WEAK_LIMITS 0 255 
+  AXIS 'KF3_X_AXIS' 0x411B1 "" INT(16) "" 1 0 7 8 0 PREC 3 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 7 
+  AXIS 'KF3_Y_AXIS' 0x411B1 "" INT(16) "" 1 0 5 6 0 PREC 3 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 5 
+ARRAY 'KF4' 'map_kf4' : 0 "8*6 BYTE shared xaxis Curve1, fixed yaxis" UINT(8) "" 1 0 255 8 6 0 PREC 3 WEAK_LIMITS 0 255 
+  AXIS 'Curve1' 
+  AXIS 'KF4_Y_AXIS' 0x411F1 "" INT(16) "" 1 0 5 6 0 PREC 3 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 5 
+ARRAY 'KF5' 'map_kf5' : 0 "8*6 BYTE memory layout MapX8Y6V86ub" UINT(8) "" 1 0 255 8 6 0 PREC 3 MapX8Y6V86ub WEAK_LIMITS 0 255 
+  AXIS 'KF5_X_AXIS' 0x414A5 "" UINT(8) "" 1 0 255 8 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 255 
+  AXIS 'KF5_Y_AXIS' 0x414A5 "" UINT(8) "" 1 0 255 6 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 255 
+ARRAY 'KF6' 'map_kf6' : 0 "8*8 BYTE no axis" UINT(8) "" 1 0 255 8 8 0 PREC 3 WEAK_LIMITS 0 255 
+  AXIS 'KF6_X_AXIS' 0x41231 "" INT(16) "" 6 0 7 8 0 PREC 0 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 7 
+  AXIS 'KF6_Y_AXIS' 0x41231 "" INT(16) "" 6 0 7 8 0 PREC 0 '' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS 0 7 
+ARRAY 'KF7' 'map2_8_8_uc' : 0 "8*8 BYTE memory layout MapV86ub, shared axis Curve1/Curve1" UINT(8) "" 1 0 255 8 8 0 PREC 3 MapV86ub WEAK_LIMITS 0 255 
+  AXIS 'Curve1' 
+  AXIS 'Curve2' 
+ARRAY 'KF8' 'map_kf8' : 0 "8*6 BYTE memory layout MapV86ub, fixed axis " UINT(8) "1/min" 7 0 10 8 6 0 PREC 2 MapV86ub WEAK_LIMITS 0 10 
+  AXIS 'KF8_X_AXIS' 0x412B1 "" INT(16) "1/min" 7 0 25.5 8 0 PREC 1 '' 2 0 50 2 0x04 READ_ONLY  WEAK_LIMITS 0 25.5 
+  AXIS 'KF8_Y_AXIS' 0x412B1 "" INT(16) "Nm" 8 0 25.5 6 0 PREC 1 '' 2 0 100 5 0x04 READ_ONLY  WEAK_LIMITS 0 25.5 
+ARRAY 'map4_80_uc'  "8*8 BYTE memory layout map4_80_uc" UINT(8) "" 1 0 255 8 8 0 PREC 3 MapX8Y8V88ub WEAK_LIMITS 0 255 
+  AXIS 'map4_80_uc_X_AXIS' 0x41455 "" UINT(8) "" 1 0 255 8 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 255 
+  AXIS 'map4_80_uc_Y_AXIS' 0x41455 "" UINT(8) "" 1 0 255 8 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 255 
+ARRAY 'map5_82_uc'  "8*8 BYTE memory layout MapNxX8NyY8V88uc" UINT(8) "" 1 0 255 0 0 0 PREC 3 MapNxXNyYVuc WEAK_LIMITS 0 255 
+  AXIS 'map5_82_uc_X_AXIS' 0x414F5 "" UINT(8) "" 1 0 255 10 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 255 
+  AXIS 'map5_82_uc_Y_AXIS' 0x414F5 "" UINT(8) "" 1 0 255 10 0 PREC 3 '' 1 0 0 1 0x04 WEAK_LIMITS 0 255 
+
+['WorkingPoint'] 
+ARRAY 'map1' 'map_kf2' : 0 "8*8 BYTE fixed axis" UINT(8) "cm" 16 0 2550 8 8 0 PREC 3 WEAK_LIMITS 0 2550 
+  AXIS 'map1_X_AXIS' 0x41171 "" INT(16) "m" 17 -12.8 12.7 8 0 PREC 3 'map1InputX' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS -12.8 12.7 
+  AXIS 'map1_Y_AXIS' 0x41171 "" INT(16) "m" 17 -12.8 12.7 8 0 PREC 3 'map1InputY' 2 0 0 1 0x04 READ_ONLY  WEAK_LIMITS -12.8 12.7 

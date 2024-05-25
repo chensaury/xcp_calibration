@@ -1,0 +1,1286 @@
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000D8B4H _TEXT                  CODE
+ 0002:00000000 00004458CH _DATA                  DATA
+ 0002:0004458C 000000000H _TLSCBA                TLSCBA
+ 0002:0004458C 00000004EH _INIT_                 INITDATA
+ 0002:000445DA 000000000H _INITEND_              INITDATA
+ 0002:000445DA 00000002AH _EXIT_                 EXITDATA
+ 0002:00044604 000000000H _EXITEND_              EXITDATA
+ 0002:00044604 00000001CH CONST                  CONST
+ 0002:00044620 000080FC0H _BSS                   BSS
+ 0002:000C55E0 000000000H _BSSEND                BSS
+ 0003:00000000 0000000B0H _TLS                   TLS
+ 0003:000000B0 000000000H _TLSEND                TLS
+
+  Address         Publics by Name
+
+ 0001:0000BCB8       operator delete(void*)
+ 0001:0000BCC8       operator delete[](void*)
+ 0001:000060F9       __tpdsc__[Bad_typeid]
+ 0001:00006115       __tpdsc__[Bad_cast]
+ 0001:00006131       __tpdsc__[typeinfo]
+ 0001:000060E2       __tpdsc__[typeinfo*]
+ 0001:00003AEB       invokeHnd()
+ 0001:00003AD0  Idle jump()
+ 0001:000036DE  Idle set_terminate(void(*)())
+ 0001:000037BE  Idle set_unexpected(void(*)())
+ 0001:000000F9  Idle System::::GetTls() __fastcall
+ 0001:000036D8  Idle terminate()
+ 0001:00005B10  Idle typeinfo::operator =(const typeinfo&)
+ 0001:00005AD8  Idle typeinfo::typeinfo(const typeinfo&)
+ 0001:00005B18  Idle typeinfo::~typeinfo()
+ 0001:00005B37  Idle typeinfo::operator ==(const typeinfo&) const
+ 0001:00005B5A  Idle typeinfo::operator !=(const typeinfo&) const
+ 0002:00042F74       typeinfo::
+ 0001:00005B7A  Idle typeinfo::before(const typeinfo&) const
+ 0001:00005BC3  Idle typeinfo::name() const
+ 0001:000037B8  Idle unexpected()
+ 0001:0000438C       _CatchCleanup()
+ 0001:000041FD       _ReThrowException(unsigned int,unsigned char*)
+ 0001:000041CD       _ThrowExceptionLDTC(void*,void*,void*,void*,unsigned int,unsigned int,unsigned int,unsigned char*,void*)
+ 0001:00006068       __adjustClassAdr(void*,tpid*,tpid*)
+ 0001:00005E98  Idle __DynamicCast(void*,void*,void*,void*,int)
+ 0001:00005FB2  Idle __DynamicCastVCLptr(void*,void*) __fastcall
+ 0001:00005F80  Idle __DynamicCastVCLref(void*,void*) __fastcall
+ 0001:00003858  Idle __GetPolymorphicDTC(void*,unsigned int)
+ 0001:00005BD4  Idle __GetTypeInfo(void*,void*,void*,void*)
+ 0001:00005700       @__InitExceptBlockLDTC
+ 0001:000059A5       __isCompatTypeID(tpid*,tpid*,int,tpid**)
+ 0001:00005773       __isSameTypeID(tpid*,tpid*)
+ 0001:00003950       __lockDebuggerData()
+ 0001:00005ACC  Idle __ThrowExceptionName()
+ 0001:00005AB4  Idle __ThrowFileName()
+ 0001:00005AC0  Idle __ThrowLineNumber()
+ 0001:0000573C       __typeIDname(tpid*)
+ 0001:00003978       __unlockDebuggerData()
+ 0001:00001F99  Idle thread
+ 0002:00041114  Idle _a
+ 0001:0000CD8C       _abort
+ 0001:000061C4       _access
+ 0002:000410DC  Idle _ampl
+ 0002:000410F0  Idle _ampl1
+ 0002:0004110C  Idle _ampl_d
+ 0002:000C4F28  Idle _analogChannel
+ 0002:000C4F27  Idle _analogIndex
+ 0002:00041116  Idle _b
+ 0002:000C4F48  Idle _bitstruct1
+ 0002:000C4F4A  Idle _bitstruct2
+ 0002:0004111C  Idle _byte1
+ 0002:0004111D  Idle _byte2
+ 0002:0004111E  Idle _byte3
+ 0002:0004111F  Idle _byte4
+ 0002:00041120  Idle _byte5
+ 0002:000C4EF5  Idle _byteCounter
+ 0002:000C4F13  Idle _bytePWM
+ 0002:0004111B  Idle _bytePWMFilter
+ 0002:000C4F14  Idle _bytePWMFiltered
+ 0002:000C4EF4  Idle _byteRandom
+ 0002:000C4F04  Idle _byteShift
+ 0002:00041118  Idle _c
+ 0001:0000BC8C       _calloc
+ 0002:00041680  Idle _calram
+ 0002:00041ECC       _CALRAM_LAST
+ 0002:00041EC8  Idle _CALRAM_SIGN
+ 0002:000410B4       _CALRAM_START
+ 0001:0000169A  Idle _canSendId
+ 0002:00044620       _ccp
+ 0001:0000064B       _ccpBackground
+ 0002:0004070C  Idle _ccpCalPage
+ 0001:00001DC3       _ccpCheckWriteAccess
+ 0001:000006D1       _ccpCommand
+ 0001:000004FA       _ccpDaq
+ 0001:00001EBF  Idle _ccpDisableNormalOperation
+ 0002:0000070C  Idle _ccpFlash
+ 0001:00001CBE       _ccpFlashClear
+ 0001:00001CF7       _ccpFlashProgramm
+ 0001:00001B58       _ccpGetCalPage
+ 0001:00001E8C       _ccpGetMTA0
+ 0001:00001E2B       _ccpGetPointer
+ 0001:00001EC6       _ccpGetSeed
+ 0001:0000127F       _ccpInit
+ 0002:00040714  Idle _ccpLastSeed
+ 0001:00000131  Idle _ccpQueueInit
+ 0001:00000144  Idle _ccpQueueWrite
+ 0001:00001C07  Idle _ccpReadFlash
+ 0002:00040710  Idle _ccpResourceMask
+ 0001:0000176E       _ccpSend
+ 0001:00001207       _ccpSendCallBack
+ 0001:00000108  Idle _ccpSendCrm
+ 0001:00001701  Idle _ccpSendId
+ 0001:00001B62       _ccpSetCalPage
+ 0002:00000074  Idle _ccpStationId
+ 0001:00001EEB       _ccpUnlock
+ 0001:00001EBA       _ccpUserBackground
+ 0001:00001BCC  Idle _ccpWriteFlash
+ 0002:000C4ED0  Idle _channel1
+ 0002:000C4ED4  Idle _channel2
+ 0002:000C4ED8  Idle _channel3
+ 0002:000C4EDC  Idle _channel4
+ 0002:000C4EE0  Idle _channel5
+ 0002:00041BA6  Idle _channel5_map
+ 0002:000C4EEC  Idle _channel_d
+ 0002:00043EDC       _CLOCALE
+ 0002:00043DD0       _CMonetary
+ 0002:00043E04       _CNumeric
+ 0002:0000007C  Idle _CRC16CCITTtab
+ 0002:00043E1A       _CTimeDate
+ 0002:00041579  Idle _curve1_8_uc
+ 0002:00041581  Idle _curve2_8_uc
+ 0002:00041589  Idle _curve3_8_uc
+ 0002:000415A1  Idle _curve4_17_uc
+ 0002:00041591  Idle _curve4_8_uc
+ 0002:0004145D  Idle _curve5_16_uc
+ 0002:0004146D  Idle _curve5_16_uc1
+ 0002:0004147D  Idle _curve5_16_uc2
+ 0002:0004148D  Idle _curve5_16_uc3
+ 0002:0004149D  Idle _curve5_16_uc4
+ 0002:000C4F0B  Idle _curveInput
+ 0002:000C4F0C  Idle _curveOutput
+ 0002:000C4F0D  Idle _curveOutput1
+ 0002:000C4F0E  Idle _curveOutput2
+ 0002:000C4F0F  Idle _curveOutput3
+ 0002:000C4F10  Idle _curveOutput4
+ 0002:0004165F  Idle _curve_kl10
+ 0002:000415B5  Idle _curve_kl2
+ 0002:000415BD  Idle _curve_kl3
+ 0002:000415CD  Idle _curve_kl4
+ 0002:000415DD  Idle _curve_kl5
+ 0002:000415E5  Idle _curve_kl6
+ 0002:000415EE  Idle _curve_kl7
+ 0002:0004160E  Idle _curve_kl8
+ 0002:0004161E  Idle _curve_kl9
+ 0002:0004112C  Idle _dword1
+ 0002:00041130  Idle _dword2
+ 0002:00041134  Idle _dword3
+ 0002:00041138  Idle _dword4
+ 0002:000C4EF8  Idle _dwordCounter
+ 0001:000029BA       _ecuCyclic
+ 0001:00002848       _ecuInit
+ 0002:00041A80  Idle _eeprom
+ 0002:000443B4       _errno
+ 0001:0000CDF8       _exit
+ 0001:0000624C       _fclose
+ 0001:000062DC       _fflush
+ 0001:00006A58       _fgetc
+ 0002:000410E8  Idle _filter
+ 0002:000410FC  Idle _filter1
+ 0002:00084ECC  Idle _flash
+ 0001:00001977  Idle _flashClear
+ 0001:00001AE2  Idle _flashCopy
+ 0001:00001936  Idle _flashGetAddress
+ 0001:000018C0  Idle _flashGetPointer
+ 0001:00001893  Idle _flashInit
+ 0001:000019C3  Idle _flashProgramm
+ 0001:000019E4  Idle _flashRead
+ 0002:000410B6       _flashSignatur
+ 0001:00001A61  Idle _flashWrite
+ 0001:00006580       _fopen
+ 0001:00006B40       _fputc
+ 0001:00006688       _fputs
+ 0001:000067F8       _fread
+ 0001:0000C2E0       _free
+ 0001:00006888       _fseek
+ 0001:000068EC       _ftell
+ 0001:0000696C       _fwrite
+ 0002:000006D0  Idle _gBitRate
+ 0002:000006C4  Idle _gChannelMask
+ 0002:000006E8  Idle _gCroId
+ 0002:000006D4       _gDebugLevel
+ 0002:000006CC  Idle _gDriverConfig
+ 0002:000006E4  Idle _gDtoId
+ 0001:0000312C       _getch
+ 0001:0000D850       _getdate
+ 0001:0000D87C       _gettime
+ 0002:000006C8  Idle _gPermissionMask
+ 0002:000006C0  Idle _gPortHandle
+ 0002:00000708  Idle _gRam
+ 0002:000006EC       _gStationAddr
+ 0001:00001F45  Idle _handleKey
+ 0002:000006B8  Idle _hwChannel
+ 0002:000006F8  Idle _hwChannel0
+ 0002:00000704  Idle _hwChannel1
+ 0002:000006BC  Idle _hwIndex
+ 0002:000006F4  Idle _hwIndex0
+ 0002:00000700  Idle _hwIndex1
+ 0002:000006B4  Idle _hwType
+ 0002:000006F0  Idle _hwType0
+ 0002:000006FC  Idle _hwType1
+ 0002:000415B2  Idle _input1_uc
+ 0002:000415B4  Idle _input2_uc
+ 0001:000094DC  Idle _iswalnum
+ 0001:00009508       _iswalpha
+ 0001:000094F4  Idle _iswascii
+ 0001:00009520  Idle _iswcntrl
+ 0001:00009534       _iswdigit
+ 0001:00009548  Idle _iswgraph
+ 0001:00009560  Idle _iswlower
+ 0001:00009574  Idle _iswprint
+ 0001:0000958C  Idle _iswpunct
+ 0001:000095A0       _iswspace
+ 0001:000095B4  Idle _iswupper
+ 0001:000095C8  Idle _iswxdigit
+ 0001:0000A1C8  Idle _itoa
+ 0002:00041F34  Idle _kbdtab
+ 0001:000032AC       _kbhit
+ 0002:000410E0  Idle _limit
+ 0002:000410F4  Idle _limit1
+ 0001:00001FE4       _main
+ 0001:0000C3E8       _malloc
+ 0002:0004113C  Idle _map1Counter
+ 0002:000C4F08  Idle _map1InputX
+ 0002:000C4F09  Idle _map1InputY
+ 0002:000C4F0A  Idle _map1Output
+ 0002:0004113D  Idle _map1_8_8_uc
+ 0002:0004133D  Idle _map2_8_8_uc
+ 0002:0004137D  Idle _map3_8_8_uc
+ 0002:000413BD  Idle _map4_80_uc
+ 0002:000414AD  Idle _map5_82_uc
+ 0002:000414FF  Idle _map6_122_uc
+ 0002:0004117D  Idle _map_kf1
+ 0002:000411BD  Idle _map_kf2
+ 0002:000411FD  Idle _map_kf3
+ 0002:0004123D  Idle _map_kf4
+ 0002:0004140D  Idle _map_kf5
+ 0002:0004127D  Idle _map_kf6
+ 0002:000412BD  Idle _map_kf7
+ 0002:000412FD  Idle _map_kf8
+ 0001:0000963C  Idle _mblen
+ 0001:000097F8       _mbstowcs
+ 0001:000096B8       _mbtowc
+ 0001:00003354       _memchr
+ 0001:000035DC       _memcmp
+ 0001:00003374       _memcpy
+ 0001:00003398       _memmove
+ 0001:000033E4       _memset
+ 0002:000C4EE4  Idle _noise
+ 0002:000C4EE8  Idle _noise_ampl
+ 0002:00041B66  Idle _noise_distribution
+ 0002:000410E4  Idle _offset
+ 0002:000410F8  Idle _offset1
+ 0002:000410D8  Idle _period
+ 0002:000410EC  Idle _period1
+ 0002:00041104  Idle _period_d
+ 0001:00006CE4  Idle _perror
+ 0001:00006D60       _printf
+ 0001:0000D534       _raise
+ 0002:00044EC8  Idle _ram
+ 0001:00001852  Idle _ramGetAddress
+ 0001:000017BA  Idle _ramGetPointer
+ 0001:00001786  Idle _ramInit
+ 0002:00084EC8  Idle _ramSectorCount
+ 0001:0000A2D0  Idle _rand
+ 0001:0000C87C       _realloc
+ 0001:00006D80       _remove
+ 0002:000C4EFC  Idle _sbyteCounter
+ 0002:0004111A  Idle _sbytePWMLevel
+ 0002:000C4F12  Idle _sbyteTriangle
+ 0002:000C4F11  Idle _sbyteTriangleSlope
+ 0002:000C4F00  Idle _sdwordCounter
+ 0001:00007794       _setvbuf
+ 0001:0000D4D4  Idle _signal
+ 0001:00009FC8       _sin
+ 0001:0000780C       _sprintf
+ 0001:0000A2B8  Idle _srand
+ 0001:00007880       _sscanf
+ 0001:00003488       _strcat
+ 0001:000034C4       _strcmp
+ 0001:00003510       _strlen
+ 0001:0000356C       _strncat
+ 0002:000C4EFE  Idle _swordCounter
+ 0002:00041AEC  Idle _TestArray_Max_10_10
+ 0002:000C4F1E  Idle _testbyte0
+ 0002:000C4F15  Idle _testbyte1
+ 0002:000C4F16  Idle _testbyte2
+ 0002:000C4F17  Idle _testbyte3
+ 0002:000C4F18  Idle _testbyte4
+ 0002:000C4F19  Idle _testbyte5
+ 0002:000C4F1A  Idle _testbyte6
+ 0002:000C4F1B  Idle _testbyte7
+ 0002:000C4F1C  Idle _testbyte8
+ 0002:000C4F1D  Idle _testbyte9
+ 0002:000410A8  Idle _testString
+ 0002:00041A88  Idle _test_array
+ 0002:000C4F24  Idle _ti
+ 0002:000C4ECC  Idle _timer
+ 0001:0000A1F8       _ultoa
+ 0001:00003280       _ungetch
+ 0002:000C4F22  Idle _v
+ 0002:00041100  Idle _variantSelector
+ 0002:000C4F20  Idle _vin
+ 0001:00007830  Idle _vsprintf
+ 0001:000078A4  Idle _vsscanf
+ 0001:00003698       _wcscpy
+ 0001:00003680       _wcslen
+ 0001:00009960       _wcstombs
+ 0001:00009784       _wctomb
+ 0002:00041122  Idle _word1
+ 0002:00041124  Idle _word2
+ 0002:00041126  Idle _word3
+ 0002:00041128  Idle _word4
+ 0002:000C4EF6  Idle _wordCounter
+ 0002:000C4F06  Idle _wordShift
+ 0002:000C4F25  Idle _xi
+ 0002:000C4F26  Idle _yi
+ 0001:0000CD78       __abort
+ 0001:00000000  Idle __acrtused
+ 0001:0000D070       __addarg
+ 0001:000061CC       __allocbuf
+ 0002:000C55B8       __argc
+ 0002:000C5580  Idle __argv
+ 0002:000444B8       __argv0
+ 0001:0000CA64       __assert
+ 0002:00044430       __atexitcnt
+ 0002:000C5500       __atexittbl
+ 0002:000C55BC       __C0argc
+ 0002:000C55C0       __C0argv
+ 0002:000C55C4       __C0environ
+ 0002:000C4F58  Idle __C4350Mode
+ 0002:000422B9       __cChar
+ 0001:0000CE28  Idle __cexit
+ 0002:00041F30       __cextend
+ 0002:00043A8C       __cfinfo_get
+ 0002:000422B8       __cFlag
+ 0002:00043BC4       __chartype
+ 0001:0000D670       __cleanup
+ 0001:00009D04       __clear87
+ 0001:00009D18       __control87
+ 0001:0000D5BC       __create_shmem
+ 0001:00002FD8       __crtinit
+ 0001:000056AA       __CurrExcContext
+ 0001:0000A61C       __cvt_init
+ 0001:0000A950       __cvt_initw
+ 0001:0000CE38  Idle __c_exit
+ 0002:000423A8  Idle __DebuggerHookData
+ 0002:00044108       __default87
+ 0002:000C50F0  Idle __DestructorCountPtr
+ 0002:00041EE4  Idle __directvideo
+ 0002:000C559C       __dll_table
+ 0002:000C52D8       __doserrno
+ 0002:00043A94  Idle __dosErrorToSV
+ 0001:00008834       __dup_handle
+ 0002:000C558C       __environ
+ 0002:000C5594       __envsize
+ 0002:000C5598  Idle __env_lock
+ 0001:0000CC18       __ErrorExit
+ 0001:0000CB28       __ErrorMessage
+ 0001:0000CC90       __ErrorMessageHelper
+ 0001:00003877       __ExceptInit
+ 0001:00004914       __ExceptionHandler
+ 0002:000423A4  Idle __ExceptVarsSize
+ 0002:000C55A4       __ExcRegPtr
+ 0002:000C55D0       __exe_table
+ 0001:0000CE10       __exit
+ 0001:0000CFE0  Idle __exitargv
+ 0002:00044434       __exitbuf
+ 0002:00044438       __exitfopen
+ 0002:0004443C  Idle __exitopen
+ 0001:00003AA8  Idle __exit_except
+ 0001:00007978  Idle __exit_streams
+ 0001:0000C754  Idle __expand
+ 0001:0000D1B0       __expandblock
+ 0002:00044444  Idle __expandptr
+ 0001:00009D5C       __f87_Cosine
+ 0001:00009D58       __f87_Sine
+ 0001:00009D60       __f87_Tangent
+ 0001:00006A40       __fgetc
+ 0002:00044364       __firstHeap
+ 0002:0004414C  Idle __floatconvert
+ 0001:000087A4       __flushall
+ 0001:00006360       __flushout
+ 0002:00043500       __fmode
+ 0002:00043504       __fmodeptr
+ 0001:00009E3C       __fpreset
+ 0002:00044370       __freeStart
+ 0001:0000889C  Idle __free_handle
+ 0001:0000C6DC  Idle __free_heaps
+ 0001:00009E54       __fuildq
+ 0001:00009E84       __fuistq
+ 0001:00009EA8       __fxam
+ 0001:00000046  Idle __GetExceptDLLinfo
+ 0001:00003912       __GetExceptDLLinfoInternal
+ 0001:00000053  Idle __getHInstance
+ 0001:0000943C       __getLocaleEra
+ 0001:00009288  Idle __getLocaleMonetaryInfo
+ 0001:000093DC  Idle __getLocaleMonetaryNegFmt
+ 0001:000093E8       __getLocaleNumericInfo
+ 0001:00008F54       __getLocaleTimeInfo
+ 0001:000087F4       __get_handle
+ 0001:00004250  Idle __Global_unwind
+ 0002:000C5110       __HandlerPtr
+ 0002:000C51F4       __handles
+ 0002:000C4F50       __hin
+ 0002:0000006B       __hInstance
+ 0002:000C4F4C       __hout
+ 0002:00044110       __huge_dble
+ 0002:0004410C  Idle __huge_flt
+ 0002:00044118       __huge_ldble
+ 0002:00044138  Idle __indefinite
+ 0001:00003ABC       __InitDefaultHander
+ 0001:000063C0       __initfmode
+ 0001:0000A29C       __initmatherr
+ 0001:0000BC04  Idle __initMBCSTable
+ 0001:0000CE48       __initwild
+ 0001:00003A90  Idle __init_except
+ 0001:0000D5C4       __init_exit_proc
+ 0001:00008954       __init_handles
+ 0001:000078C8       __init_streams
+ 0001:0000004B  Idle __isDLL
+ 0001:0000BC14       __ismbcspace
+ 0002:000C55DC       __isWindows
+ 0002:00044300  Idle __kalpha
+ 0002:00044302  Idle __kpunct
+ 0002:00044368  Idle __lastHeap
+ 0002:000C4F54  Idle __LastMode
+ 0002:0004436C       __linktable
+ 0001:00009B27  Idle __lldiv
+ 0001:00009BE8  Idle __llmod
+ 0001:00009B04       __llmul
+ 0001:00009CB0  Idle __llshl
+ 0001:00009CCC  Idle __llshr
+ 0001:00009B9F       __lludiv
+ 0001:00009C62       __llumod
+ 0001:00009CE8  Idle __llushr
+ 0001:00004898       __Local_unwind
+ 0001:0000A2EC       __lrand
+ 0001:0000A218       __ltoa
+ 0001:0000A240       __matherr
+ 0001:0000A26C       __matherrl
+ 0002:00044158       __mathwhy
+ 0002:00044126       __max_dble
+ 0002:00044122       __max_flt
+ 0002:0004412E       __max_ldble
+ 0002:000C53E0       __mbcsCodePage
+ 0002:000C52DC       __mbctype
+ 0001:0000BC34       __mbsrchr
+ 0002:000443B8  Idle __messagefile
+ 0002:00041EE8  Idle __ModeTable
+ 0001:0000C8F8  Idle __msize
+ 0002:0004403C       __nextrealptr
+ 0002:000440A4       __nextrealwptr
+ 0002:00043434       __nfile
+ 0002:00043A90       __notUmask
+ 0002:00044354  Idle __nv_heap_size
+ 0002:00043438       __openfd
+ 0002:000C55B0       __oscmd
+ 0002:000C55A8       __osenv
+ 0002:000C54FC       __ostype
+ 0001:0000C6C4  Idle __phys_avail
+ 0002:000C512C       __pidtab
+ 0002:00044150       __pmatherr
+ 0002:00044154       __pmatherrl
+ 0001:0000B99C       __pow10
+ 0001:00009F70       __qdiv10
+ 0001:00009F98       __qmul10
+ 0001:00008B58  Idle __read
+ 0002:00044038       __realcvtptr
+ 0002:000440A0       __realcvtwptr
+ 0001:000048AB  Idle __Return_unwind
+ 0002:0004437C       __rover
+ 0001:00008B10       __rtl_read
+ 0001:00008B74       __rtl_write
+ 0001:00006D90       __scanner
+ 0001:00009D52       __scanrslt
+ 0002:00044044       __scanrsltptr
+ 0001:00009D4C       __scantod
+ 0002:00044040       __scantodptr
+ 0002:000440AC       __scanwrsltptr
+ 0002:000440A8       __scanwtodptr
+ 0001:0000AE34       __scan_init
+ 0001:0000B318       __scan_initw
+ 0001:0000CE4C  Idle __setargv
+ 0002:00044440       __setargv__
+ 0002:000444D8       __setenvp__
+ 0001:00003A44  Idle __setexc
+ 0001:0000617C       __SetExceptionHandler
+ 0001:0000BB14       __setmbcp
+ 0001:00003A70  Idle __SetUserHandler
+ 0002:00044358       __smalloc_threshold
+ 0001:0000D6E8       __startup
+ 0002:000C55D8  Idle __stkbase
+ 0002:00042420       __stkchk
+ 0001:00003648       __stpcpy
+ 0002:00042F84       __streams
+ 0002:00043514       __sys_errlist
+ 0002:000435D8       __sys_nerr
+ 0001:0000D5AC       __terminate
+ 0002:0004413C       __tiny_ldble
+ 0002:00000063  Idle __TLS_index
+ 0002:00000067  Idle __TLS_index4
+ 0002:000C52C4       __tmpnum
+ 0002:00044148       __turboFloat
+ 0001:000087DC       __umask
+ 0001:00008F18       __unlink
+ 0001:00003A60  Idle __unsetexc
+ 0001:00006191       __UnsetExceptionHandler
+ 0001:00003A84  Idle __unsetuserhandler
+ 0001:000061BD  Idle __UnwindException
+ 0002:000C5114  Idle __UserHandlerPtr
+ 0002:00041ED0       __video
+ 0002:0004435C  Idle __virt_chunk_free
+ 0002:00044360  Idle __virt_chunk_free2
+ 0002:0004434C  Idle __virt_chunk_size
+ 0002:00044350  Idle __virt_chunk_size2
+ 0001:0000C980       __virt_commit
+ 0001:0000C9D4       __virt_decommit
+ 0002:00044348  Idle __virt_heap_size
+ 0001:0000C9F8       __virt_release
+ 0001:0000C914       __virt_reserve
+ 0002:000C55C8       __wC0argv
+ 0002:000C55CC       __wC0environ
+ 0001:00003470       __wmemset
+ 0002:000C55B4       __woscmd
+ 0002:000C55AC       __wosenv
+ 0001:00006D88  Idle __wremove
+ 0001:00008BBC  Idle __write
+ 0001:00008F34       __wunlink
+ 0001:0000837C       __xfclose
+ 0001:000083AC       __xfflush
+ 0001:00008BD8       ___access
+ 0002:00044384       ___allocated
+ 0001:00003706       ___call_terminate
+ 0001:000037E6       ___call_unexpected
+ 0001:00008C14       ___close
+ 0002:0000006F  Idle ___CPPdebugHook
+ 0002:000422C0  Idle ___CPPexceptionList
+ 0002:00042434       ___debuggerDisableTerminateCallback
+ 0002:000422D0  Idle ___debuggerHookDataP
+ 0002:000422C8  Idle ___debuggerHookFN
+ 0002:000422CC  Idle ___debuggerWatchingP
+ 0001:00003984       ___DefHandler
+ 0001:00003AD6       ___doGlobalUnwind
+ 0001:00008ADC       ___DOSerror
+ 0001:000083D4       ___eof
+ 0001:0000CAC4  Idle ___errno
+ 0001:0000CC08  Idle ___ErrorMessage
+ 0002:000422C4  Idle ___exceptFlags
+ 0002:000422EC  Idle ___exceptMemAllocVars
+ 0002:000422E8  Idle ___exceptStaticBuffP
+ 0002:000422F0  Idle ___ExceptStaticXbuff
+ 0001:000065AC       ___fputn
+ 0001:00006554       ___getfp
+ 0001:00009EBC       ___int64toa
+ 0001:00008A98       ___IOerror
+ 0001:00008C60       ___isatty
+ 0001:00008C90       ___isatty_osfhandle
+ 0002:00000058       ___isDLL
+ 0002:00000062       ___isGUI
+ 0001:000095E0       ___iswctype
+ 0001:00003AF4  Idle ___JumpToCatch__
+ 0001:0000A03C       ___ldtrunc
+ 0002:00043F08       ___locale
+ 0001:0000A138       ___longtoa
+ 0001:00008CA8       ___lseek
+ 0001:0000B8F0       ___matherr
+ 0001:00006C50       ___mkname
+ 0001:00009D46       ___nextreal
+ 0001:00008AFC       ___NTerror
+ 0001:00008D20       ___open
+ 0001:000064AC       ___openfp
+ 0001:000061C4  Idle ___org_access
+ 0001:0000BC8C  Idle ___org_calloc
+ 0001:0000BCB8  Idle ___org_delete
+ 0001:0000BCC8  Idle ___org_deletea
+ 0001:0000624C  Idle ___org_fclose
+ 0001:000062DC  Idle ___org_fflush
+ 0001:00006A58  Idle ___org_fgetc
+ 0001:00006580  Idle ___org_fopen
+ 0001:00006B40  Idle ___org_fputc
+ 0001:00006688  Idle ___org_fputs
+ 0001:000067F8  Idle ___org_fread
+ 0001:0000C2E0  Idle ___org_free
+ 0001:00006888  Idle ___org_fseek
+ 0001:000068EC  Idle ___org_ftell
+ 0001:0000696C  Idle ___org_fwrite
+ 0001:0000D850  Idle ___org_getdate
+ 0001:0000D87C  Idle ___org_gettime
+ 0001:0000A1C8  Idle ___org_itoa
+ 0001:0000C3E8       ___org_malloc
+ 0001:0000963C  Idle ___org_mblen
+ 0001:000097F8  Idle ___org_mbstowcs
+ 0001:000096B8  Idle ___org_mbtowc
+ 0001:00003354  Idle ___org_memchr
+ 0001:000035DC  Idle ___org_memcmp
+ 0001:00003374  Idle ___org_memcpy
+ 0001:00003398  Idle ___org_memmove
+ 0001:000033E4  Idle ___org_memset
+ 0001:00006CE4  Idle ___org_perror
+ 0001:00006D60  Idle ___org_printf
+ 0001:0000D534  Idle ___org_raise
+ 0001:0000C87C  Idle ___org_realloc
+ 0001:00006D80  Idle ___org_remove
+ 0001:00007794  Idle ___org_setvbuf
+ 0001:00009FC8  Idle ___org_sin
+ 0001:0000780C  Idle ___org_sprintf
+ 0001:00007880  Idle ___org_sscanf
+ 0001:00003488  Idle ___org_strcat
+ 0001:000034C4  Idle ___org_strcmp
+ 0001:00003510  Idle ___org_strlen
+ 0001:0000356C  Idle ___org_strncat
+ 0001:0000A1F8  Idle ___org_ultoa
+ 0001:00007830  Idle ___org_vsprintf
+ 0001:000078A4  Idle ___org_vsscanf
+ 0001:00009960  Idle ___org_wcstombs
+ 0001:00009784  Idle ___org_wctomb
+ 0001:0000C754  Idle ___org__expand
+ 0001:00006A40  Idle ___org__fgetc
+ 0001:0000A240  Idle ___org__matherr
+ 0001:0000A26C  Idle ___org__matherrl
+ 0001:0000C8F8  Idle ___org__msize
+ 0001:00008B58  Idle ___org__read
+ 0001:00008B10  Idle ___org__rtl_read
+ 0001:00008B74  Idle ___org__rtl_write
+ 0001:00008BBC  Idle ___org__write
+ 0001:000084C8       ___read
+ 0001:00009D40       ___realcvt
+ 0001:0000756C       ___scantoint64
+ 0001:000000F9       ___System__GetTls
+ 0002:000422D4  Idle ___terminatePTR
+ 0002:000422E4  Idle ___throwExceptionName
+ 0002:000422DC  Idle ___throwFileName
+ 0002:000422E0  Idle ___throwLineNumber
+ 0001:00006CA0       ___tmpnam
+ 0002:000422D8  Idle ___unexpectdPTR
+ 0002:00000061  Idle ___useDynamicTLS
+ 0001:0000A1AC       ___utoa
+ 0001:00007A54       ___vprinter
+ 0001:000086B0       ___write
+ 0001:0000B330       ___xcvt
+ 0001:0000B600       ___xcvtw
+ 0003:00000000       ___xxInfo
+
+  Address         Publics by Value
+
+ 0001:00000000  Idle __acrtused
+ 0001:00000046  Idle __GetExceptDLLinfo
+ 0001:0000004B  Idle __isDLL
+ 0001:00000053  Idle __getHInstance
+ 0001:000000F9       ___System__GetTls
+ 0001:000000F9  Idle System::::GetTls() __fastcall
+ 0001:00000108  Idle _ccpSendCrm
+ 0001:00000131  Idle _ccpQueueInit
+ 0001:00000144  Idle _ccpQueueWrite
+ 0001:000004FA       _ccpDaq
+ 0001:0000064B       _ccpBackground
+ 0001:000006D1       _ccpCommand
+ 0001:00001207       _ccpSendCallBack
+ 0001:0000127F       _ccpInit
+ 0001:0000169A  Idle _canSendId
+ 0001:00001701  Idle _ccpSendId
+ 0001:0000176E       _ccpSend
+ 0001:00001786  Idle _ramInit
+ 0001:000017BA  Idle _ramGetPointer
+ 0001:00001852  Idle _ramGetAddress
+ 0001:00001893  Idle _flashInit
+ 0001:000018C0  Idle _flashGetPointer
+ 0001:00001936  Idle _flashGetAddress
+ 0001:00001977  Idle _flashClear
+ 0001:000019C3  Idle _flashProgramm
+ 0001:000019E4  Idle _flashRead
+ 0001:00001A61  Idle _flashWrite
+ 0001:00001AE2  Idle _flashCopy
+ 0001:00001B58       _ccpGetCalPage
+ 0001:00001B62       _ccpSetCalPage
+ 0001:00001BCC  Idle _ccpWriteFlash
+ 0001:00001C07  Idle _ccpReadFlash
+ 0001:00001CBE       _ccpFlashClear
+ 0001:00001CF7       _ccpFlashProgramm
+ 0001:00001DC3       _ccpCheckWriteAccess
+ 0001:00001E2B       _ccpGetPointer
+ 0001:00001E8C       _ccpGetMTA0
+ 0001:00001EBA       _ccpUserBackground
+ 0001:00001EBF  Idle _ccpDisableNormalOperation
+ 0001:00001EC6       _ccpGetSeed
+ 0001:00001EEB       _ccpUnlock
+ 0001:00001F45  Idle _handleKey
+ 0001:00001F99  Idle thread
+ 0001:00001FE4       _main
+ 0001:00002848       _ecuInit
+ 0001:000029BA       _ecuCyclic
+ 0001:00002FD8       __crtinit
+ 0001:0000312C       _getch
+ 0001:00003280       _ungetch
+ 0001:000032AC       _kbhit
+ 0001:00003354       _memchr
+ 0001:00003354  Idle ___org_memchr
+ 0001:00003374       _memcpy
+ 0001:00003374  Idle ___org_memcpy
+ 0001:00003398  Idle ___org_memmove
+ 0001:00003398       _memmove
+ 0001:000033E4       _memset
+ 0001:000033E4  Idle ___org_memset
+ 0001:00003470       __wmemset
+ 0001:00003488  Idle ___org_strcat
+ 0001:00003488       _strcat
+ 0001:000034C4       _strcmp
+ 0001:000034C4  Idle ___org_strcmp
+ 0001:00003510       _strlen
+ 0001:00003510  Idle ___org_strlen
+ 0001:0000356C       _strncat
+ 0001:0000356C  Idle ___org_strncat
+ 0001:000035DC  Idle ___org_memcmp
+ 0001:000035DC       _memcmp
+ 0001:00003648       __stpcpy
+ 0001:00003680       _wcslen
+ 0001:00003698       _wcscpy
+ 0001:000036D8  Idle terminate()
+ 0001:000036DE  Idle set_terminate(void(*)())
+ 0001:00003706       ___call_terminate
+ 0001:000037B8  Idle unexpected()
+ 0001:000037BE  Idle set_unexpected(void(*)())
+ 0001:000037E6       ___call_unexpected
+ 0001:00003858  Idle __GetPolymorphicDTC(void*,unsigned int)
+ 0001:00003877       __ExceptInit
+ 0001:00003912       __GetExceptDLLinfoInternal
+ 0001:00003950       __lockDebuggerData()
+ 0001:00003978       __unlockDebuggerData()
+ 0001:00003984       ___DefHandler
+ 0001:00003A44  Idle __setexc
+ 0001:00003A60  Idle __unsetexc
+ 0001:00003A70  Idle __SetUserHandler
+ 0001:00003A84  Idle __unsetuserhandler
+ 0001:00003A90  Idle __init_except
+ 0001:00003AA8  Idle __exit_except
+ 0001:00003ABC       __InitDefaultHander
+ 0001:00003AD0  Idle jump()
+ 0001:00003AD6       ___doGlobalUnwind
+ 0001:00003AEB       invokeHnd()
+ 0001:00003AF4  Idle ___JumpToCatch__
+ 0001:000041CD       _ThrowExceptionLDTC(void*,void*,void*,void*,unsigned int,unsigned int,unsigned int,unsigned char*,void*)
+ 0001:000041FD       _ReThrowException(unsigned int,unsigned char*)
+ 0001:00004250  Idle __Global_unwind
+ 0001:0000438C       _CatchCleanup()
+ 0001:00004898       __Local_unwind
+ 0001:000048AB  Idle __Return_unwind
+ 0001:00004914       __ExceptionHandler
+ 0001:000056AA       __CurrExcContext
+ 0001:00005700       @__InitExceptBlockLDTC
+ 0001:0000573C       __typeIDname(tpid*)
+ 0001:00005773       __isSameTypeID(tpid*,tpid*)
+ 0001:000059A5       __isCompatTypeID(tpid*,tpid*,int,tpid**)
+ 0001:00005AB4  Idle __ThrowFileName()
+ 0001:00005AC0  Idle __ThrowLineNumber()
+ 0001:00005ACC  Idle __ThrowExceptionName()
+ 0001:00005AD8  Idle typeinfo::typeinfo(const typeinfo&)
+ 0001:00005B10  Idle typeinfo::operator =(const typeinfo&)
+ 0001:00005B18  Idle typeinfo::~typeinfo()
+ 0001:00005B37  Idle typeinfo::operator ==(const typeinfo&) const
+ 0001:00005B5A  Idle typeinfo::operator !=(const typeinfo&) const
+ 0001:00005B7A  Idle typeinfo::before(const typeinfo&) const
+ 0001:00005BC3  Idle typeinfo::name() const
+ 0001:00005BD4  Idle __GetTypeInfo(void*,void*,void*,void*)
+ 0001:00005E98  Idle __DynamicCast(void*,void*,void*,void*,int)
+ 0001:00005F80  Idle __DynamicCastVCLref(void*,void*) __fastcall
+ 0001:00005FB2  Idle __DynamicCastVCLptr(void*,void*) __fastcall
+ 0001:00006068       __adjustClassAdr(void*,tpid*,tpid*)
+ 0001:000060E2       __tpdsc__[typeinfo*]
+ 0001:000060F9       __tpdsc__[Bad_typeid]
+ 0001:00006115       __tpdsc__[Bad_cast]
+ 0001:00006131       __tpdsc__[typeinfo]
+ 0001:0000617C       __SetExceptionHandler
+ 0001:00006191       __UnsetExceptionHandler
+ 0001:000061BD  Idle __UnwindException
+ 0001:000061C4  Idle ___org_access
+ 0001:000061C4       _access
+ 0001:000061CC       __allocbuf
+ 0001:0000624C       _fclose
+ 0001:0000624C  Idle ___org_fclose
+ 0001:000062DC  Idle ___org_fflush
+ 0001:000062DC       _fflush
+ 0001:00006360       __flushout
+ 0001:000063C0       __initfmode
+ 0001:000064AC       ___openfp
+ 0001:00006554       ___getfp
+ 0001:00006580  Idle ___org_fopen
+ 0001:00006580       _fopen
+ 0001:000065AC       ___fputn
+ 0001:00006688  Idle ___org_fputs
+ 0001:00006688       _fputs
+ 0001:000067F8       _fread
+ 0001:000067F8  Idle ___org_fread
+ 0001:00006888  Idle ___org_fseek
+ 0001:00006888       _fseek
+ 0001:000068EC  Idle ___org_ftell
+ 0001:000068EC       _ftell
+ 0001:0000696C       _fwrite
+ 0001:0000696C  Idle ___org_fwrite
+ 0001:00006A40       __fgetc
+ 0001:00006A40  Idle ___org__fgetc
+ 0001:00006A58       _fgetc
+ 0001:00006A58  Idle ___org_fgetc
+ 0001:00006B40       _fputc
+ 0001:00006B40  Idle ___org_fputc
+ 0001:00006C50       ___mkname
+ 0001:00006CA0       ___tmpnam
+ 0001:00006CE4  Idle _perror
+ 0001:00006CE4  Idle ___org_perror
+ 0001:00006D60  Idle ___org_printf
+ 0001:00006D60       _printf
+ 0001:00006D80  Idle ___org_remove
+ 0001:00006D80       _remove
+ 0001:00006D88  Idle __wremove
+ 0001:00006D90       __scanner
+ 0001:0000756C       ___scantoint64
+ 0001:00007794       _setvbuf
+ 0001:00007794  Idle ___org_setvbuf
+ 0001:0000780C       _sprintf
+ 0001:0000780C  Idle ___org_sprintf
+ 0001:00007830  Idle _vsprintf
+ 0001:00007830  Idle ___org_vsprintf
+ 0001:00007880       _sscanf
+ 0001:00007880  Idle ___org_sscanf
+ 0001:000078A4  Idle ___org_vsscanf
+ 0001:000078A4  Idle _vsscanf
+ 0001:000078C8       __init_streams
+ 0001:00007978  Idle __exit_streams
+ 0001:00007A54       ___vprinter
+ 0001:0000837C       __xfclose
+ 0001:000083AC       __xfflush
+ 0001:000083D4       ___eof
+ 0001:000084C8       ___read
+ 0001:000086B0       ___write
+ 0001:000087A4       __flushall
+ 0001:000087DC       __umask
+ 0001:000087F4       __get_handle
+ 0001:00008834       __dup_handle
+ 0001:0000889C  Idle __free_handle
+ 0001:00008954       __init_handles
+ 0001:00008A98       ___IOerror
+ 0001:00008ADC       ___DOSerror
+ 0001:00008AFC       ___NTerror
+ 0001:00008B10       __rtl_read
+ 0001:00008B10  Idle ___org__rtl_read
+ 0001:00008B58  Idle __read
+ 0001:00008B58  Idle ___org__read
+ 0001:00008B74       __rtl_write
+ 0001:00008B74  Idle ___org__rtl_write
+ 0001:00008BBC  Idle __write
+ 0001:00008BBC  Idle ___org__write
+ 0001:00008BD8       ___access
+ 0001:00008C14       ___close
+ 0001:00008C60       ___isatty
+ 0001:00008C90       ___isatty_osfhandle
+ 0001:00008CA8       ___lseek
+ 0001:00008D20       ___open
+ 0001:00008F18       __unlink
+ 0001:00008F34       __wunlink
+ 0001:00008F54       __getLocaleTimeInfo
+ 0001:00009288  Idle __getLocaleMonetaryInfo
+ 0001:000093DC  Idle __getLocaleMonetaryNegFmt
+ 0001:000093E8       __getLocaleNumericInfo
+ 0001:0000943C       __getLocaleEra
+ 0001:000094DC  Idle _iswalnum
+ 0001:000094F4  Idle _iswascii
+ 0001:00009508       _iswalpha
+ 0001:00009520  Idle _iswcntrl
+ 0001:00009534       _iswdigit
+ 0001:00009548  Idle _iswgraph
+ 0001:00009560  Idle _iswlower
+ 0001:00009574  Idle _iswprint
+ 0001:0000958C  Idle _iswpunct
+ 0001:000095A0       _iswspace
+ 0001:000095B4  Idle _iswupper
+ 0001:000095C8  Idle _iswxdigit
+ 0001:000095E0       ___iswctype
+ 0001:0000963C  Idle _mblen
+ 0001:0000963C  Idle ___org_mblen
+ 0001:000096B8  Idle ___org_mbtowc
+ 0001:000096B8       _mbtowc
+ 0001:00009784  Idle ___org_wctomb
+ 0001:00009784       _wctomb
+ 0001:000097F8       _mbstowcs
+ 0001:000097F8  Idle ___org_mbstowcs
+ 0001:00009960  Idle ___org_wcstombs
+ 0001:00009960       _wcstombs
+ 0001:00009B04       __llmul
+ 0001:00009B27  Idle __lldiv
+ 0001:00009B9F       __lludiv
+ 0001:00009BE8  Idle __llmod
+ 0001:00009C62       __llumod
+ 0001:00009CB0  Idle __llshl
+ 0001:00009CCC  Idle __llshr
+ 0001:00009CE8  Idle __llushr
+ 0001:00009D04       __clear87
+ 0001:00009D18       __control87
+ 0001:00009D40       ___realcvt
+ 0001:00009D46       ___nextreal
+ 0001:00009D4C       __scantod
+ 0001:00009D52       __scanrslt
+ 0001:00009D58       __f87_Sine
+ 0001:00009D5C       __f87_Cosine
+ 0001:00009D60       __f87_Tangent
+ 0001:00009E3C       __fpreset
+ 0001:00009E54       __fuildq
+ 0001:00009E84       __fuistq
+ 0001:00009EA8       __fxam
+ 0001:00009EBC       ___int64toa
+ 0001:00009F70       __qdiv10
+ 0001:00009F98       __qmul10
+ 0001:00009FC8       _sin
+ 0001:00009FC8  Idle ___org_sin
+ 0001:0000A03C       ___ldtrunc
+ 0001:0000A138       ___longtoa
+ 0001:0000A1AC       ___utoa
+ 0001:0000A1C8  Idle ___org_itoa
+ 0001:0000A1C8  Idle _itoa
+ 0001:0000A1F8       _ultoa
+ 0001:0000A1F8  Idle ___org_ultoa
+ 0001:0000A218       __ltoa
+ 0001:0000A240       __matherr
+ 0001:0000A240  Idle ___org__matherr
+ 0001:0000A26C       __matherrl
+ 0001:0000A26C  Idle ___org__matherrl
+ 0001:0000A29C       __initmatherr
+ 0001:0000A2B8  Idle _srand
+ 0001:0000A2D0  Idle _rand
+ 0001:0000A2EC       __lrand
+ 0001:0000A61C       __cvt_init
+ 0001:0000A950       __cvt_initw
+ 0001:0000AE34       __scan_init
+ 0001:0000B318       __scan_initw
+ 0001:0000B330       ___xcvt
+ 0001:0000B600       ___xcvtw
+ 0001:0000B8F0       ___matherr
+ 0001:0000B99C       __pow10
+ 0001:0000BB14       __setmbcp
+ 0001:0000BC04  Idle __initMBCSTable
+ 0001:0000BC14       __ismbcspace
+ 0001:0000BC34       __mbsrchr
+ 0001:0000BC8C       _calloc
+ 0001:0000BC8C  Idle ___org_calloc
+ 0001:0000BCB8       operator delete(void*)
+ 0001:0000BCB8  Idle ___org_delete
+ 0001:0000BCC8  Idle ___org_deletea
+ 0001:0000BCC8       operator delete[](void*)
+ 0001:0000C2E0       _free
+ 0001:0000C2E0  Idle ___org_free
+ 0001:0000C3E8       _malloc
+ 0001:0000C3E8       ___org_malloc
+ 0001:0000C6C4  Idle __phys_avail
+ 0001:0000C6DC  Idle __free_heaps
+ 0001:0000C754  Idle __expand
+ 0001:0000C754  Idle ___org__expand
+ 0001:0000C87C  Idle ___org_realloc
+ 0001:0000C87C       _realloc
+ 0001:0000C8F8  Idle __msize
+ 0001:0000C8F8  Idle ___org__msize
+ 0001:0000C914       __virt_reserve
+ 0001:0000C980       __virt_commit
+ 0001:0000C9D4       __virt_decommit
+ 0001:0000C9F8       __virt_release
+ 0001:0000CA64       __assert
+ 0001:0000CAC4  Idle ___errno
+ 0001:0000CB28       __ErrorMessage
+ 0001:0000CC08  Idle ___ErrorMessage
+ 0001:0000CC18       __ErrorExit
+ 0001:0000CC90       __ErrorMessageHelper
+ 0001:0000CD78       __abort
+ 0001:0000CD8C       _abort
+ 0001:0000CDF8       _exit
+ 0001:0000CE10       __exit
+ 0001:0000CE28  Idle __cexit
+ 0001:0000CE38  Idle __c_exit
+ 0001:0000CE48       __initwild
+ 0001:0000CE4C  Idle __setargv
+ 0001:0000CFE0  Idle __exitargv
+ 0001:0000D070       __addarg
+ 0001:0000D1B0       __expandblock
+ 0001:0000D4D4  Idle _signal
+ 0001:0000D534       _raise
+ 0001:0000D534  Idle ___org_raise
+ 0001:0000D5AC       __terminate
+ 0001:0000D5BC       __create_shmem
+ 0001:0000D5C4       __init_exit_proc
+ 0001:0000D670       __cleanup
+ 0001:0000D6E8       __startup
+ 0001:0000D850       _getdate
+ 0001:0000D850  Idle ___org_getdate
+ 0001:0000D87C       _gettime
+ 0001:0000D87C  Idle ___org_gettime
+ 0002:00000058       ___isDLL
+ 0002:00000061  Idle ___useDynamicTLS
+ 0002:00000062       ___isGUI
+ 0002:00000063  Idle __TLS_index
+ 0002:00000067  Idle __TLS_index4
+ 0002:0000006B       __hInstance
+ 0002:0000006F  Idle ___CPPdebugHook
+ 0002:00000074  Idle _ccpStationId
+ 0002:0000007C  Idle _CRC16CCITTtab
+ 0002:000006B4  Idle _hwType
+ 0002:000006B8  Idle _hwChannel
+ 0002:000006BC  Idle _hwIndex
+ 0002:000006C0  Idle _gPortHandle
+ 0002:000006C4  Idle _gChannelMask
+ 0002:000006C8  Idle _gPermissionMask
+ 0002:000006CC  Idle _gDriverConfig
+ 0002:000006D0  Idle _gBitRate
+ 0002:000006D4       _gDebugLevel
+ 0002:000006E4  Idle _gDtoId
+ 0002:000006E8  Idle _gCroId
+ 0002:000006EC       _gStationAddr
+ 0002:000006F0  Idle _hwType0
+ 0002:000006F4  Idle _hwIndex0
+ 0002:000006F8  Idle _hwChannel0
+ 0002:000006FC  Idle _hwType1
+ 0002:00000700  Idle _hwIndex1
+ 0002:00000704  Idle _hwChannel1
+ 0002:00000708  Idle _gRam
+ 0002:0000070C  Idle _ccpFlash
+ 0002:0004070C  Idle _ccpCalPage
+ 0002:00040710  Idle _ccpResourceMask
+ 0002:00040714  Idle _ccpLastSeed
+ 0002:000410A8  Idle _testString
+ 0002:000410B4       _CALRAM_START
+ 0002:000410B6       _flashSignatur
+ 0002:000410D8  Idle _period
+ 0002:000410DC  Idle _ampl
+ 0002:000410E0  Idle _limit
+ 0002:000410E4  Idle _offset
+ 0002:000410E8  Idle _filter
+ 0002:000410EC  Idle _period1
+ 0002:000410F0  Idle _ampl1
+ 0002:000410F4  Idle _limit1
+ 0002:000410F8  Idle _offset1
+ 0002:000410FC  Idle _filter1
+ 0002:00041100  Idle _variantSelector
+ 0002:00041104  Idle _period_d
+ 0002:0004110C  Idle _ampl_d
+ 0002:00041114  Idle _a
+ 0002:00041116  Idle _b
+ 0002:00041118  Idle _c
+ 0002:0004111A  Idle _sbytePWMLevel
+ 0002:0004111B  Idle _bytePWMFilter
+ 0002:0004111C  Idle _byte1
+ 0002:0004111D  Idle _byte2
+ 0002:0004111E  Idle _byte3
+ 0002:0004111F  Idle _byte4
+ 0002:00041120  Idle _byte5
+ 0002:00041122  Idle _word1
+ 0002:00041124  Idle _word2
+ 0002:00041126  Idle _word3
+ 0002:00041128  Idle _word4
+ 0002:0004112C  Idle _dword1
+ 0002:00041130  Idle _dword2
+ 0002:00041134  Idle _dword3
+ 0002:00041138  Idle _dword4
+ 0002:0004113C  Idle _map1Counter
+ 0002:0004113D  Idle _map1_8_8_uc
+ 0002:0004117D  Idle _map_kf1
+ 0002:000411BD  Idle _map_kf2
+ 0002:000411FD  Idle _map_kf3
+ 0002:0004123D  Idle _map_kf4
+ 0002:0004127D  Idle _map_kf6
+ 0002:000412BD  Idle _map_kf7
+ 0002:000412FD  Idle _map_kf8
+ 0002:0004133D  Idle _map2_8_8_uc
+ 0002:0004137D  Idle _map3_8_8_uc
+ 0002:000413BD  Idle _map4_80_uc
+ 0002:0004140D  Idle _map_kf5
+ 0002:0004145D  Idle _curve5_16_uc
+ 0002:0004146D  Idle _curve5_16_uc1
+ 0002:0004147D  Idle _curve5_16_uc2
+ 0002:0004148D  Idle _curve5_16_uc3
+ 0002:0004149D  Idle _curve5_16_uc4
+ 0002:000414AD  Idle _map5_82_uc
+ 0002:000414FF  Idle _map6_122_uc
+ 0002:00041579  Idle _curve1_8_uc
+ 0002:00041581  Idle _curve2_8_uc
+ 0002:00041589  Idle _curve3_8_uc
+ 0002:00041591  Idle _curve4_8_uc
+ 0002:000415A1  Idle _curve4_17_uc
+ 0002:000415B2  Idle _input1_uc
+ 0002:000415B4  Idle _input2_uc
+ 0002:000415B5  Idle _curve_kl2
+ 0002:000415BD  Idle _curve_kl3
+ 0002:000415CD  Idle _curve_kl4
+ 0002:000415DD  Idle _curve_kl5
+ 0002:000415E5  Idle _curve_kl6
+ 0002:000415EE  Idle _curve_kl7
+ 0002:0004160E  Idle _curve_kl8
+ 0002:0004161E  Idle _curve_kl9
+ 0002:0004165F  Idle _curve_kl10
+ 0002:00041680  Idle _calram
+ 0002:00041A80  Idle _eeprom
+ 0002:00041A88  Idle _test_array
+ 0002:00041AEC  Idle _TestArray_Max_10_10
+ 0002:00041B66  Idle _noise_distribution
+ 0002:00041BA6  Idle _channel5_map
+ 0002:00041EC8  Idle _CALRAM_SIGN
+ 0002:00041ECC       _CALRAM_LAST
+ 0002:00041ED0       __video
+ 0002:00041EE4  Idle __directvideo
+ 0002:00041EE8  Idle __ModeTable
+ 0002:00041F30       __cextend
+ 0002:00041F34  Idle _kbdtab
+ 0002:000422B8       __cFlag
+ 0002:000422B9       __cChar
+ 0002:000422C0  Idle ___CPPexceptionList
+ 0002:000422C4  Idle ___exceptFlags
+ 0002:000422C8  Idle ___debuggerHookFN
+ 0002:000422CC  Idle ___debuggerWatchingP
+ 0002:000422D0  Idle ___debuggerHookDataP
+ 0002:000422D4  Idle ___terminatePTR
+ 0002:000422D8  Idle ___unexpectdPTR
+ 0002:000422DC  Idle ___throwFileName
+ 0002:000422E0  Idle ___throwLineNumber
+ 0002:000422E4  Idle ___throwExceptionName
+ 0002:000422E8  Idle ___exceptStaticBuffP
+ 0002:000422EC  Idle ___exceptMemAllocVars
+ 0002:000422F0  Idle ___ExceptStaticXbuff
+ 0002:000423A4  Idle __ExceptVarsSize
+ 0002:000423A8  Idle __DebuggerHookData
+ 0002:00042420       __stkchk
+ 0002:00042434       ___debuggerDisableTerminateCallback
+ 0002:00042F74       typeinfo::
+ 0002:00042F84       __streams
+ 0002:00043434       __nfile
+ 0002:00043438       __openfd
+ 0002:00043500       __fmode
+ 0002:00043504       __fmodeptr
+ 0002:00043514       __sys_errlist
+ 0002:000435D8       __sys_nerr
+ 0002:00043A8C       __cfinfo_get
+ 0002:00043A90       __notUmask
+ 0002:00043A94  Idle __dosErrorToSV
+ 0002:00043BC4       __chartype
+ 0002:00043DD0       _CMonetary
+ 0002:00043E04       _CNumeric
+ 0002:00043E1A       _CTimeDate
+ 0002:00043EDC       _CLOCALE
+ 0002:00043F08       ___locale
+ 0002:00044038       __realcvtptr
+ 0002:0004403C       __nextrealptr
+ 0002:00044040       __scantodptr
+ 0002:00044044       __scanrsltptr
+ 0002:000440A0       __realcvtwptr
+ 0002:000440A4       __nextrealwptr
+ 0002:000440A8       __scanwtodptr
+ 0002:000440AC       __scanwrsltptr
+ 0002:00044108       __default87
+ 0002:0004410C  Idle __huge_flt
+ 0002:00044110       __huge_dble
+ 0002:00044118       __huge_ldble
+ 0002:00044122       __max_flt
+ 0002:00044126       __max_dble
+ 0002:0004412E       __max_ldble
+ 0002:00044138  Idle __indefinite
+ 0002:0004413C       __tiny_ldble
+ 0002:00044148       __turboFloat
+ 0002:0004414C  Idle __floatconvert
+ 0002:00044150       __pmatherr
+ 0002:00044154       __pmatherrl
+ 0002:00044158       __mathwhy
+ 0002:00044300  Idle __kalpha
+ 0002:00044302  Idle __kpunct
+ 0002:00044348  Idle __virt_heap_size
+ 0002:0004434C  Idle __virt_chunk_size
+ 0002:00044350  Idle __virt_chunk_size2
+ 0002:00044354  Idle __nv_heap_size
+ 0002:00044358       __smalloc_threshold
+ 0002:0004435C  Idle __virt_chunk_free
+ 0002:00044360  Idle __virt_chunk_free2
+ 0002:00044364       __firstHeap
+ 0002:00044368  Idle __lastHeap
+ 0002:0004436C       __linktable
+ 0002:00044370       __freeStart
+ 0002:0004437C       __rover
+ 0002:00044384       ___allocated
+ 0002:000443B4       _errno
+ 0002:000443B8  Idle __messagefile
+ 0002:00044430       __atexitcnt
+ 0002:00044434       __exitbuf
+ 0002:00044438       __exitfopen
+ 0002:0004443C  Idle __exitopen
+ 0002:00044440       __setargv__
+ 0002:00044444  Idle __expandptr
+ 0002:000444B8       __argv0
+ 0002:000444D8       __setenvp__
+ 0002:00044620       _ccp
+ 0002:00044EC8  Idle _ram
+ 0002:00084EC8  Idle _ramSectorCount
+ 0002:00084ECC  Idle _flash
+ 0002:000C4ECC  Idle _timer
+ 0002:000C4ED0  Idle _channel1
+ 0002:000C4ED4  Idle _channel2
+ 0002:000C4ED8  Idle _channel3
+ 0002:000C4EDC  Idle _channel4
+ 0002:000C4EE0  Idle _channel5
+ 0002:000C4EE4  Idle _noise
+ 0002:000C4EE8  Idle _noise_ampl
+ 0002:000C4EEC  Idle _channel_d
+ 0002:000C4EF4  Idle _byteRandom
+ 0002:000C4EF5  Idle _byteCounter
+ 0002:000C4EF6  Idle _wordCounter
+ 0002:000C4EF8  Idle _dwordCounter
+ 0002:000C4EFC  Idle _sbyteCounter
+ 0002:000C4EFE  Idle _swordCounter
+ 0002:000C4F00  Idle _sdwordCounter
+ 0002:000C4F04  Idle _byteShift
+ 0002:000C4F06  Idle _wordShift
+ 0002:000C4F08  Idle _map1InputX
+ 0002:000C4F09  Idle _map1InputY
+ 0002:000C4F0A  Idle _map1Output
+ 0002:000C4F0B  Idle _curveInput
+ 0002:000C4F0C  Idle _curveOutput
+ 0002:000C4F0D  Idle _curveOutput1
+ 0002:000C4F0E  Idle _curveOutput2
+ 0002:000C4F0F  Idle _curveOutput3
+ 0002:000C4F10  Idle _curveOutput4
+ 0002:000C4F11  Idle _sbyteTriangleSlope
+ 0002:000C4F12  Idle _sbyteTriangle
+ 0002:000C4F13  Idle _bytePWM
+ 0002:000C4F14  Idle _bytePWMFiltered
+ 0002:000C4F15  Idle _testbyte1
+ 0002:000C4F16  Idle _testbyte2
+ 0002:000C4F17  Idle _testbyte3
+ 0002:000C4F18  Idle _testbyte4
+ 0002:000C4F19  Idle _testbyte5
+ 0002:000C4F1A  Idle _testbyte6
+ 0002:000C4F1B  Idle _testbyte7
+ 0002:000C4F1C  Idle _testbyte8
+ 0002:000C4F1D  Idle _testbyte9
+ 0002:000C4F1E  Idle _testbyte0
+ 0002:000C4F20  Idle _vin
+ 0002:000C4F22  Idle _v
+ 0002:000C4F24  Idle _ti
+ 0002:000C4F25  Idle _xi
+ 0002:000C4F26  Idle _yi
+ 0002:000C4F27  Idle _analogIndex
+ 0002:000C4F28  Idle _analogChannel
+ 0002:000C4F48  Idle _bitstruct1
+ 0002:000C4F4A  Idle _bitstruct2
+ 0002:000C4F4C       __hout
+ 0002:000C4F50       __hin
+ 0002:000C4F54  Idle __LastMode
+ 0002:000C4F58  Idle __C4350Mode
+ 0002:000C50F0  Idle __DestructorCountPtr
+ 0002:000C5110       __HandlerPtr
+ 0002:000C5114  Idle __UserHandlerPtr
+ 0002:000C512C       __pidtab
+ 0002:000C51F4       __handles
+ 0002:000C52C4       __tmpnum
+ 0002:000C52D8       __doserrno
+ 0002:000C52DC       __mbctype
+ 0002:000C53E0       __mbcsCodePage
+ 0002:000C54FC       __ostype
+ 0002:000C5500       __atexittbl
+ 0002:000C5580  Idle __argv
+ 0002:000C558C       __environ
+ 0002:000C5594       __envsize
+ 0002:000C5598  Idle __env_lock
+ 0002:000C559C       __dll_table
+ 0002:000C55A4       __ExcRegPtr
+ 0002:000C55A8       __osenv
+ 0002:000C55AC       __wosenv
+ 0002:000C55B0       __oscmd
+ 0002:000C55B4       __woscmd
+ 0002:000C55B8       __argc
+ 0002:000C55BC       __C0argc
+ 0002:000C55C0       __C0argv
+ 0002:000C55C4       __C0environ
+ 0002:000C55C8       __wC0argv
+ 0002:000C55CC       __wC0environ
+ 0002:000C55D0       __exe_table
+ 0002:000C55D8  Idle __stkbase
+ 0002:000C55DC       __isWindows
+ 0003:00000000       ___xxInfo

@@ -1,0 +1,2714 @@
+ASAP2_VERSION 1 50
+/begin PROJECT ccptest ""
+
+  /begin MODULE CPP ""
+
+    /begin A2ML
+
+      block "IF_DATA" taggedunion if_data {
+
+
+        "CANAPE_EXT" struct {
+          int;             /* version number */
+          taggedstruct {
+            "LINK_MAP" struct {
+              char[256];   /* segment name */
+              long;        /* base address of the segment */
+              uint;        /* address extension of the segment */
+              uint;        /* flag: address is relative to DS */
+              long;        /* offset of the segment address */
+              uint;        /* datatypValid */
+              uint;        /* enum datatyp */
+              uint;        /* bit offset of the segment */
+            };
+            "DISPLAY" struct {
+              long;        /* display color */
+              double;      /* minimal display value (phys)*/
+              double;      /* maximal display value (phys)*/
+            };
+            "VIRTUAL_CONVERSION" struct {
+              char[256];   /* name of the conversion formula */
+            };
+          };
+        };
+
+        /*********************************************************/
+        /*   CCP AML   AML Version V2.6, 18.10.2002              */
+        /*********************************************************/
+        "ASAP1B_CCP" taggedstruct {
+            /* Description of the DAQ-Lists */
+            (block "SOURCE" struct {
+              struct {
+                char [101];   /* Name of the DAQ-List (data acquisition list),
+                                 measurement source .        */
+                              /* If the DAQ-Liste only supports one fixed ECU
+                                 sampling rate, it can be declared below
+                                 to achieve compatibility with the ASAP2 standard.
+                                 Otherwise description of the possible ECU
+                                 sampling rates in QP_BLOB      */
+                int;          /* Period definition : Basic scaling unit in
+                                 CSE defined in ASAP1b (CSE=Code for Scaling Unit) */
+                long;         /* Period definition : Rate in Scaling Units */
+              };
+              taggedstruct {
+                "DISPLAY_IDENTIFIER" char[32];
+                block "QP_BLOB" struct {
+                  uint;                  /* Number of the DAQ-List 0..n               */
+                  taggedstruct {
+                    "LENGTH" uint;     /* Length of the DAQ-Liste, maximum number of
+                                          the useable ODTs                          */
+                    "CAN_ID_VARIABLE"; /* CAN-Message-ID is variable                */
+                    "CAN_ID_FIXED" ulong;
+                                       /* CAN-Message-ID of the DTOs is fixed,
+                                          Default DTO
+                                          Bit31 = 1: extended Identifier
+                                          Bit31 = 0: standard Identifier            */
+                                       /* Not applied if the ECU uses the DTM-Id    */
+                    ("RASTER" uchar )*;
+                                       /* Supported CCP Event Channel Names
+                                          of this DAQ List */
+                    ("EXCLUSIVE" int )*;
+                                       /* Exclusion of other DAQ-Lists              */
+                    "REDUCTION_ALLOWED";
+                                       /* Data reduction possible                   */
+                    "FIRST_PID" uchar; /* First Packet ID (PID) of the DAQ List     */
+                  };
+                };
+              };
+            } )*;
+            /* Description of the available ECU Sampling Rates (Event Channels)      */
+            (block "RASTER" struct {
+               char [101];   /* CCP Event Channel Name                               */
+               char [9];     /* Short Display Name of the Event Channel Name         */
+               uchar;        /* Event Channel No., used for CCP START_STOP)          */
+               int;          /* Period definition :  basic scaling unit in CSE
+                                as defined in ASAP1b                                 */
+               long;         /* ECU sample rate of the event channel,
+                                period definition based on the basic scaling unit    */
+               taggedstruct {
+                 ("EXCLUSIVE" uchar )*;
+                             /* Exclusion of other CCP Event Channels                */
+               };
+            })*;
+            /* Group several event channels to form one combined event */
+            /* e.g. group all cylinder synchronous events to one combined element */
+            (block "EVENT_GROUP" struct {
+               char [101];   /* Event group name */
+               char [9];     /* Short name for the event group */
+               taggedstruct {
+                 ("RASTER" uchar )*;
+               };
+                             /* all event channels beloging to group
+                                (CCP Event Channel Numbers for START_STOP)               */
+            })*;
+            /* Description of the authentification process */
+            block "SEED_KEY" struct {
+               char[256];    /* Name of the Seed&Key DLL for CAL Priviledge,
+                                including file-Extension without path */
+               char[256];    /* Name of the Seed&Key DLL for DAQ Priviledge,
+                                including file-Extension without path */
+               char[256];    /* Name of the Seed&Key DLL for PGM Priviledge,
+                                including file-Extension without path */
+            };
+            /* Description of the checksum calculation process */
+            block "CHECKSUM" struct {
+               char[256];    /* Name of the Checksum DLL representing the ECU Algorithm,
+                                including file-Extension without path */
+            };
+            block "TP_BLOB" struct {
+               uint;   /* CCP Version,       High Byte: Version
+                                             Low Byte : subversion (dec.)            */
+               uint;   /* Blob-Version,      High Byte: Version
+                                             Low Byte : subversion (dec.)            */
+               ulong;  /* CAN-Message ID for 'Transmitting to ECU (CRM)'
+                                             Bit31 = 1: extended Identifier
+                                             Bit31 = 0: standard Identifier          */
+               ulong;  /* CAN-Message ID for 'Receiving from ECU (DTM)'
+                                             Bit31 = 1: extended Identifier
+                                             Bit31 = 0: standard Identifier          */
+               uint;   /* Logical CCP-Address of the (station address)           */
+               uint;   /* Byte order of Multiple-byte-items
+                                             1 = high Byte first, 2 = low byte first */
+               taggedstruct {
+                 block "CAN_PARAM" struct {
+                   uint;                  /* Quartz freq. of the elec. control unit  */
+                   uchar;                 /* BTR0                                    */
+                   uchar;                 /* BTR1                                    */
+                 };
+                 "BAUDRATE" ulong;        /* Baud rate in Hz.                        */
+                 "SAMPLE_POINT" uchar;    /* sampling point of time in percent       */
+                 "SAMPLE_RATE" uchar;     /* number of samples per Bit (1 oder 3)    */
+                 "BTL_CYCLES" uchar;      /* number of BTL-cycles                    */
+                 "SJW" uchar;             /* SJW-parameter in BTL-cycles             */
+                 "SYNC_EDGE" enum {
+                    "SINGLE" = 0,         /* Synchronisation only on fallende edge   */
+                    "DUAL" = 1            /* Synchr. on falling and rising edge      */
+                 };
+                 "DAQ_MODE" enum {        /* mode of cylcic data acquisition         */
+                    "ALTERNATING" = 0,    /* ECU is sending one ODT per cycle        */
+                    "BURST" = 1           /* ECU is sending a complete DAQ           */
+                 };
+                 "BYTES_ONLY";            /* ECU supports max. elements of one Byte size */
+                                          /* otherwise ECU supports different dataTypes  */
+                 "RESUME_SUPPORTED";      /* ECU supports the Resume function            */
+                 "STORE_SUPPORTED";       /* ECU supports the Store function             */
+                 "CONSISTENCY" enum {
+                    "DAQ" = 0,            /* consistency of a complete DAQ ist guaranteed */
+                    "ODT" = 1             /* consistency of a complete ODT ist guaranteed */
+                 };
+                 "ADDRESS_EXTENSION" enum {  /* address extension                      */
+                    "DAQ" = 0,               /* ECU supports only one Address extension
+                                                within an DAQ                    */
+                    "ODT" = 1                /* ECU supports only one Address extension
+                                                within an ODT                    */
+                 };
+                 block "CHECKSUM_PARAM" struct {
+                   uint;               /* checksum calculation procedure
+                                        standard types not yet defined,
+                                        if greater of equal 1000 : manufacturer specific  */
+                   ulong;               /* Maximum block length used by an ASAP1a-CCP
+                                           command, for checksum calculation procedure  */
+                   taggedstruct {
+                     "CHECKSUM_CALCULATION" enum {
+                        "ACTIVE_PAGE" = 0,
+                        "BIT_OR_WITH_OPT_PAGE" = 1
+                     };
+                   };
+                 };
+                 (block "DEFINED_PAGES" struct {
+                    struct {
+                       uint;            /* Logical No. of the memory page (1,2,..)   */
+                       char[101];       /* Name of the memory page                   */
+                       uint;            /* Adress-Extension of the memory page (only
+                                           Low Byte significant)                     */
+                       ulong;           /* Base address of the memory page           */
+                       ulong;           /* Length of the memory page in Bytes        */
+                    };
+                    taggedstruct {
+                      "RAM";              /* memory page in RAM */
+                      "ROM";              /* memory page in ROM */
+                      "FLASH";            /* memory page in FLASH */
+                      "EEPROM";           /* memory page in EEPROM */
+                      "RAM_INIT_BY_ECU";  /* memory page is initialised by ECU start-up */
+                      "RAM_INIT_BY_TOOL"; /* RAM- memory page is initialised by the MCS */
+                      "AUTO_FLASH_BACK";  /* RAM memory page is automatically flashed back */
+                      "FLASH_BACK";       /* feature available to flash back the RAM memory page */
+                      "DEFAULT";          /* memory page is standard (fallback mode) */
+                    };
+                 } ) *;
+                 ( "OPTIONAL_CMD"  uint )*; /* CCP-Code of the optional command available
+                                               in the ECU. It is recommended to declare all
+                                               non-standard ECU commands here */
+               };
+            };
+            ("ADDR_MAPPING" struct {
+              ulong;   /* from   */
+              ulong;   /* to     */
+              ulong;   /* length */
+            })*;
+            /* for CHARACTERISTIC and AXIS_PTS and MEMORY_LAYOUT */
+            "DP_BLOB" struct {
+               uint;   /* Address extension of the calibration data
+                          (only Low Byte significant) */
+               ulong;  /* Base address of the calibration data */
+               ulong;  /* Number of Bytes belonging to the calibration data  */
+            };
+            /* for MEASUREMENT */
+            "KP_BLOB" struct {
+               uint;   /* Address extension of the online data
+                            (only Low Byte significant) */
+               ulong;  /* Base address of the online data   */
+               ulong;  /* Number of Bytes belonging to the online data (1,2 or 4) */
+               taggedstruct {
+                  ("RASTER" uchar )*;
+                         /* Array of event channel initialization values */
+               };
+            };
+        };
+      };
+
+    /end A2ML
+
+    /begin MOD_COMMON ""
+      BYTE_ORDER MSB_LAST
+    /end MOD_COMMON
+
+    /begin IF_DATA ASAP1B_CCP
+       /begin RASTER
+              "10 ms" "10 ms" 2 3 10
+       /end RASTER
+       /begin TP_BLOB
+              0x201 0x0206 0x0100 0x0101 0x0001 2
+              BAUDRATE 1000000
+              SAMPLE_POINT 75
+              SAMPLE_RATE 1
+              BTL_CYCLES 8
+              SJW 2
+              SYNC_EDGE SINGLE
+              DAQ_MODE BURST
+              CONSISTENCY DAQ
+              ADDRESS_EXTENSION DAQ
+              BYTES_ONLY
+              /begin CHECKSUM_PARAM
+                0x0002 /* Type */
+                0xFFFFFFFF /* Limit */
+              /end CHECKSUM_PARAM
+              /begin DEFINED_PAGES
+                0 "RAM_PAGE" 0 0x0001 0
+                RAM
+                RAM_INIT_BY_ECU
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                1 "ROM_PAGE" 0 0x0000 0
+                ROM
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                2 "RAM" 0 0x14000 16384
+                RAM
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                3 "RAM" 0 0x18000 16384
+                RAM
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                4 "RAM" 0 0x40000 104
+                RAM
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                5 "FLASH" 0 0x0000 32768
+                FLASH
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                6 "FLASH" 0 0x8000 32768
+                FLASH
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                7 "FLASH" 0 0x10000 32768
+                FLASH
+              /end DEFINED_PAGES
+              /begin DEFINED_PAGES
+                8 "FLASH" 0 0x18000 32768
+                FLASH
+              /end DEFINED_PAGES
+
+              OPTIONAL_CMD 0x0F /* SHORT_UPLOAD */
+              OPTIONAL_CMD 0x0E /* BUILD_CHECKSUM */
+              OPTIONAL_CMD 0x11 /* SELECT_CAL_PAGE */
+              OPTIONAL_CMD 0x09 /* GET_ACTIVE_CAL_PAGE */
+       /end TP_BLOB
+    /end IF_DATA
+
+    /begin MOD_PAR ""
+    /end MOD_PAR
+
+
+    /begin COMPU_METHOD FRM_3 ""
+      RAT_FUNC "%3.1f" "Volt"
+      COEFFS 0 1000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD FRM_4 ""
+      RAT_FUNC "%3.1f" ""
+      COEFFS 0 100 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD FRM_5 ""
+      RAT_FUNC "%3.1f" "1/min"
+      COEFFS 0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD FRM_6 ""
+      RAT_FUNC "%3.1f" "cm"
+      COEFFS 0 0.1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD FRM_7 ""
+      TAB_VERB "%3.1f" ""
+      COMPU_TAB_REF FRM_7
+    /end COMPU_METHOD
+    /begin COMPU_VTAB FRM_7 "" TAB_VERB 2
+      0 "Low"
+      100 "High"
+      DEFAULT_VALUE ""
+    /end COMPU_VTAB
+
+    /begin COMPU_METHOD FRM_8 ""
+      RAT_FUNC "%3.1f" "Nm"
+      COEFFS 0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD FRM_9 ""
+      RAT_FUNC "%3.1f" "m"
+      COEFFS 0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD NO_FORMULA "Regel fuer Objekte ohne Umrechnungsregel"
+      RAT_FUNC "%6.0" ""
+      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD PWM_Level.CONVERSION "@@@@RuleName created by CANape"
+      RAT_FUNC "%3.1f" "Volt"
+      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD TestStatusValues ""
+      TAB_VERB "%3.1" ""
+      COMPU_TAB_REF TestStatusValues
+    /end COMPU_METHOD
+    /begin COMPU_VTAB_RANGE TestStatusValues "" 6
+      0 0 "Off"
+      1 1 "Silent"
+      2 2 "Pending"
+      3 3 "Running"
+      4 127 "Invalid"
+      128 255 "128-255"
+      DEFAULT_VALUE ""
+    /end COMPU_VTAB_RANGE
+
+    /begin MEASUREMENT BitSlice "Testsignal: 4 Bit on a byte boundary"
+      UWORD NO_FORMULA 0 0 0 15
+      READ_WRITE
+      BIT_MASK 0x3C0
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4006E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4006E 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x4006E 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 15
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BitSlice0 "Testsignal: 5 Bit"
+      UBYTE NO_FORMULA 0 0 0 31
+      READ_WRITE
+      BIT_MASK 0x1F
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4006E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4006E 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x4006E 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 31
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BitSlice1 "Testsignal: 5 Bit "
+      UWORD NO_FORMULA 0 0 0 31
+      READ_WRITE
+      BIT_MASK 0x3E0
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4006E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4006E 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x4006E 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 31
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BitSlice2 "Testsignal: 5 Bit "
+      UBYTE NO_FORMULA 0 0 0 63
+      READ_WRITE
+      BIT_MASK 0xFC
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4006F
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4006F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x4006E 0x0 0 0x1 1 0x8F 0x0
+        DISPLAY 0 0 31
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin AXIS_PTS Curve1 "Curve used as axis"
+      0x1443F NO_INPUT_QUANTITY SSV__UBYTE 0 NO_FORMULA 8 0 255
+      EXTENDED_LIMITS 0 255
+      DEPOSIT ABSOLUTE
+      BYTE_ORDER MSB_LAST
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x1443F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve1_8_uc" 0x1443F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end AXIS_PTS
+
+    /begin AXIS_PTS Curve2 "Curve used as axis"
+      0x14447 NO_INPUT_QUANTITY CurveX8ub 0 NO_FORMULA 8 0 255
+      EXTENDED_LIMITS 0 255
+      DEPOSIT ABSOLUTE
+      BYTE_ORDER MSB_LAST
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14447 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve2_8_uc" 0x14447 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end AXIS_PTS
+
+    /begin AXIS_PTS Curve3 "Curve used as axis"
+      0x1444F NO_INPUT_QUANTITY SSV__UBYTE 0 NO_FORMULA 6 0 255
+      EXTENDED_LIMITS 0 255
+      DEPOSIT ABSOLUTE
+      BYTE_ORDER MSB_LAST
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x1444F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve3_8_uc" 0x1444F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end AXIS_PTS
+
+    /begin MEASUREMENT FW1 "Testparameter"
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14037
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14037 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte4" 0x14037 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC KF2 "8*8 BYTE shared axis Curve1/Curve1"
+      MAP 0x14053 __UBYTE 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve1
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve2
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14053 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1_8_8_uc" 0x14053 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF2_FLASH "8*8 BYTE shared axis Curve1/Curve1"
+      MAP 0x18000 __UBYTE 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve1
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve2
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x18000 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF5 "8*6 BYTE memory layout MapX8Y6V86ub"
+      MAP 0x142D3 MapX8Y6V86ub 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  6 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x142D3 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map4_80_uc" 0x142D3 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF7 "8*8 BYTE memory layout MapV86ub, shared axis Curve1/Curve1"
+      MAP 0x14253 MapV86ub 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve1
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve2
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14253 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map2_8_8_uc" 0x14253 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KF8 "8*6 BYTE memory layout MapV86ub, fixed axis "
+      MAP 0x14293 MapV86ub 0 FRM_5  0 10
+      EXTENDED_LIMITS 0 10
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY FRM_5  8 0 25.5
+        EXTENDED_LIMITS 0 25.5
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FIX_AXIS_PAR_DIST 0 2 8
+        DEPOSIT ABSOLUTE
+        FORMAT "%.1"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY FRM_8  6 0 25.5
+        EXTENDED_LIMITS 0 25.5
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FIX_AXIS_PAR_DIST 0 5 6
+        DEPOSIT ABSOLUTE
+        FORMAT "%.1"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14293 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map3_8_8_uc" 0x14293 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.2"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL1 "16 BYTE curve"
+      VAL_BLK 0x14478 __UBYTE 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      NUMBER 16 
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14478 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve5_16_uc" 0x14478 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT KL1Output "Value generated from curve KL1"
+      UBYTE NO_FORMULA 0 0 0 255
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4004D
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4004D 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curveOutput" 0x4004D 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC KL2 "8 BYTE shared axis Curve2"
+      CURVE 0x1443F __UBYTE 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve2
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x1443F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve1_8_uc" 0x1443F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL3 "8 BYTE CurveX8V8ub"
+      CURVE 0x14457 CurveX8V8ub 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14457 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve4_8_uc" 0x14457 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL4 "8 BYTE CurveV8ub"
+      VAL_BLK 0x14457 CurveV8ub 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      NUMBER 8 
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14457 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve4_8_uc" 0x14457 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL5 "8 BYTE CurveV8ub shared axis Curve2"
+      CURVE 0x1443F CurveV8ub 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        COM_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        AXIS_PTS_REF Curve2
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x1443F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve1_8_uc" 0x1443F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL6 "8 BYTE CurveV8ub fixed axis"
+      CURVE 0x1444F CurveV8ub 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FIX_AXIS_PAR_DIST 0 8 8
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x1444F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve3_8_uc" 0x1444F 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC KL7 ""
+      CURVE 0x144B8 CurveX8V8ubAlternate 0 FRM_4  0 500
+      EXTENDED_LIMITS 0 500
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFFFF
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY FRM_4  8 0 655.35
+        EXTENDED_LIMITS 0 655.35
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x144B8 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "curve5_16_uc4" 0x144B8 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT PWM "Pulse width signal from PWM_level and Triangle"
+      UBYTE FRM_7 0 0 0 1
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4004B
+      FORMAT "%.0"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4004B 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bytePWM" 0x4004B 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT PWMFiltered "Low pass filtered PWM signal"
+      UBYTE NO_FORMULA 0 0 0 255
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40048
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40048 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bytePWMFiltered" 0x40048 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT PWM_Level ""
+      SBYTE PWM_Level.CONVERSION 0 0 -50 50
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14032
+      FORMAT "%.0"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14032 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "sbytePWMLevel" 0x14032 0x0 0 0x0 1 0xC7 0x0
+        DISPLAY 0 -50 50
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B0 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x1
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40042
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40042 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x40042 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B1 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x2
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40042
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40042 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x40042 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B2 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x4
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40042
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40042 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x40042 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Shifter_B3 "Single bit demo signal (bit from a byte shifting)"
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x8
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40042
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40042 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteShift" 0x40042 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TestDouble ""
+      VALUE 0x16000 __FLOAT64_IEEE_S 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS -1.7e+308 1.7e+308
+      BYTE_ORDER MSB_LAST
+      FORMAT "%.12"
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x16000 8
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TestStatus "2 bit demo signal with symbolic conversion formula"
+      UBYTE TestStatusValues 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4000C
+      FORMAT "%.1"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4000C 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x4000C 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TestString ""
+      ASCII 0x15000 __UBYTE_Z 0 NO_FORMULA 0 255
+      EXTENDED_LIMITS 0 255
+      NUMBER 0
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x15000 0
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT Triangle "Triangle test signal used for PWM output PWM"
+      SBYTE NO_FORMULA 0 0 -50 50
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40067
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40067 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "sbyteTriangle" 0x40067 0x0 0 0x0 1 0xC7 0x0
+        DISPLAY 0 -50 50
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC a0 "Digital Filter v=(vin*a0+v*b0)/c0"
+      VALUE 0x1402C __UWORD 0 FRM_3  0 1
+      EXTENDED_LIMITS 0 1
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFFFF
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x1402C 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "a" 0x1402C 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT analogChannel ""
+      UWORD NO_FORMULA 0 0 0 65535
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40022
+      FORMAT "%.12"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40022 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "analogChannel" 0x40022 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 65535
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT analogIndex ""
+      UBYTE NO_FORMULA 0 0 0 255
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4004C
+      FORMAT "%.12"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4004C 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "analogIndex" 0x4004C 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC b0 "Digital Filter v=(vin*a0+v*b0)/c0"
+      VALUE 0x1402E __UWORD 0 FRM_3  0 1
+      EXTENDED_LIMITS 0 1
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFFFF
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x1402E 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "b" 0x1402E 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT bit12Counter "Demo signal (12 bit, incrementing)"
+      UWORD NO_FORMULA 0 0 0 4095
+      READ_WRITE
+      BIT_MASK 0xFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4006E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4006E 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x4006E 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 4096
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT bitstruct1 ""
+      UBYTE NO_FORMULA 0 0 0 65535
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0xFD04
+      FORMAT "%.12"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0xFD04 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bitstruct1" 0xFD04 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 65535
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT bitstruct2 ""
+      UBYTE NO_FORMULA 0 0 0 65535
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0xFD02
+      FORMAT "%.12"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0xFD02 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bitstruct2" 0xFD02 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 65535
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte1 "Demo, read and write possible"
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14034
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14034 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte1" 0x14034 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte2 "Demo, read and write possible"
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14035
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14035 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte2" 0x14035 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte3 "Demo, read and write possible"
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14036
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14036 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte3" 0x14036 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byte4 "Demo, read and write possible"
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14037
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14037 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byte4" 0x14037 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT byteCounter "Demo signal (byte, incrementing)"
+      UBYTE NO_FORMULA 0 0 0 255
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4000C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4000C 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "byteCounter" 0x4000C 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT bytePWMFilter "Filter constant for PWM filter"
+      UBYTE NO_FORMULA 0 0 0 100
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14033
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14033 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "bytePWMFilter" 0x14033 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 100
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC c0 "Digital Filter v=(vin*a0+v*b0)/c0"
+      VALUE 0x14030 __UWORD 0 FRM_3  0 1
+      EXTENDED_LIMITS 0 1
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFFFF
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14030 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "c" 0x14030 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT dwordCounter "Demo signal (dword, incrementing)"
+      ULONG NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFFFFFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4001E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4001E 4
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "dwordCounter" 0x4001E 0x0 0 0x0 1 0x9F 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT gCounter ""
+      ULONG NO_FORMULA 0 0 0 65535
+      BIT_MASK 0xFFFFFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4017C
+      FORMAT "%.12"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4017C 4
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "gCounter" 0x4017C 0x0 0 0x0 1 0x9F 0x0
+        DISPLAY 0 0 65535
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT gTimer ""
+      ULONG NO_FORMULA 0 0 0 65535
+      BIT_MASK 0xFFFFFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40178
+      FORMAT "%.12"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40178 4
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "gTimer" 0x40178 0x0 0 0x0 1 0x9F 0x0
+        DISPLAY 0 0 65535
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC map1 "8*8 BYTE shared axis Curve1/Curve1"
+      MAP 0x14053 __UBYTE 0 FRM_6  0 2550
+      EXTENDED_LIMITS 0 2550
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        FIX_AXIS map1InputX FRM_9  8 -12.8 12.7
+        EXTENDED_LIMITS -12.8 12.7
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FIX_AXIS_PAR_DIST 0 1 8
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS map1InputY FRM_9  8 -12.8 12.7
+        EXTENDED_LIMITS -12.8 12.7
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FIX_AXIS_PAR_DIST 0 1 8
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14053 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1_8_8_uc" 0x14053 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC map1Counter ""
+      VALUE 0x14052 __UBYTE 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14052 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1Counter" 0x14052 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT map1InputX ""
+      UBYTE FRM_9 0 0 0 25.5
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4004A
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4004A 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1InputX" 0x4004A 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 7
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT map1InputY ""
+      UBYTE FRM_9 0 0 0 25.5
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x40049
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x40049 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1InputY" 0x40049 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 7
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT map1Output ""
+      UBYTE FRM_6 0 0 0 2550
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4000E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4000E 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map1Output" 0x4000E 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC map4_80_uc "8*8 BYTE memory layout map4_80_uc"
+      MAP 0x142D3 MapX8Y8V88ub 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  8 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x142D3 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map4_80_uc" 0x142D3 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC map5_82_uc "8*8 BYTE memory layout MapNxX8NyY8V88uc"
+      MAP 0x14373 MapNxXNyYVuc 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  0 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  0 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.3"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14373 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map5_82_uc" 0x14373 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.3"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC map6_122_us "Test insert and delete axis points"
+      MAP 0x143C5 MapNxXNyYVuc 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  10 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.12"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        STD_AXIS NO_INPUT_QUANTITY NO_FORMULA  10 0 255
+        EXTENDED_LIMITS 0 255
+        BYTE_ORDER MSB_LAST
+        DEPOSIT ABSOLUTE
+        FORMAT "%.12"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x143C5 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "map6_122_uc" 0x143C5 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.12"
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC map7_8K_us ""
+      MAP 0x14500 __UBYTE_Z 0 NO_FORMULA  0 255
+      EXTENDED_LIMITS 0 255
+      BYTE_ORDER MSB_LAST
+      BIT_MASK 0xFF
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY NO_FORMULA  64 0 63
+        EXTENDED_LIMITS 0 63
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FIX_AXIS_PAR_DIST 0 1 64
+        DEPOSIT ABSOLUTE
+        FORMAT "%.0"
+      /end AXIS_DESCR
+      /begin AXIS_DESCR
+        FIX_AXIS NO_INPUT_QUANTITY NO_FORMULA  128 0 127
+        EXTENDED_LIMITS 0 127
+        READ_ONLY
+        BYTE_ORDER MSB_LAST
+        FIX_AXIS_PAR_DIST 0 1 128
+        DEPOSIT ABSOLUTE
+        FORMAT "%.0"
+      /end AXIS_DESCR
+      /begin IF_DATA ASAP1B_CCP
+        DP_BLOB 0x0 0x14500 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        DISPLAY 0 0 255
+      /end IF_DATA
+      FORMAT "%.12"
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT testbit0 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x1
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbit1 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x2
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbit2 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x4
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbit3 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x8
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbit4 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x10
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbit5 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x20
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbit6 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x40
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbit7 ""
+      UBYTE NO_FORMULA 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0x80
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 20
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbitslice0 ""
+      SBYTE NO_FORMULA 0 0 -16 15
+      READ_WRITE
+      BIT_MASK 0x1F
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 32
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbitslice1 ""
+      SWORD NO_FORMULA 0 0 -16 15
+      READ_WRITE
+      BIT_MASK 0x3E0
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 32
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbitslice2 ""
+      SBYTE NO_FORMULA 0 0 -32 31
+      READ_WRITE
+      BIT_MASK 0xFC
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14599
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14599 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x1 1 0x87 0x0
+        DISPLAY 0 0 32
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte0 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte1 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14599
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14599 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x1 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte2 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459A
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459A 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x2 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte3 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459B
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459B 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x3 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte4 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459C 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x4 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte5 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459D
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459D 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x5 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte6 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459E 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x6 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testbyte7 ""
+      SBYTE NO_FORMULA 0 0 -128 127
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459F
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x7 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testdword0 ""
+      SLONG NO_FORMULA 0 0 -2147480000 2147480000
+      READ_WRITE
+      BIT_MASK 0xFFFFFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 4
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 1000000
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testdword1 ""
+      SLONG NO_FORMULA 0 0 -2147480000 2147480000
+      READ_WRITE
+      BIT_MASK 0xFFFFFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459C 4
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x4 1 0x87 0x0
+        DISPLAY 0 0 1000000
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubitslice0 ""
+      UBYTE NO_FORMULA 0 0 0 31
+      READ_WRITE
+      BIT_MASK 0x1F
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 32
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubitslice1 ""
+      UWORD NO_FORMULA 0 0 0 31
+      READ_WRITE
+      BIT_MASK 0x3E0
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 32
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubitslice2 ""
+      UBYTE NO_FORMULA 0 0 0 63
+      READ_WRITE
+      BIT_MASK 0xFC
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14599
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14599 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x1 1 0x87 0x0
+        DISPLAY 0 0 32
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte0 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte1 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14599
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14599 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x1 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte2 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459A
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459A 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x2 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte3 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459B
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459B 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x3 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte4 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459C 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x4 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte5 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459D
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459D 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x5 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte6 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459E 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x6 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testubyte7 ""
+      UBYTE NO_FORMULA 0 0 0 255
+      READ_WRITE
+      BIT_MASK 0xFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459F
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459F 1
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x7 1 0x87 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testudword0 ""
+      ULONG NO_FORMULA 0 0 0 4294970000
+      READ_WRITE
+      BIT_MASK 0xFFFFFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 4
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 1000000
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testudword1 ""
+      ULONG NO_FORMULA 0 0 0 4294970000
+      READ_WRITE
+      BIT_MASK 0xFFFFFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459C 4
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x4 1 0x87 0x0
+        DISPLAY 0 0 1000000
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testuword0 ""
+      UWORD NO_FORMULA 0 0 0 65536
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testuword1 ""
+      UWORD NO_FORMULA 0 0 0 65536
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459A
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459A 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x2 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testuword2 ""
+      UWORD NO_FORMULA 0 0 0 65536
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459C 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x4 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testuword3 ""
+      UWORD NO_FORMULA 0 0 0 65536
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459E 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x6 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testword0 ""
+      SWORD NO_FORMULA 0 0 -32768 32767
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x14598
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x14598 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x0 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testword1 ""
+      SWORD NO_FORMULA 0 0 -32768 32767
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459A
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459A 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x2 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testword2 ""
+      SWORD NO_FORMULA 0 0 -32768 32767
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459C 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x4 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT testword3 ""
+      SWORD NO_FORMULA 0 0 -32768 32767
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x1459E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x1459E 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "calram" 0x14598 0x0 0 0x6 1 0x87 0x0
+        DISPLAY 0 0 65536
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT v "Digital Filter Outputvalue"
+      UWORD FRM_3 0 0 0 1
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4004E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4004E 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "v" 0x4004E 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT vin "Digital Filter Inputvalue"
+      UWORD FRM_3 0 0 0 1
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4005C
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4005C 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "vin" 0x4005C 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 1
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT wordCounter "Demo signal (word, incrementing)"
+      UWORD NO_FORMULA 0 0 0 65535
+      READ_WRITE
+      BIT_MASK 0xFFFF
+      BYTE_ORDER MSB_LAST
+      ECU_ADDRESS 0x4006E
+      FORMAT "%.3"
+      /begin IF_DATA ASAP1B_CCP
+        KP_BLOB 0x0 0x4006E 2
+      /end IF_DATA
+      /begin IF_DATA CANAPE_EXT
+        100
+        LINK_MAP "wordCounter" 0x4006E 0x0 0 0x0 1 0x8F 0x0
+        DISPLAY 0 0 255
+      /end IF_DATA
+    /end MEASUREMENT
+
+    /begin GROUP Axis "Shared Axis for Calibration Maps"
+      ROOT
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+        Curve1 Curve2 Curve3 
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Bits "Single Bit Values"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Shifter_B0 Shifter_B1 Shifter_B2 Shifter_B3 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Bitslices "Multibit Values"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BitSlice BitSlice0 BitSlice1 BitSlice2 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Curves "Calibration Curves"
+      ROOT
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+        KL1 KL2 KL3 KL4 KL5 KL6 KL7 
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Example_Filter "Digital Filter v=(vin*a0+v*b0)/c0"
+      ROOT
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+        a0 b0 c0 
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        v vin 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Example_PWM "Generator for a PWM Signal"
+      ROOT
+      /begin SUB_GROUP
+        PWM_Signals 
+        PWM_Parameters 
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Maps "Calibration Maps"
+      ROOT
+      /begin SUB_GROUP
+        WorkingPoint 
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+        KF2 KF2_FLASH KF5 KF7 KF8 map4_80_uc map5_82_uc map6_122_us 
+        map7_8K_us 
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Measure "Measurement Values"
+      ROOT
+      /begin SUB_GROUP
+        Test_Signals 
+        Bitslices 
+        Bits 
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        TestStatus 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP PWM_Parameters "Parametes for PWM Example"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        FW1 PWM_Level bytePWMFilter 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP PWM_Signals "Measurement Signals from PWM"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        PWM PWMFiltered Triangle 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Parameters "Calibration Parameters"
+      ROOT
+      /begin SUB_GROUP
+        Test_Parameters 
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Test_Parameters "Test Parameters, BYTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        testbit0 testbit1 testbit2 testbit3 testbit4 testbit5 testbit6 testbit7 
+        testbitslice0 testbitslice1 testbitslice2 testbyte0 testbyte1 testbyte2 testbyte3 testbyte4 
+        testbyte5 testbyte6 testbyte7 testdword0 testdword1 testubitslice0 testubitslice1 testubitslice2 
+        testubyte0 testubyte1 testubyte2 testubyte3 testubyte4 testubyte5 testubyte6 testubyte7 
+        testudword0 testudword1 testuword0 testuword1 testuword2 testuword3 testword0 testword1 
+        testword2 testword3 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Test_Signals "Test Signals"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        KL1Output bit12Counter byte1 byte2 byte3 byte4 byteCounter dwordCounter 
+        wordCounter 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP WorkingPoint "Example for working point"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+        map1 map1Counter 
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        map1InputX map1InputY map1Output 
+      /end REF_MEASUREMENT
+    /end GROUP
+
+
+    /begin RECORD_LAYOUT CurveNxVub 
+      FNC_VALUES 2 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveNxXVub 
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 2 UBYTE INDEX_INCR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveV8ub 
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveVub 
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveX8V8ub 
+      FNC_VALUES 2 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveX8V8ubAlternate 
+      FNC_VALUES 2 UWORD ALTERNATE_WITH_X DIRECT
+      AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT CurveX8ub 
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapColRowuw 
+      FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapNxNyVub 
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+      NO_AXIS_PTS_Y 2 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapNxNyXYVub 
+      FNC_VALUES 5 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 3 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 4 UBYTE INDEX_INCR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+      NO_AXIS_PTS_Y 2 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapNxXNyYVuc 
+      FNC_VALUES 5 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 2 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 4 UBYTE INDEX_INCR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+      NO_AXIS_PTS_Y 3 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapRowColub 
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapV86ub 
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+      FIX_NO_AXIS_PTS_Y 6
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapX8Y6V86ub 
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 2 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+      FIX_NO_AXIS_PTS_Y 6
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapX8Y8V88ub 
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 2 UBYTE INDEX_INCR DIRECT
+      FIX_NO_AXIS_PTS_X 8
+      FIX_NO_AXIS_PTS_Y 8
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT MapXYVub 
+      FNC_VALUES 3 UBYTE ROW_DIR DIRECT
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+      AXIS_PTS_Y 2 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__FLOAT32_IEEE 
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SBYTE 
+      AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SLONG 
+      AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SWORD 
+      AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__UBYTE 
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__ULONG 
+      AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__UWORD 
+      AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT _CurveNxVub 
+      FNC_VALUES 2 UBYTE ROW_DIR DIRECT
+      NO_AXIS_PTS_X 1 UBYTE
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT32_IEEE 
+      FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SBYTE 
+      FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SLONG 
+      FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SWORD 
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UBYTE 
+      FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __ULONG 
+      FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UWORD 
+      FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UBYTE_Z 
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UWORD_Z 
+      FNC_VALUES 1 UWORD ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __ULONG_Z 
+      FNC_VALUES 1 ULONG ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SBYTE_Z 
+      FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SWORD_Z 
+      FNC_VALUES 1 SWORD ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SLONG_Z 
+      FNC_VALUES 1 SLONG ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT32_IEEE_Z 
+      FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT64_IEEE_Z 
+      FNC_VALUES 1 FLOAT64_IEEE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UBYTE_S 
+      FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __UWORD_S 
+      FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __ULONG_S 
+      FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SBYTE_S 
+      FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SWORD_S 
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __SLONG_S 
+      FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT32_IEEE_S 
+      FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT __FLOAT64_IEEE_S 
+      FNC_VALUES 1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__UBYTE_S 
+      AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__UWORD_S 
+      AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__ULONG_S 
+      AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SBYTE_S 
+      AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SWORD_S 
+      AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__SLONG_S 
+      AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__FLOAT32_IEEE_S 
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SSV__FLOAT64_IEEE_S 
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+  /end MODULE
+/end PROJECT
